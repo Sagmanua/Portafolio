@@ -1,0 +1,14 @@
+[
+{ 
+    "title": "Project One",
+    "img":"pupupu", 
+    "description": "Description for project one.",
+    "language":"Java"
+},
+{ 
+    "title": "Project Two",
+    "img":"pupupu", 
+    "description": "Another project description.",
+    "language":"Python"
+}
+]
