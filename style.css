@@ -4,6 +4,13 @@ body {
   padding: 0;
   background: #f4f4f4;
 }
+.thumb {
+    width: 100%;        /* image scales with the container/page */
+    max-width: 300px;   /* but never becomes larger than 300px */
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
 
 /* 🔹 Barra superior */
 .topbar {
