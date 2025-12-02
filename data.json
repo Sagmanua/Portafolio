@@ -3,30 +3,39 @@
     "title": "Project One",
     "img":"pupupu", 
     "description": "Description for project one.",
-    "language":"Java"
+    "language":"Java",
+    "linkgithub":"https://github.com/Sagmanua/Bases-de-datos-/blob/main/create%20user%20just%20change%20datos.sql"
+
 },
 { 
     "title": "Project One",
     "img":"pupupu", 
     "description": "Description for project one.",
-    "language":"Java"
+    "language":"Java",
+    "linkgithub":"https://github.com/Sagmanua/Bases-de-datos-/blob/main/create%20user%20just%20change%20datos.sql"
 },
 { 
     "title": "Project One",
     "img":"pupupu", 
     "description": "Description for project one.",
-    "language":"Java"
+    "language":"Java",
+    "linkgithub":"https://github.com/Sagmanua/Bases-de-datos-/blob/main/create%20user%20just%20change%20datos.sql"
+
 },
 { 
     "title": "Project One",
     "img":"pupupu", 
     "description": "Description for project one.",
-    "language":"Java"
+    "language":"Java",
+    "linkgithub":"https://github.com/Sagmanua/Bases-de-datos-/blob/main/create%20user%20just%20change%20datos.sql"
+
 },
 { 
     "title": "Project Two",
     "img":"pupupu", 
     "description": "Another project description.",
-    "language":"Python"
+    "language":"Python",
+    "linkgithub":"https://github.com/Sagmanua/Bases-de-datos-/blob/main/create%20user%20just%20change%20datos.sql"
+
 }
 ]

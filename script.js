@@ -12,6 +12,7 @@ fetch('data.json')
         <div class="title">${item.title}</div>
         <div class="desc">${item.description}</div>
         <div class="desc">${item.language}</div>
+        <div class="desc"><a href="${item.linkgithub}">link a github</a> </div>
       `;
 
       grid.appendChild(card);
