@@ -1,7 +1,7 @@
 [
 { 
     "title": "Project One",
-    "img":"pupupu", 
+    "image":"pupupu", 
     "description": "Description for project one.",
     "language":"Java",
     "github":"https://github.com/Sagmanua/Bases-de-datos-/blob/main/create%20user%20just%20change%20datos.sql"
@@ -9,14 +9,14 @@
 },
 { 
     "title": "Project One",
-    "img":"pupupu", 
+    "image":"pupupu", 
     "description": "Description for project one.",
     "language":"Java",
     "github":"https://github.com/Sagmanua/Bases-de-datos-/blob/main/create%20user%20just%20change%20datos.sql"
 },
 { 
     "title": "Project One",
-    "img":"pupupu", 
+    "image":"pupupu", 
     "description": "Description for project one.",
     "language":"Java",
     "github":"https://github.com/Sagmanua/Bases-de-datos-/blob/main/create%20user%20just%20change%20datos.sql"
@@ -24,7 +24,7 @@
 },
 { 
     "title": "Wot Wordle",
-    "img": "foto of projects/Wot-wordle.png", 
+    "image": "foto of projects/Wot-wordle.png", 
     "description": "Mini-juego de adivinanza de tanques en Python: aplicación GUI creada con Tkinter que reta al usuario a adivinar un tanque elegido al azar de un archivo JSON. Proporciona retroalimentación sobre atributos como daño, velocidad, clase y nación, cuenta los intentos y cambia el fondo al ganar. Incluye un sistema de reinicio para seleccionar un nuevo tanque y probar de nuevo.",
     "language": "Python",
     "github": "https://github.com/Sagmanua/Wot-Wordle"

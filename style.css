@@ -5,12 +5,37 @@ body {
   background: #f4f4f4;
 }
 .thumb {
-    width: 100%;        /* image scales with the container/page */
-    max-width: 300px;   /* but never becomes larger than 300px */
-    height: auto;
-    object-fit: cover;
-    display: block;
+  width: 100%;          /* fills the card width */
+  height: auto;         /* keeps aspect ratio */
+  max-height: 200px;    /* optional: limit height so it doesn't get too tall */
+  object-fit: cover;    /* crop nicely if image is larger */
+  border-radius: 12px;  /* match card rounded corners */
+  display: block;
 }
+
+/* Responsive grid */
+@media (max-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  }
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr; /* 1 card per row on small screens */
+  }
+
+  .thumb {
+    max-height: 250px; /* taller images on mobile if needed */
+  }
+}
+
 
 /* 🔹 Barra superior */
 .topbar {
