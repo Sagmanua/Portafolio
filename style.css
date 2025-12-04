@@ -1,23 +1,58 @@
-/* Sticky Footer Setup */
+/* --------------------------------------------------
+    COLORS (Updated for a Deeper Wheat/Khaki Background 🍂)
+-------------------------------------------------- */
+
+:root {
+    --primary-light: #E0CCA6; /* <<< NEW DEEPER WHEAT/KHAKI BACKGROUND */
+    --secondary-mid: #2F4244; /* Dark Pine Green for Top Bar/Footer (Kept) */
+    --card-light: #FFFFFF; /* Bright white cards (Kept) */
+    --accent-gold: #C28E00; /* Deepened Gold/Amber (Kept) */
+    --accent-green: #38A3A5; /* A bright, cool green for highlights (Kept) */
+    --text-dark: #2F4244; /* Dark text for light backgrounds (Kept) */
+    --text-secondary: #5C6F73; /* Muted dark text for descriptions (Kept) */
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.18); /* Slightly stronger shadow */
+
+    /* Variable mapping to new scheme */
+    --card: var(--card-light);
+    --glass: rgba(194, 142, 0, 0.15);
+    --green: var(--accent-green);
+}
+
+/* --------------------------------------------------
+    GLOBAL RESET & LAYOUT (Color updates)
+-------------------------------------------------- */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: #f4f4f4;
-    
-    /* STICKY FOOTER: Pushes the footer to the bottom */
+    font-family: Arial, sans-serif;
+
+    background: var(--primary-light); /* <<< NEW DEEPER KHAKI COLOR */
+    color: var(--text-dark); /* Default text color is dark */
+
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensures body takes up at least the viewport height */
+    min-height: 100vh;
 }
 
-/* NEW RULE: Makes the main content grow and adds top spacing */
 main {
-    flex-grow: 1; /* Crucial: Allows the main content area to fill the remaining space */
-    padding-top: 30px; /* Use padding here instead of margin on the grid */
+    flex-grow: 1;
+    padding-top: 30px;
 }
 
+/* --- (Sections below this point generally remain unchanged, as the main color variables have been updated) --- */
 
+/* --------------------------------------------------
+    IMAGES
+-------------------------------------------------- */
 .thumb {
     width: 100%;
     height: auto;
@@ -27,7 +62,71 @@ main {
     display: block;
 }
 
-/* Responsive grid */
+@media (max-width: 600px) {
+    .thumb {
+        max-height: 250px;
+    }
+}
+
+/* --------------------------------------------------
+    TOP BAR
+-------------------------------------------------- */
+.topbar {
+    width: 100%;
+    background: var(--secondary-mid);
+    padding: 15px 20px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.25);
+}
+
+.topbar .logo {
+    color: var(--accent-gold);
+    text-align: center;
+    margin: 0;
+}
+
+/* --------------------------------------------------
+    LANGUAGE FILTER
+-------------------------------------------------- */
+.lang-filter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.lang-filter img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+
+    border-radius: 8px;
+    border: 2px solid transparent;
+
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.lang-filter img:hover {
+    transform: scale(1.1);
+}
+
+.lang-filter img.selected {
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 10px rgba(194, 142, 0, 0.7);
+}
+
+/* --------------------------------------------------
+    GRID LAYOUT
+-------------------------------------------------- */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    overflow: hidden;
+
+    padding: 0 20px 20px 20px;
+}
+
 @media (max-width: 1200px) {
     .grid {
         grid-template-columns: repeat(3, 1fr);
@@ -44,50 +143,27 @@ main {
     .grid {
         grid-template-columns: 1fr;
     }
-
-    .thumb {
-        max-height: 250px;
-    }
 }
 
-
-/* 🔹 Barra superior */
-.topbar {
-    width: 100%;
-    background: #222;
-    padding: 15px 20px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
-}
-
-.topbar .logo {
-    color: white;
-    margin: 0;
-    font-size: 28px;
-    text-align: center;
-}
-
-/* GRID ── Max 4 cards per row */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* max 4 per row */
-    gap: 20px;
-    
-    /* CHANGES HERE: Removed margin-top, kept horizontal padding, increased bottom padding */
-    margin-top: 0; /* Removed this for the main padding-top to work */
-    padding: 0 20px 20px 20px; 
-}
-
-/* Card */
+/* --------------------------------------------------
+    CARD
+-------------------------------------------------- */
 .card {
-    background: white;
+    background: var(--card);
     padding: 20px;
+
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: transform .2s;
+    box-shadow: var(--card-shadow);
+
+    transition: transform 0.2s;
+
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 .card:hover {
     transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
 }
 
 .title {
@@ -95,11 +171,11 @@ main {
     font-weight: bold;
     margin-bottom: 10px;
     text-align: center;
+    color: var(--accent-gold);
 }
 
 .desc {
-    color: #444;
-    word-wrap: break-word; /* Essential for responsiveness */
+    color: var(--text-secondary);
 }
 
 .lang-icon {
@@ -109,49 +185,26 @@ main {
     vertical-align: middle;
 }
 
-/* Language filter container */
-.lang-filter {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 15px;
-}
-
-/* Language icons */
-.lang-filter img {
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    border-radius: 8px;
-    border: 2px solid transparent;
-    transition: transform 0.2s, border-color 0.2s;
-}
-
-.lang-filter img:hover {
-    transform: scale(1.1);
-}
-
-.lang-filter img.selected {
-    border-color: #fff;
-    box-shadow: 0 0 8px rgba(255,255,255,0.8);
-}
-
-/* Estilo del footer */
+/* --------------------------------------------------
+    FOOTER
+-------------------------------------------------- */
 .footer {
-    background-color: #222;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
     width: 100%;
-    font-family: Arial, sans-serif;
+    padding: 20px 0;
+
+    background-color: var(--secondary-mid);
+    color: var(--text-light);
+
+    text-align: center;
     font-size: 14px;
+    font-family: Arial, sans-serif;
 }
+
 .contacto_img {
     width: 32px;
     height: 32px;
     margin-right: 8px;
-    vertical-align: middle; 
-    transition: opacity 0.2s ease-in-out; 
-}
+    vertical-align: middle;
 
+    transition: opacity 0.2s ease-in-out;
+}
