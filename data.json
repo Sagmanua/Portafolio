@@ -14,14 +14,8 @@
     "language":"Java",
     "github":"https://github.com/Sagmanua/Bases-de-datos-/blob/main/create%20user%20just%20change%20datos.sql"
 },
-{ 
-    "title": "Project One",
-    "image":"pupupu", 
-    "description": "Description for project one.",
-    "language":"Java",
-    "github":"https://github.com/Sagmanua/Bases-de-datos-/blob/main/create%20user%20just%20change%20datos.sql"
 
-},
+
 { 
     "title": "Wot Wordle",
     "image": "foto of projects/Wot-wordle.png", 
@@ -35,5 +29,12 @@
     "description": "Un miniproyecto de varias páginas en HTML y CSS que presenta reseñas personales y discusiones sobre videojuegos populares de PC, incluyendo una lista de los 5 mejores y secciones dedicadas a 'The Witcher 3', 'Cyberpunk 2077' y 'Borderlands 3'. El sitio es compatible con los idiomas inglés, español y ucraniano.",
     "language": ["HTML", "CSS", "JavaScript"],
     "github": "[https://github.com/Sagmanua/Webasirwork-2023-](https://github.com/Sagmanua/Webasirwork-2023-)"
+},
+{
+    "title": "Agenda de Contactos in console",
+    "image": "foto of projects/MenuBetter.png",
+    "description": "Aplicación de consola en Python para gestionar contactos. Permite agregar, leer, actualizar y borrar registros, con validación de email y teléfono mediante expresiones regulares. Los datos se guardan de forma persistente en un archivo binario usando pickle, y el programa carga automáticamente los contactos existentes al iniciar. Incluye un menú interactivo y confirmación antes de eliminar registros.",
+    "language": "Python",
+    "github": "https://github.com/Sagmanua/Programacion-de-DAM-2025-2026-/tree/main/Practica/Mejorar%20menu"
 }
 ]
