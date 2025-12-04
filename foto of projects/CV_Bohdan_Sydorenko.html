@@ -1,0 +1,190 @@
+<!doctype html>\n<html lang="es"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CV — Bohdan Sydorenko</title>
+  <style>
+    :root{--bg:#f6f8fb;--card:#ffffff;--accent:#2b6cb0;--muted:#6b7280;--glass: rgba(43,108,176,0.08)}
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:var(--bg); color:#111827}
+    .container{max-width:900px;margin:32px auto;padding:24px}
+    .card{background:var(--card);border-radius:12px;box-shadow:0 6px 18px rgba(15,23,42,0.06);overflow:hidden}
+    header{display:flex;gap:20px;padding:28px}
+    .photo{width:110px;height:110px;border-radius:12px;background:linear-gradient(135deg,var(--glass),transparent);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent);font-size:20px}
+    .head-info{flex:1}
+    h1{margin:0;font-size:28px;letter-spacing:0.2px}
+    .subtitle{color:var(--muted);margin-top:6px}
+    .actions{display:flex;gap:8px;margin-top:12px}
+    .btn{background:var(--accent);color:white;padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:600;font-size:14px}
+    main{display:grid;grid-template-columns:1fr 320px;gap:20px;padding:24px;border-top:1px solid #eef2f7}
+    section{padding:6px 0}
+    h2{font-size:16px;margin:0 0 8px 0;color:#0f172a}
+    p,li{color:#111827;font-size:14px;line-height:1.45;margin:0}
+    .summary{background:var(--glass);padding:12px;border-radius:8px}
+    .list{margin-top:8px}
+    .experience-item{margin-bottom:12px}
+    .muted{color:var(--muted);font-size:13px}
+    .chip{display:inline-block;padding:6px 8px;border-radius:999px;background:#f3f4f6;margin:6px 6px 0 0;font-size:13px}
+    ul.skills{list-style:none;padding:0;margin:6px 0;display:flex;flex-wrap:wrap}
+    .col-right{background:#fbfdff;padding:18px;border-left:1px solid #eef2f7}
+    .section-block{margin-bottom:16px}
+    footer{padding:14px 24px;background:#ffffff;border-top:1px solid #eef2f7;text-align:center;color:var(--muted);font-size:13px}
+    @media (max-width:840px){main{grid-template-columns:1fr} .col-right{border-left:none}}
+    /* print */
+    @media print{body{background:white} .container{box-shadow:none;margin:0} .btn{display:none}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <header>
+        <div class="photo" aria-hidden="true">BS</div>
+        <div class="head-info">
+          <h1>Bohdan Sydorenko</h1>
+          <div class="subtitle">Estudiante de Desarrollo de Aplicaciones Multiplataforma — Buscando primera experiencia laboral</div>
+          <div class="actions">
+            <a class="btn" href="#" id="downloadBtn">Descargar HTML</a>
+            <a class="btn" href="#print" onclick="window.print();return false;">Imprimir</a>
+          </div>
+          <div style="margin-top:12px" class="muted">Email: — · Teléfono: — · Ubicación: —</div>
+        </div>
+      </header>
+
+      <main>
+        <div>
+          <section>
+            <h2>Sobre mí</h2>
+            <div class="summary">Estudiante de Desarrollo de Aplicaciones Multiplataforma, con actitud proactiva y muchas ganas de aprender. Busco mi primera experiencia laboral para seguir creciendo en el ámbito tecnológico.</div>
+          </section>
+
+          <section>
+            <h2>Experiencia laboral</h2>
+            <div class="experience-item">
+              <strong>Voluntario en Educación Infantil — Ucrania</strong>
+              <div class="muted">Colaboración voluntaria</div>
+              <p style="margin-top:6px">Colaboré en la organización y coordinación de actividades educativas y recreativas para niños, asegurando su bienestar y participación durante los eventos.</p>
+            </div>
+          </section>
+
+          <section>
+            <h2>Estudios</h2>
+            <div class="experience-item">
+              <strong>Universidad Borcelle</strong>
+              <div class="muted">2025 — Actualmente</div>
+              <p>Desarrollo de Aplicaciones Multiplataforma</p>
+            </div>
+            <div class="experience-item">
+              <strong>Escuela Secundaria Borcelle de Matemática</strong>
+              <div class="muted">2020 — 2022</div>
+              <p>Bachiller en Ucrania</p>
+            </div>
+          </section>
+
+          <section>
+            <h2>Competencias</h2>
+            <ul class="list">
+              <li class="chip">Trabajo en equipo</li>
+              <li class="chip">Resolución de problemas</li>
+              <li class="chip">Actitud proactiva</li>
+              <li class="chip">Deseo de aprendizaje continuo</li>
+            </ul>
+          </section>
+
+        </div>
+
+        <aside class="col-right">
+          <div class="section-block">
+            <h2>Datos</h2>
+            <p class="muted">Nombre</p>
+            <p><strong>Bohdan Sydorenko</strong></p>
+          </div>
+
+          <div class="section-block">
+            <h2>Idiomas</h2>
+            <p class="muted">Ruso (nativo)</p>
+            <p class="muted">Ucraniano (nativo)</p>
+            <p class="muted">Inglés — Intermedio</p>
+            <p class="muted">Español — Intermedio</p>
+          </div>
+
+          <div class="section-block">
+            <h2>Tecnologías</h2>
+            <ul class="skills">
+              <li class="chip">Java</li>
+              <li class="chip">Python</li>
+              <li class="chip">SQL</li>
+              <li class="chip">HTML</li>
+              <li class="chip">CSS</li>
+            </ul>
+          </div>
+
+          <div class="section-block">
+            <h2>Herramientas</h2>
+            <div class="chip">Git</div>
+            <div class="chip">Visual Studio Code</div>
+          </div>
+
+        </aside>
+      </main>
+
+      <footer>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    // Botón para descargar el HTML actual como archivo
+    document.getElementById('downloadBtn').addEventListener('click', function(e){
+      e.preventDefault();
+      const html = '<!doctype html>\\n' + document.documentElement.outerHTML;
+      const blob = new Blob([html], {type: 'text/html'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'CV_Bohdan_Sydorenko.html';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    });
+  </script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+</body></html>

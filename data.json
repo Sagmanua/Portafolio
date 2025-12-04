@@ -21,14 +21,15 @@
     "image": "foto of projects/Wot-wordle.png", 
     "description": "Mini-juego de adivinanza de tanques en Python: aplicación GUI creada con Tkinter que reta al usuario a adivinar un tanque elegido al azar de un archivo JSON. Proporciona retroalimentación sobre atributos como daño, velocidad, clase y nación, cuenta los intentos y cambia el fondo al ganar. Incluye un sistema de reinicio para seleccionar un nuevo tanque y probar de nuevo.",
     "language": "Python",
-    "github": "https://github.com/Sagmanua/Wot-Wordle"
+    "githublinkrepo": "https://github.com/Sagmanua/Wot-Wordle"
 },
 { 
     "title": "Html website Asir mini-project",
     "image": "foto of projects/ASIR.png", 
     "description": "Un miniproyecto de varias páginas en HTML y CSS que presenta reseñas personales y discusiones sobre videojuegos populares de PC, incluyendo una lista de los 5 mejores y secciones dedicadas a 'The Witcher 3', 'Cyberpunk 2077' y 'Borderlands 3'. El sitio es compatible con los idiomas inglés, español y ucraniano.",
     "language": ["HTML", "CSS", "JavaScript"],
-    "github": "[https://github.com/Sagmanua/Webasirwork-2023-](https://github.com/Sagmanua/Webasirwork-2023-)"
+    "githublinkrepo": "https://github.com/Sagmanua/Webasirwork-2023-",
+    "githublinkwebsite": "https://sagmanua.github.io/Webasirwork-2023-/"
 },
 {
     "title": "Agenda de Contactos in console",
