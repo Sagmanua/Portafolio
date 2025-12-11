@@ -7,12 +7,13 @@
     "github":"https://github.com/Sagmanua/Bases-de-datos-/blob/main/create%20user%20just%20change%20datos.sql"
 
 },
-{ 
-    "title": "Project One",
-    "image":"pupupu", 
-    "description": "Description for project one.",
-    "language":"Java",
-    "github":"https://github.com/Sagmanua/Bases-de-datos-/blob/main/create%20user%20just%20change%20datos.sql"
+{
+    "title": "Reloj Analógico Multi-Zona con Canvas",
+    "image": "foto of projects/AnalogClock.png",
+    "description": "Un reloj analógico interactivo desarrollado con HTML Canvas. Permite al usuario seleccionar entre la hora local, UTC y 12 zonas horarias globales principales. Utiliza la API `Intl.DateTimeFormat` de JavaScript para garantizar la precisión de la hora, incluyendo los ajustes automáticos por Horario de Verano (DST).",
+    "language": ["HTML", "CSS", "JavaScript"],
+    "github": "https://github.com/Sagmanua/Reloj-de-tiempo-",
+    "githublinkwebsite":""
 },
 
 
@@ -38,4 +39,5 @@
     "language": "Python",
     "github": "https://github.com/Sagmanua/Programacion-de-DAM-2025-2026-/tree/main/Practica/Mejorar%20menu"
 }
+
 ]
