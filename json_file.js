@@ -1,7 +1,6 @@
 fetch('data.json')
   .then(response => response.json())
   .then(items => {
-    
     const grid = document.getElementById('portfolioGrid');
     const langFilter = document.getElementById('langFilter');
 
@@ -14,9 +13,7 @@ fetch('data.json')
       Java: "images/java.png"
     };
 
-    // ----------------------------------------
     // Extract unique languages
-    // ----------------------------------------
     const uniqueLanguages = new Set();
     items.forEach(item => {
       if (Array.isArray(item.language)) {
@@ -28,9 +25,7 @@ fetch('data.json')
 
     let currentFilter = null;
 
-    // ----------------------------------------
     // Build language filter buttons
-    // ----------------------------------------
     uniqueLanguages.forEach(lang => {
       const img = document.createElement('img');
       img.src = languageImages[lang] || 'images/default.png';
@@ -59,9 +54,6 @@ fetch('data.json')
     // Show all projects initially
     displayProjects();
 
-    // ----------------------------------------
-    // Display project grid
-    // ----------------------------------------
     function displayProjects(filterLang) {
       grid.innerHTML = '';
 
@@ -83,14 +75,6 @@ fetch('data.json')
           ? `<img src="${item.image}" class="thumb" alt="${item.title}">`
           : '';
 
-        // Website button
-        const websiteLinkHTML = item.githublinkwebsite
-          ? `
-            <div class="desc">
-              <a href="${item.githublinkwebsite}" target="_blank" onclick="event.stopPropagation()">Website Link</a>
-            </div>`
-          : '';
-
         // Language icons
         let languageHTML = '';
         if (item.language) {
@@ -110,13 +94,29 @@ fetch('data.json')
           ${imageHTML}
           <div class="desc">${item.description}</div>
           <div class="desc">Languages: ${languageHTML}</div>
-          ${websiteLinkHTML}
+          <div class="desc buttons"></div>
         `;
 
-        // On click → open repo
-        card.addEventListener('click', () => {
-          window.open(item.githublinkrepo, '_blank');
-        });
+        // Buttons
+        const buttonsContainer = card.querySelector('.buttons');
+
+        if (item.githublinkwebsite) {
+          const websiteBtn = document.createElement('a');
+          websiteBtn.href = item.githublinkwebsite;
+          websiteBtn.target = '_blank';
+          websiteBtn.className = 'button-link';
+          websiteBtn.textContent = 'Website';
+          buttonsContainer.appendChild(websiteBtn);
+        }
+
+        if (item.githublinkrepo) {
+          const repoBtn = document.createElement('a');
+          repoBtn.href = item.githublinkrepo;
+          repoBtn.target = '_blank';
+          repoBtn.className = 'button-link';
+          repoBtn.textContent = 'Repository';
+          buttonsContainer.appendChild(repoBtn);
+        }
 
         grid.appendChild(card);
       });

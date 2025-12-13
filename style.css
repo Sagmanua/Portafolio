@@ -84,6 +84,60 @@ main {
     margin: 0;
 }
 
+
+
+/* --------------------------------------------------
+    HEADER BUTTON - Centered Curriculum Link
+-------------------------------------------------- */
+.header-center {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center; /* centers the button */
+    align-items: center; /* vertically center with logo */
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--accent-gold); /* matches your color scheme */
+    color: var(--secondary-mid); /* dark text for contrast */
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.button:hover {
+    background-color: #a77b00; /* slightly darker gold on hover */
+    transform: scale(1.05); /* subtle pop effect */
+}
+
+.button:hover {
+    background-color: #0056b3; /* Hover color */
+}
+
+/* --------------------------------------------------
+    
+-------------------------------------------------- */
+/* JS-generated link styled as a button */
+.button-link {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: var(--accent-gold); /* matches your theme */
+    color: var(--secondary-mid); /* dark text for contrast */
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.button-link:hover {
+    background-color: #a77b00; /* slightly darker gold on hover */
+    transform: scale(1.05); /* subtle pop effect */
+}
+
+
 /* --------------------------------------------------
     LANGUAGE FILTER
 -------------------------------------------------- */

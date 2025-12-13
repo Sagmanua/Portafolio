@@ -12,7 +12,7 @@
     "image": "foto of projects/AnalogClock.png",
     "description": "Un reloj analógico interactivo desarrollado con HTML Canvas. Permite al usuario seleccionar entre la hora local, UTC y 12 zonas horarias globales principales. Utiliza la API `Intl.DateTimeFormat` de JavaScript para garantizar la precisión de la hora, incluyendo los ajustes automáticos por Horario de Verano (DST).",
     "language": ["HTML", "CSS", "JavaScript"],
-    "github": "https://github.com/Sagmanua/Reloj-de-tiempo-",
+    "githublinkrepo": "https://github.com/Sagmanua/Reloj-de-tiempo-",
     "githublinkwebsite":"https://sagmanua.github.io/Reloj-de-tiempo-/"
 },
 
