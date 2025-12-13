@@ -9,8 +9,10 @@ fetch('data.json')
       Python: "images/python.png",
       HTML: "images/html.png",
       CSS: "images/css.png",
-      "C++": "images/cpp.png",
-      Java: "images/java.png"
+      Java: "images/java.png",
+      Php: "images/php.png"
+
+
     };
 
     // Extract unique languages
