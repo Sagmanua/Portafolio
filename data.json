@@ -1,7 +1,7 @@
 [
 { 
     "title": "Noticia",
-    "image":"pupupu", 
+    "image":["foto of projects/Noticia/Noticia admin.index.png", "foto of projects/Noticia/Noticia admin.index.png"],
     "description": "The aplication directory, therefore, holds the necessary files (which are typically PHP, HTML, and possibly CSS/JS) for running the front-end and back-end logic of a simple administrative interface designed to manage data (perform CRUD operations) within a PHP environment.",
     "language":["Php","HTML", "CSS"],
     "githublinkrepo":"https://github.com/Sagmanua/Programacion-de-DAM-2025-2026-/tree/main/Explication/PHP%20Ud-10%20Programaci%C3%B3n%20en%20el%20lado%20del%20servidor/009%20Instalacion%20de%20CRUD/003%20Panel%20de%20control/aplication"
