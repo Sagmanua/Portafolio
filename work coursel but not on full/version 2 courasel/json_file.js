@@ -146,52 +146,46 @@ fetch('data.json')
    // After all projects are displayed, initialize carousels
    initializeCarousels();
   }
-  // ... (rest of the file remains the same until initializeCarousels)
 
-    function initializeCarousels() {
-      document.querySelectorAll('.carousel-container').forEach(container => {
-        const track = container.querySelector('.carousel-track');
-        const slides = Array.from(container.querySelectorAll('.carousel-slide'));
-        const prevButton = container.querySelector('.prev-btn');
-        const nextButton = container.querySelector('.next-btn');
-        let currentSlideIndex = 0;
+  function initializeCarousels() {
+   document.querySelectorAll('.carousel-container').forEach(container => {
+    const track = container.querySelector('.carousel-track');
+    const slides = Array.from(container.querySelectorAll('.carousel-slide'));
+    const prevButton = container.querySelector('.prev-btn');
+    const nextButton = container.querySelector('.next-btn');
+    let currentSlideIndex = 0;
+    const slideWidth = slides[0].clientWidth; // Assuming all slides have the same width
 
-        const updateCarousel = () => {
-          // 1. Recalculate the width of the container/slide on every update
-          const slideWidth = container.clientWidth; // Use container width for certainty
-          
-          // 2. Set the transform to move the track
-          track.style.transform = `translateX(-${currentSlideIndex * slideWidth}px)`;
+    const updateCarousel = () => {
+     // Calculate the scroll position based on the current slide index
+     track.style.transform = `translateX(-${currentSlideIndex * slideWidth}px)`;
 
-          // Update active class for smooth transition (optional, but good practice)
-          slides.forEach((slide, index) => {
-            slide.classList.toggle('active', index === currentSlideIndex);
-          });
-        };
+     // Update active class for smooth transition (optional, but good practice)
+     slides.forEach((slide, index) => {
+      slide.classList.toggle('active', index === currentSlideIndex);
+     });
+    };
 
-        // Re-calculate on window resize
-        const observer = new ResizeObserver(updateCarousel); // Use the function reference
-        observer.observe(container);
+   // Re-calculate slide width on window resize and initial load
+    const observer = new ResizeObserver(() => {
+     updateCarousel();
+    });
+    observer.observe(container);
 
 
-        nextButton.addEventListener('click', () => {
-          currentSlideIndex = (currentSlideIndex + 1) % slides.length;
-          updateCarousel();
-        });
+    nextButton.addEventListener('click', () => {
+     currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+     updateCarousel();
+    });
 
-        prevButton.addEventListener('click', () => {
-          currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
-          updateCarousel();
-        });
+    prevButton.addEventListener('click', () => {
+     currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+     updateCarousel();
+    });
 
-        // Initial position setting
-        // We don't need to call updateCarousel() here because the ResizeObserver
-        // will call it immediately after it starts observing (in most browsers).
-        // However, if the images are cached, it's safer to call it once:
-        updateCarousel(); 
-      });
-    }
-// ... (rest of the file remains the same)
-  
+    // Initial position setting
+    updateCarousel();
+   });
+  }
  })
  .catch(err => console.error('Error loading JSON:', err));
