@@ -3,14 +3,14 @@
 -------------------------------------------------- */
 
 :root {
-    --primary-light: #E0CCA6; /* <<< NEW DEEPER WHEAT/KHAKI BACKGROUND */
-    --secondary-mid: #2F4244; /* Dark Pine Green for Top Bar/Footer (Kept) */
-    --card-light: #FFFFFF; /* Bright white cards (Kept) */
-    --accent-gold: #C28E00; /* Deepened Gold/Amber (Kept) */
-    --accent-green: #38A3A5; /* A bright, cool green for highlights (Kept) */
-    --text-dark: #2F4244; /* Dark text for light backgrounds (Kept) */
-    --text-secondary: #5C6F73; /* Muted dark text for descriptions (Kept) */
-    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.18); /* Slightly stronger shadow */
+    --primary-light: #E0CCA6; 
+    --secondary-mid: #2F4244; 
+    --card-light: #FFFFFF; 
+    --accent-gold: #C28E00; 
+    --accent-green: #38A3A5;
+    --text-dark: #2F4244; 
+    --text-secondary: #5C6F73; 
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
 
     /* Variable mapping to new scheme */
     --card: var(--card-light);
@@ -35,8 +35,8 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
 
-    background: var(--primary-light); /* <<< NEW DEEPER KHAKI COLOR */
-    color: var(--text-dark); /* Default text color is dark */
+    background: var(--primary-light);
+    color: var(--text-dark); 
 
     display: flex;
     flex-direction: column;
@@ -48,7 +48,6 @@ main {
     padding-top: 30px;
 }
 
-/* --- (Sections below this point generally remain unchanged, as the main color variables have been updated) --- */
 
 /* --------------------------------------------------
     IMAGES
@@ -92,15 +91,15 @@ main {
 .header-center {
     flex-grow: 1;
     display: flex;
-    justify-content: center; /* centers the button */
-    align-items: center; /* vertically center with logo */
+    justify-content: center;
+    align-items: center; 
 }
 
 .button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: var(--accent-gold); /* matches your color scheme */
-    color: var(--secondary-mid); /* dark text for contrast */
+    background-color: var(--accent-gold); 
+    color: var(--secondary-mid); 
     text-decoration: none;
     border-radius: 8px;
     font-weight: bold;
@@ -109,23 +108,22 @@ main {
 }
 
 .button:hover {
-    background-color: #a77b00; /* slightly darker gold on hover */
-    transform: scale(1.05); /* subtle pop effect */
+    background-color: #a77b00;
+    transform: scale(1.05); 
 }
 
 .button:hover {
-    background-color: #0056b3; /* Hover color */
+    background-color: #0056b3; 
 }
 
 /* --------------------------------------------------
-    
+    BUTTON
 -------------------------------------------------- */
-/* JS-generated link styled as a button */
 .button-link {
     display: inline-block;
     padding: 8px 16px;
-    background-color: var(--accent-gold); /* matches your theme */
-    color: var(--secondary-mid); /* dark text for contrast */
+    background-color: var(--accent-gold); 
+    color: var(--secondary-mid); 
     text-decoration: none;
     border-radius: 6px;
     font-weight: bold;
@@ -133,8 +131,8 @@ main {
 }
 
 .button-link:hover {
-    background-color: #a77b00; /* slightly darker gold on hover */
-    transform: scale(1.05); /* subtle pop effect */
+    background-color: #a77b00; 
+    transform: scale(1.05);
 }
 
 
