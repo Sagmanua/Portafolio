@@ -2,71 +2,117 @@
 [English](#english) | [Español](#español)
 
 ## Español
-# Dynamic Portfolio Website
+# Sitio Web de Portafolio Dinámico
 
-A responsive, data-driven portfolio website designed to showcase development projects.  
-The site features a dynamic grid layout, project filtering by programming language, and an interactive image carousel for multi-screenshot projects.
+Un sitio web de portafolio **responsive** y basado en datos, diseñado para mostrar proyectos de desarrollo.  
+El sitio cuenta con un diseño de cuadrícula dinámica, filtrado de proyectos por lenguaje de programación y un carrusel de imágenes interactivo para proyectos con múltiples capturas de pantalla.
 
-🚀 **Live Demo**  
-[View Bohdan Sydorenko's Portfolio](#)
+🚀 **Demo en Vivo**  
+[Ver el Portafolio de Bohdan Sydorenko](https://sagmanua.github.io/Portafolio/)
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Stack Tecnológico
 
 ### Frontend
 - **HTML5**
 - **CSS3**
-  - Custom Variables
+  - Variables personalizadas
   - Flexbox
   - Grid
-- **Vanilla JavaScript (ES6+)**
+- **JavaScript Vanilla (ES6+)**
 
-### Data Management
-- JSON-based project storage
+### Gestión de Datos
+- Almacenamiento de proyectos basado en JSON
 
-### Icons & Images
-- Custom language badges
-- Project screenshots
-
----
-
-## ✨ Key Features
-
-### Dynamic Project Loading
-Projects are automatically fetched from `data.json` and rendered via JavaScript, making it easy to update content without touching HTML.
-
-### Interactive Language Filter
-A custom-built filtering system using language icons.  
-Clicking an icon filters projects by that specific language (e.g., PHP, Python, JavaScript).
-
-### Custom Image Carousel
-Built from scratch in Vanilla JS, the carousel supports:
-- Automatic resizing via `ResizeObserver`
-- Touch and click navigation for projects with multiple screenshots
-- Smooth CSS transitions
-
-### Responsive Design
-A mobile-first approach that adjusts from:
-- **3-column grid** on desktop  
-- **1-column layout** on mobile devices
-
-### External Links
-Integrated buttons for direct access to:
-- GitHub repositories
-- Live website deployments
+### Iconos e Imágenes
+- Insignias personalizadas por lenguaje
+- Capturas de pantalla de los proyectos
 
 ---
 
-## 📁 Project Structure
+## ✨ Características Clave
+
+### Carga Dinámica de Proyectos
+Los proyectos se obtienen automáticamente desde `data.json` y se renderizan mediante JavaScript, lo que facilita actualizar el contenido sin modificar el HTML.
+
+### Filtro Interactivo por Lenguaje
+Sistema de filtrado personalizado usando iconos de lenguajes.  
+Al hacer clic en un icono, se filtran los proyectos por ese lenguaje específico (por ejemplo, PHP, Python, JavaScript).
+
+### Carrusel de Imágenes Personalizado
+Construido desde cero en JavaScript Vanilla, el carrusel incluye:
+- Redimensionado automático mediante `ResizeObserver`
+- Navegación táctil y por clic para proyectos con múltiples capturas
+- Transiciones CSS suaves
+
+### Diseño Responsive
+Enfoque *mobile-first* que se adapta de:
+- **Cuadrícula de 3 columnas** en escritorio  
+- **Diseño de 1 columna** en dispositivos móviles
+
+### Enlaces Externos
+Botones integrados para acceso directo a:
+- Repositorios de GitHub
+- Despliegues de sitios web en vivo
+
+---
+
+## 📁 Estructura del Proyecto
 
 ```plaintext
-├── index.html      # Main structure and navigation
-├── style.css       # Custom styling, themes, and carousel animations
-├── json_file.js    # Logic for fetching data, filtering, and carousel control
-├── data.json       # The "database" containing project details and image paths
-└── images/         # Language icons and social media assets
+├── images          # Logo
+├── foto of project # Imágenes de los proyectos mostrados en el portafolio
+├── version         # Versión de estos proyectos
+├── index.html      # Estructura principal y navegación
+├── style.css       # Estilos personalizados, temas y animaciones del carrusel
+├── json_file.js    # Lógica para obtener datos, filtrar y controlar el carrusel
+├── data.json       # La "base de datos" con detalles de proyectos y rutas de imágenes
+└── images/         # Iconos de lenguajes y recursos de redes sociales
 ```
+
+### 1. Integración de Datos
+El sitio utiliza la API `fetch()` para obtener los datos de los proyectos desde `data.json`.
+Estos datos incluyen:
+
+- Títulos  
+- Descripciones  
+- Lenguajes de programación  
+- Arrays de imágenes  
+
+### 2. Lógica de Filtrado
+JavaScript extrae los lenguajes únicos del conjunto de datos para construir el filtro de navegación superior.
+
+- Usa un `Set` para evitar duplicados  
+- Aplica el método `.filter()` a la lista de proyectos cuando se selecciona un lenguaje  
+
+### 3. El Carrusel
+El carrusel se inicializa después de que los proyectos se inyectan en el DOM.
+
+- Calcula el `clientWidth` de su contenedor  
+- Asegura que el valor `translateX` mueva la pista con precisión  
+- Funciona de manera consistente en todos los tamaños de pantalla  
+
+---
+
+## 🎨 Tema de Estilos
+
+El proyecto utiliza una paleta de colores **Trigo Profundo / Caqui**:
+
+**Fondo Principal**
+- `#E0CCA6` (Trigo)
+
+**Secundarios / Acentos**
+- `#2F4244` (Pizarra Oscura)  
+- `#C28E00` (Dorado)
+
+**Tarjetas**
+- Fondos blancos limpios  
+- Sombras suaves para un estilo moderno tipo *Glassmorphism*
+## 👤 Author
+
+Desarrollado por **Bohdan Sydorenko**  
+No dudes en explorar [My Repositories](https://github.com/Sagmanua) en GitHub.
 
 ## English
 A responsive, data-driven portfolio website designed to showcase development projects.  
