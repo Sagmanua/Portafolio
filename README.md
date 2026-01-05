@@ -4,7 +4,7 @@ A responsive, data-driven portfolio website designed to showcase development pro
 The site features a dynamic grid layout, project filtering by programming language, and an interactive image carousel for multi-screenshot projects.
 
 🚀 **Live Demo**  
-[View Bohdan Sydorenko's Portfolio](#)
+[View Bohdan Sydorenko's Portfolio](https://sagmanua.github.io/Portafolio/)
 
 ---
 
