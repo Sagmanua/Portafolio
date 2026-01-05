@@ -1,5 +1,74 @@
 # Dynamic Portfolio Website
+[English](#english) | [Español](#español)
 
+## Español
+# Dynamic Portfolio Website
+
+A responsive, data-driven portfolio website designed to showcase development projects.  
+The site features a dynamic grid layout, project filtering by programming language, and an interactive image carousel for multi-screenshot projects.
+
+🚀 **Live Demo**  
+[View Bohdan Sydorenko's Portfolio](#)
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- **HTML5**
+- **CSS3**
+  - Custom Variables
+  - Flexbox
+  - Grid
+- **Vanilla JavaScript (ES6+)**
+
+### Data Management
+- JSON-based project storage
+
+### Icons & Images
+- Custom language badges
+- Project screenshots
+
+---
+
+## ✨ Key Features
+
+### Dynamic Project Loading
+Projects are automatically fetched from `data.json` and rendered via JavaScript, making it easy to update content without touching HTML.
+
+### Interactive Language Filter
+A custom-built filtering system using language icons.  
+Clicking an icon filters projects by that specific language (e.g., PHP, Python, JavaScript).
+
+### Custom Image Carousel
+Built from scratch in Vanilla JS, the carousel supports:
+- Automatic resizing via `ResizeObserver`
+- Touch and click navigation for projects with multiple screenshots
+- Smooth CSS transitions
+
+### Responsive Design
+A mobile-first approach that adjusts from:
+- **3-column grid** on desktop  
+- **1-column layout** on mobile devices
+
+### External Links
+Integrated buttons for direct access to:
+- GitHub repositories
+- Live website deployments
+
+---
+
+## 📁 Project Structure
+
+```plaintext
+├── index.html      # Main structure and navigation
+├── style.css       # Custom styling, themes, and carousel animations
+├── json_file.js    # Logic for fetching data, filtering, and carousel control
+├── data.json       # The "database" containing project details and image paths
+└── images/         # Language icons and social media assets
+```
+
+## English
 A responsive, data-driven portfolio website designed to showcase development projects.  
 The site features a dynamic grid layout, project filtering by programming language, and an interactive image carousel for multi-screenshot projects.
 
