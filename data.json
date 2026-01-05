@@ -6,7 +6,7 @@
         "foto of projects/Recetas/profile_page.png"
     ],
     "description": "Una aplicación web full-stack que permite a los usuarios gestionar recetas y organizar un calendario de comidas semanal. Incluye un sistema de autenticación, gestión de perfiles y una base de datos relacional para manejar ingredientes y menús programados mediante operaciones CRUD en un entorno PHP.",
-    "language": ["Php", "CSS", "mysql"],
+    "language": ["Php", "CSS", "Mysql"],
     "githublinkrepo": "https://github.com/Sagmanua/Proyecto-Entornos-de-Desarrollo"
 },
 { 

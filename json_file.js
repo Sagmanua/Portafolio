@@ -11,7 +11,7 @@ const languageImages = {
    CSS: "images/css.png",
    Java: "images/java.png",
    Php: "images/php.png",
-   Mysql: "images/php.png"
+   Mysql: "images/mysql.png"
 };
 
 // Extract unique languages
