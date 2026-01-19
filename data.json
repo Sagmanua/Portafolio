@@ -2,8 +2,13 @@
 {
     "title": "Recetas y Planificador de Comidas",
     "image": [
-        "foto of projects/Recetas/index_front_page.png", 
-        "foto of projects/Recetas/profile_page.png"
+        "foto of projects/Recetas/CRUD.png",
+        "foto of projects/Recetas/index.png",
+        "foto of projects/Recetas/login.png",
+        "foto of projects/Recetas/planner.png",
+        "foto of projects/Recetas/profile.png",
+        "foto of projects/Recetas/recipe_details.png",
+        "foto of projects/Recetas/update.png"
     ],
     "description": "Una aplicación web full-stack que permite a los usuarios gestionar recetas y organizar un calendario de comidas semanal. Incluye un sistema de autenticación, gestión de perfiles y una base de datos relacional para manejar ingredientes y menús programados mediante operaciones CRUD en un entorno PHP.",
     "language": ["Php", "CSS", "Mysql"],
