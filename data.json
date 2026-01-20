@@ -48,6 +48,21 @@
     "githublinkwebsite": "https://sagmanua.github.io/Webasirwork-2023-/"
 },
 {
+    "title": "(En ruso) Generador de paletas de colores",
+    "image": "foto of projects/Generador_de_paletas/image.png",
+    "description": "Aplicación web interactiva para la generación y gestión de paletas cromáticas. Permite crear combinaciones de colores personalizadas basadas en estilos y estados de ánimo (como 'calm', 'vibrant' o 'minimalism'), con una interfaz dinámica que ajusta el contraste del texto automáticamente para asegurar la legibilidad. Incluye funciones para la edición manual de colores mediante un selector integrado, exportación de variables a CSS y pre-configuración para integración con una base de datos mediante una arquitectura escalable. Los datos se visualizan en un contenedor flexbox responsivo con efectos de transición y sombras suaves.",
+    "github": "https://github.com/Sagmanua/Ideas/tree/main/ideas/palitra",
+    "githublinkwebsite": "https://sagmanua.github.io/Ideas/ideas/palitra/index.html"
+},
+{
+    "title": "(En ruso) Generador de plantillas de correo electrónico",
+    "image": "foto of projects/Generador_de_plantillas/image.png",
+    "description": "Aplicación web Full Stack para la generación y gestión de plantillas de correos electrónicos. Permite la creación de borradores personalizados mediante un sistema de categorías (negocios, amigos, felicitaciones) con campos de entrada dinámicos que adaptan sus etiquetas según el contexto seleccionado. Incluye un sistema completo de autenticación de usuarios y persistencia de datos en el servidor mediante una API REST construida con Node.js y Express, utilizando un archivo JSON como base de datos. El programa permite a los usuarios registrados guardar sus borradores, visualizar un historial de correos guardados con marcas de tiempo y exportar el contenido mediante la copia al portapapeles o una función de impresión optimizada.",
+    "github": "https://github.com/Sagmanua/Ideas/tree/main/ideas/pisama",
+    "githublinkwebsite": "https://sagmanua.github.io/Ideas/ideas/pisama/index.html"
+
+},
+{
     "title": "Agenda de Contactos in console",
     "image": "foto of projects/MenuBetter.png",
     "description": "Aplicación de consola en Python para gestionar contactos. Permite agregar, leer, actualizar y borrar registros, con validación de email y teléfono mediante expresiones regulares. Los datos se guardan de forma persistente en un archivo binario usando pickle, y el programa carga automáticamente los contactos existentes al iniciar. Incluye un menú interactivo y confirmación antes de eliminar registros.",
