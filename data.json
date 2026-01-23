@@ -1,4 +1,11 @@
 [
+{ 
+    "title": "Noticia",
+    "image":[""],
+    "description": "Este es mi propio Ai que install en la la Google colab(por eso debe ejutar por mano)",
+    "githublinkrepo":"https://github.com/Sagmanua/SagmanOllamaAI",
+    "githublinkwebsite":"https://sagmanua.github.io/SagmanOllamaAI/"
+},
 {
     "title": "Recetas y Planificador de Comidas",
     "image": [
