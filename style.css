@@ -338,4 +338,11 @@ main {
   right: 10px;
   border-radius: 5px 0 0 5px;
 }
-
+/* --------------------------------------------------
+  Video STYLES (
+-------------------------------------------------- */
+video.thumb, video.carousel-slide {
+    width: 100%;
+    max-height: 250px; /* Ajusta según tu diseño */
+    background: #000;
+}

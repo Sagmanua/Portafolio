@@ -1,198 +1,185 @@
 fetch('data.json')
-.then(response => response.json())
+.then(res => res.json())
 .then(items => {
-const grid = document.getElementById('portfolioGrid');
-const langFilter = document.getElementById('langFilter');
 
-const languageImages = {
-   JavaScript: "images/js.png",
-   Python: "images/python.png",
-   HTML: "images/html.png",
-   CSS: "images/css.png",
-   Java: "images/java.png",
-   Php: "images/php.png",
-   Mysql: "images/mysql.png"
-};
+    const grid = document.getElementById('portfolioGrid');
+    const langFilter = document.getElementById('langFilter');
 
-// Extract unique languages
-const uniqueLanguages = new Set();
-items.forEach(item => {
-   if (Array.isArray(item.language)) {
-   item.language.forEach(lang => uniqueLanguages.add(lang));
-   } else if (item.language) {
-   uniqueLanguages.add(item.language);
-   }
-});
+    const languageImages = {
+        JavaScript: "images/js.png",
+        Python: "images/python.png",
+        HTML: "images/html.png",
+        CSS: "images/css.png",
+        Java: "images/java.png",
+        Php: "images/php.png",
+        Mysql: "images/mysql.png"
+    };
 
-let currentFilter = null;
+    /* ---------------------------
+       EXTRAER LENGUAJES ÚNICOS
+    ---------------------------- */
+    const uniqueLanguages = new Set();
+    items.forEach(item => {
+        const langs = Array.isArray(item.language) ? item.language : [item.language];
+        langs.forEach(lang => { if (lang) uniqueLanguages.add(lang); });
+    });
 
-// Build language filter buttons
-uniqueLanguages.forEach(lang => {
-   const img = document.createElement('img');
-   img.src = languageImages[lang] || 'images/default.png';
-   img.title = lang;
-   img.dataset.lang = lang;
+    /* ---------------------------
+       CREAR BOTONES DE FILTRO
+    ---------------------------- */
+    let currentFilter = null;
 
-   img.addEventListener('click', () => {
-   const isSameFilter = currentFilter === lang;
+    uniqueLanguages.forEach(lang => {
+        const img = document.createElement('img');
+        img.src = languageImages[lang] || 'images/default.png';
+        img.title = lang;
+        img.dataset.lang = lang;
 
-   document.querySelectorAll('.lang-filter img')
-   .forEach(i => i.classList.remove('selected'));
+        img.addEventListener('click', () => {
+            const same = currentFilter === lang;
+            document.querySelectorAll('.lang-filter img').forEach(i => i.classList.remove('selected'));
 
-   if (isSameFilter) {
-   currentFilter = null;
-   displayProjects();
-   } else {
-   currentFilter = lang;
-   img.classList.add('selected');
-   displayProjects(lang);
-   }
-   });
+            if (same) {
+                currentFilter = null;
+                displayProjects();
+            } else {
+                currentFilter = lang;
+                img.classList.add('selected');
+                displayProjects(lang);
+            }
+        });
 
-   langFilter.appendChild(img);
-});
+        langFilter.appendChild(img);
+    });
 
-// Show all projects initially
-displayProjects();
+    displayProjects();
 
-function displayProjects(filterLang) {
-   grid.innerHTML = '';
+    /* ---------------------------
+       RENDER DE PROYECTOS
+    ---------------------------- */
+    function displayProjects(filterLang) {
+        grid.innerHTML = '';
 
-   const projectsToShow = filterLang
-   ? items.filter(item => {
-      const langs = Array.isArray(item.language)
-      ? item.language
-      : [item.language];
-      return langs.includes(filterLang);
-   })
-   : items;
+        const projectsToShow = filterLang
+            ? items.filter(item => {
+                const langs = Array.isArray(item.language) ? item.language : [item.language];
+                return langs.includes(filterLang);
+            })
+            : items;
 
-   projectsToShow.forEach(item => {
-   const card = document.createElement('div');
-   card.className = 'card';
+        projectsToShow.forEach(item => {
+            const card = document.createElement('div');
+            card.className = 'card';
 
-   // CAROUSEL / SINGLE IMAGE LOGIC
-   let imageHTML = '';
-   const images = Array.isArray(item.image) ? item.image : (item.image ? [item.image] : []);
+            /* ---------------------------
+               IMÁGENES + VIDEOS
+            ---------------------------- */
+            const images = Array.isArray(item.image) ? item.image : (item.image ? [item.image] : []);
+            const videos = Array.isArray(item.video) ? item.video : (item.video ? [item.video] : []);
 
-   if (images.length > 0) {
-   if (images.length > 1) {
-      // Multiple images: Create a carousel structure
-      const imageSlides = images.map((src, index) => 
-      `<img src="${src}" class="carousel-slide ${index === 0 ? 'active' : ''}" alt="${item.title} Screenshot ${index + 1}">`
-      ).join('');
+            const media = [
+                ...images.map(src => `<img src="${src}" class="carousel-slide" alt="">`),
+                ...videos.map(src => `<video src="${src}" class="carousel-slide" controls muted loop></video>`)
+            ];
 
-      imageHTML = `
-      <div class="carousel-container" data-project-title="${item.title.replace(/\s/g, '-')}-${Date.now()}">
-         <div class="carousel-track">
-            ${imageSlides}
-         </div>
-         <button class="carousel-btn prev-btn">❮</button>
-         <button class="carousel-btn next-btn">❯</button>
-      </div>
-      `;
-   } else {
-      // Single image: Use the existing thumb class
-      imageHTML = `<img src="${images[0]}" class="thumb" alt="${item.title}">`;
-   }
-   }
+            let mediaHTML = "";
 
-   // Language icons
-   let languageHTML = '';
-   if (item.language) {
-   const langs = Array.isArray(item.language)
-      ? item.language
-      : [item.language];
+            if (media.length > 1) {
+                mediaHTML = `
+                <div class="carousel-container">
+                    <div class="carousel-track">
+                        ${media.map((m, i) =>
+                            m.replace('carousel-slide', `carousel-slide ${i === 0 ? 'active' : ''}`)
+                        ).join('')}
+                    </div>
+                    <button class="carousel-btn prev-btn">❮</button>
+                    <button class="carousel-btn next-btn">❯</button>
+                </div>`;
+            } else if (media.length === 1) {
+                mediaHTML = media[0].replace('carousel-slide', 'thumb');
+            }
 
-   languageHTML = langs.map(lang => {
-      const src = languageImages[lang] || 'images/default.png';
-      return `<img src="${src}" alt="${lang}" title="${lang}" class="lang-icon">`;
-   }).join(' ');
-   }
+            /* ---------------------------
+               ICONOS DE LENGUAJE
+            ---------------------------- */
+            const langs = Array.isArray(item.language) ? item.language : [item.language];
+            const languageHTML = langs.map(lang => {
+                const src = languageImages[lang] || 'images/default.png';
+                return `<img src="${src}" alt="${lang}" title="${lang}" class="lang-icon">`;
+            }).join(' ');
 
-   // Card content
-   card.innerHTML = `
-   <div class="title">${item.title}</div>
-   ${imageHTML}
-   <div class="desc">${item.description}</div>
-   <div class="desc">Languages: ${languageHTML}</div>
-   <div class="desc buttons"></div>
-   `;
+            /* ---------------------------
+               CONSTRUCCIÓN DE TARJETA
+            ---------------------------- */
+            card.innerHTML = `
+                <div class="title">${item.title}</div>
+                ${mediaHTML}
+                <div class="desc">${item.description}</div>
+                <div class="desc">Languages: ${languageHTML}</div>
+                <div class="desc buttons"></div>
+            `;
 
-   // Buttons
-   const buttonsContainer = card.querySelector('.buttons');
+            const buttons = card.querySelector('.buttons');
 
-   if (item.githublinkwebsite) {
-   const websiteBtn = document.createElement('a');
-   websiteBtn.href = item.githublinkwebsite;
-   websiteBtn.target = '_blank';
-   websiteBtn.className = 'button-link';
-   websiteBtn.textContent = 'Website';
-   buttonsContainer.appendChild(websiteBtn);
-   }
+            if (item.githublinkwebsite) {
+                const btn = document.createElement('a');
+                btn.href = item.githublinkwebsite;
+                btn.target = '_blank';
+                btn.textContent = "Website";
+                btn.classList.add("button-link");
+                buttons.appendChild(btn);
+            }
 
-   if (item.githublinkrepo) {
-   const repoBtn = document.createElement('a');
-   repoBtn.href = item.githublinkrepo;
-   repoBtn.target = '_blank';
-   repoBtn.className = 'button-link';
-   repoBtn.textContent = 'Repository';
-   buttonsContainer.appendChild(repoBtn);
-   }
-   
-   // Append the completed card to the grid
-   grid.appendChild(card);
-   });
+            if (item.githublinkrepo) {
+                const btn = document.createElement('a');
+                btn.href = item.githublinkrepo;
+                btn.target = '_blank';
+                btn.textContent = "Repository";
+                btn.classList.add("button-link");
+                buttons.appendChild(btn);
+            }
 
-   // After all projects are displayed, initialize carousels
-   initializeCarousels();
-}
-// ... (rest of the file remains the same until initializeCarousels)
+            grid.appendChild(card);
+        });
 
-function initializeCarousels() {
-   document.querySelectorAll('.carousel-container').forEach(container => {
-   const track = container.querySelector('.carousel-track');
-   const slides = Array.from(container.querySelectorAll('.carousel-slide'));
-   const prevButton = container.querySelector('.prev-btn');
-   const nextButton = container.querySelector('.next-btn');
-   let currentSlideIndex = 0;
+        initializeCarousels();
+    }
 
-   const updateCarousel = () => {
-   // 1. Recalculate the width of the container/slide on every update
-   const slideWidth = container.clientWidth; // Use container width for certainty
-   
-   // 2. Set the transform to move the track
-   track.style.transform = `translateX(-${currentSlideIndex * slideWidth}px)`;
+    /* ---------------------------
+       CARUSEL GENERALIZADO
+    ---------------------------- */
+    function initializeCarousels() {
+        document.querySelectorAll('.carousel-container').forEach(container => {
 
-   // Update active class for smooth transition (optional, but good practice)
-   slides.forEach((slide, index) => {
-      slide.classList.toggle('active', index === currentSlideIndex);
-   });
-   };
+            const track = container.querySelector('.carousel-track');
+            const slides = Array.from(container.querySelectorAll('.carousel-slide'));
+            const nextBtn = container.querySelector('.next-btn');
+            const prevBtn = container.querySelector('.prev-btn');
+            let index = 0;
 
-   // Re-calculate on window resize
-   const observer = new ResizeObserver(updateCarousel); // Use the function reference
-   observer.observe(container);
+            const update = () => {
+                const width = container.clientWidth;
+                track.style.transform = `translateX(-${index * width}px)`;
 
+                slides.forEach((s, i) => {
+                    s.classList.toggle('active', i === index);
+                });
+            };
 
-   nextButton.addEventListener('click', () => {
-   currentSlideIndex = (currentSlideIndex + 1) % slides.length;
-   updateCarousel();
-   });
+            nextBtn.onclick = () => {
+                index = (index + 1) % slides.length;
+                update();
+            };
 
-   prevButton.addEventListener('click', () => {
-   currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
-   updateCarousel();
-   });
+            prevBtn.onclick = () => {
+                index = (index - 1 + slides.length) % slides.length;
+                update();
+            };
 
-   // Initial position setting
-   // We don't need to call updateCarousel() here because the ResizeObserver
-      // will call it immediately after it starts observing (in most browsers).
-      // However, if the images are cached, it's safer to call it once:
-   updateCarousel(); 
-   });
-}
-// ... (rest of the file remains the same)
+            new ResizeObserver(update).observe(container);
+            update();
+        });
+    }
 
 })
-.catch(err => console.error('Error loading JSON:', err));
+.catch(err => console.error("Error loading JSON:", err));

@@ -1,7 +1,7 @@
 [
 { 
-    "title": "Noticia",
-    "image":[""],
+    "title": "My AI i google page",
+    "video":["video/AIColab/AIcolab.mp4"],
     "description": "Este es mi propio Ai que install en la la Google colab(por eso debe ejutar por mano)",
     "githublinkrepo":"https://github.com/Sagmanua/SagmanOllamaAI",
     "githublinkwebsite":"https://sagmanua.github.io/SagmanOllamaAI/"
@@ -23,6 +23,7 @@
     "githublinkwebsite":"https://recepe-planer.great-site.net/Proyecto-Entornos-de-Desarrollo/"
     
 },
+
 { 
     "title": "Noticia",
     "image":["foto of projects/Noticia/Noticia admin.index.png", "foto of projects/Noticia/Noticia admin.index.png"],
