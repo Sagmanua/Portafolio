@@ -1,0 +1,120 @@
+[
+
+  {
+    "title": {
+      "es": "Recetas y Planificador de Comidas",
+      "en": "Recipes and Meal Planner"
+    },
+    "image": [
+      "foto of projects/Recetas/CRUD.png",
+      "foto of projects/Recetas/index.png",
+      "foto of projects/Recetas/login.png",
+      "foto of projects/Recetas/planner.png",
+      "foto of projects/Recetas/profile.png",
+      "foto of projects/Recetas/recipe_details.png",
+      "foto of projects/Recetas/update.png"
+    ],
+    "description": {
+      "es": "Una aplicación web full-stack para gestionar recetas y organizar un calendario semanal. Incluye autenticación y CRUD con PHP y MySQL.",
+      "en": "A full-stack web application to manage recipes and organize a weekly calendar. Includes authentication and CRUD using PHP and MySQL."
+    },
+    "language": ["Php", "CSS", "Mysql"],
+    "githublinkrepo": "https://github.com/Sagmanua/Proyecto-Entornos-de-Desarrollo",
+    "githublinkwebsite": "https://recepe-planer.great-site.net/Proyecto-Entornos-de-Desarrollo/"
+  },
+  {
+    "title": {
+      "es": "Panel de Administración de Noticias",
+      "en": "News Admin Panel"
+    },
+    "image": ["foto of projects/Noticia/Noticia admin.index.png"],
+    "description": {
+      "es": "Interfaz administrativa simple diseñada para gestionar datos (operaciones CRUD) dentro de un entorno PHP.",
+      "en": "Simple administrative interface designed to manage data (CRUD operations) within a PHP environment."
+    },
+    "language": ["Php", "HTML", "CSS"],
+    "githublinkrepo": "https://github.com/Sagmanua/Programacion-de-DAM-2025-2026-/tree/main/Explication/PHP%20Ud-10%20Programaci%C3%B3n%20en%20el%20lado%20del%20servidor/009%20Instalacion%20de%20CRUD/003%20Panel%20de%20control/aplication"
+  },
+  {
+    "title": {
+      "es": "Reloj Analógico Multi-Zona",
+      "en": "Multi-Zone Analog Clock"
+    },
+    "image": "foto of projects/AnalogClock.png",
+    "description": {
+      "es": "Reloj interactivo con HTML Canvas. Permite seleccionar entre hora local y 12 zonas globales con ajuste DST automático.",
+      "en": "Interactive clock built with HTML Canvas. Allows selection between local time and 12 global zones with automatic DST adjustment."
+    },
+    "language": ["HTML", "CSS", "JavaScript"],
+    "githublinkrepo": "https://github.com/Sagmanua/Reloj-de-tiempo-",
+    "githublinkwebsite": "https://sagmanua.github.io/Reloj-de-tiempo-/"
+  },
+  {
+    "title": {
+      "es": "Wot Wordle",
+      "en": "Wot Wordle"
+    },
+    "image": "foto of projects/Wot-wordle.png",
+    "description": {
+      "es": "Mini-juego de adivinanza de tanques en Python (Tkinter). Utiliza un archivo JSON para datos de tanques y atributos.",
+      "en": "Tank guessing mini-game in Python (Tkinter). Uses a JSON file for tank data and attributes."
+    },
+    "language": "Python",
+    "githublinkrepo": "https://github.com/Sagmanua/Wot-Wordle"
+  },
+  {
+    "title": {
+      "es": "Mini-proyecto Web ASIR",
+      "en": "ASIR Web Mini-project"
+    },
+    "image": "foto of projects/ASIR.png",
+    "description": {
+      "es": "Sitio web de reseñas de videojuegos en HTML/CSS. Soporta múltiples idiomas y diseño responsivo.",
+      "en": "Video game review website in HTML/CSS. Supports multiple languages and responsive design."
+    },
+    "language": ["HTML", "CSS", "JavaScript"],
+    "githublinkrepo": "https://github.com/Sagmanua/Webasirwork-2023-",
+    "githublinkwebsite": "https://sagmanua.github.io/Webasirwork-2023-/"
+  },
+  {
+    "title": {
+      "es": "Generador de Paletas de Colores",
+      "en": "Color Palette Generator"
+    },
+    "image": "foto of projects/Generador_de_paletas/image.png",
+    "description": {
+      "es": "Generador interactivo de colores basado en estados de ánimo. Exporta variables a CSS y ajusta contraste automáticamente.",
+      "en": "Interactive color generator based on moods. Exports variables to CSS and adjusts contrast automatically."
+    },
+    "language": ["HTML", "CSS", "JavaScript"],
+    "githublinkrepo": "https://github.com/Sagmanua/Ideas/tree/main/ideas/palitra",
+    "githublinkwebsite": "https://sagmanua.github.io/Ideas/ideas/palitra/index.html"
+  },
+  {
+    "title": {
+      "es": "Generador de Plantillas de Email",
+      "en": "Email Template Generator"
+    },
+    "image": "foto of projects/Generador_de_plantillas/image.png",
+    "description": {
+      "es": "App Full Stack (Node.js/Express) para crear borradores de email por categorías con persistencia de datos.",
+      "en": "Full Stack App (Node.js/Express) to create email drafts by categories with data persistence."
+    },
+    "language": ["JavaScript", "HTML", "CSS"],
+    "githublinkrepo": "https://github.com/Sagmanua/Ideas/tree/main/ideas/pisama",
+    "githublinkwebsite": "https://sagmanua.github.io/Ideas/ideas/pisama/index.html"
+  },
+  {
+    "title": {
+      "es": "Agenda de Contactos (Consola)",
+      "en": "Contact Agenda (Console)"
+    },
+    "image": "foto of projects/MenuBetter.png",
+    "description": {
+      "es": "Gestor de contactos en Python con validación de Regex y almacenamiento persistente mediante pickle.",
+      "en": "Python contact manager with Regex validation and persistent storage using pickle."
+    },
+    "language": "Python",
+    "githublinkrepo": "https://github.com/Sagmanua/Programacion-de-DAM-2025-2026-/tree/main/Practica/Mejorar%20menu"
+  }
+]

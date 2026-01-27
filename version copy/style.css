@@ -1,0 +1,348 @@
+/* --------------------------------------------------
+    COLORS (Updated for a Deeper Wheat/Khaki Background 🍂)
+-------------------------------------------------- */
+
+:root {
+    --primary-light: #E0CCA6; 
+    --secondary-mid: #2F4244;
+    --card-light: #FFFFFF; 
+    --accent-gold: #C28E00; 
+    --accent-green: #38A3A5; 
+    --text-dark: #2F4244; 
+    --text-secondary: #5C6F73; 
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.18); 
+
+    /* Variable mapping to new scheme */
+    --card: var(--card-light);
+    --glass: rgba(194, 142, 0, 0.15);
+    --green: var(--accent-green);
+}
+
+/* --------------------------------------------------
+    GLOBAL RESET & LAYOUT (Color updates)
+-------------------------------------------------- */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+
+    background: var(--primary-light); 
+    color: var(--text-dark); 
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex-grow: 1;
+    padding-top: 30px;
+}
+
+
+
+/* --------------------------------------------------
+    IMAGES
+-------------------------------------------------- */
+.thumb {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+}
+
+@media (max-width: 600px) {
+    .thumb {
+        max-height: 250px;
+    }
+}
+
+/* --------------------------------------------------
+    TOP BAR
+-------------------------------------------------- */
+.topbar {
+    width: 100%;
+    background: var(--secondary-mid);
+    padding: 15px 20px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.25);
+}
+
+.topbar .logo {
+    color: var(--accent-gold);
+    text-align: center;
+    margin: 0;
+}
+
+
+
+/* --------------------------------------------------
+    HEADER BUTTON - Centered Curriculum Link
+-------------------------------------------------- */
+.header-center {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--accent-gold); 
+    color: var(--secondary-mid); 
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.button:hover {
+    background-color: #a77b00; 
+    transform: scale(1.05); 
+}
+
+.button:hover {
+    background-color: #0056b3; 
+}
+
+/* --------------------------------------------------
+    
+-------------------------------------------------- */
+.button-link {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: var(--accent-gold); 
+    color: var(--secondary-mid); 
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.button-link:hover {
+    background-color: #a77b00; 
+    transform: scale(1.05); 
+}
+
+
+/* --------------------------------------------------
+    LANGUAGE FILTER
+-------------------------------------------------- */
+.lang-filter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.lang-filter img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+
+    border-radius: 8px;
+    border: 2px solid transparent;
+
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.lang-filter img:hover {
+    transform: scale(1.1);
+}
+
+.lang-filter img.selected {
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 10px rgba(194, 142, 0, 0.7);
+}
+
+/* --------------------------------------------------
+    GRID LAYOUT
+-------------------------------------------------- */
+/* --------------------------------------------------
+    GRID LAYOUT
+-------------------------------------------------- */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+    padding: 0 20px 20px 20px;
+    align-items: stretch; 
+}
+
+@media (max-width: 1200px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 700px) {
+    .grid {
+        grid-template-columns: 1fr; 
+    }
+}
+
+/* --------------------------------------------------
+    CARD
+-------------------------------------------------- */
+.card {
+    background: var(--card);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.2s;
+
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
+}
+
+
+.desc {
+    color: var(--text-secondary);
+    flex-grow: 1; 
+    margin-bottom: 15px;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    color: var(--accent-gold);
+}
+
+
+.lang-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+/* --------------------------------------------------
+    FOOTER
+-------------------------------------------------- */
+.footer {
+    width: 100%;
+    padding: 20px 0;
+
+    background-color: var(--secondary-mid);
+    color: var(--text-light);
+
+    text-align: center;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+
+.contacto_img {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+    vertical-align: middle;
+
+    transition: opacity 0.2s ease-in-out;
+}
+
+/* --------------------------------------------------
+  CAROUSEL STYLES (
+-------------------------------------------------- */
+/* Ensure the carousel is always the same height in every card */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 10px; 
+    width: 100%;
+    height: 200px; /* Keep this consistent */
+    background-color: #f0f0f0; /* Optional: adds a light grey if image fails to load */
+}
+
+
+
+.thumb {
+    width: 100%;
+    height: 200px; /* Force same height as carousel-container */
+    object-fit: cover; 
+    border-radius: 12px;
+    display: block;
+}
+
+
+@media (max-width: 600px) {
+  .carousel-container {
+    height: 250px;
+  }
+}
+
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.3s ease-in-out; 
+    height: 100%;
+    width: 100%; /* Ensure it spans the container */
+}
+
+.carousel-slide {
+    min-width: 100%; /* Each slide must take up exactly 100% of the container */
+    width: 100%;
+    height: 200px; 
+    object-fit: cover; 
+    display: block;
+}
+
+
+/* CAROUSEL BUTTONS */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 18px;
+  line-height: 1;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.carousel-btn:hover { opacity: 1;
+}
+
+.prev-btn {
+  left: 10px;
+ border-radius: 0 5px 5px 0;
+}
+
+.next-btn {
+  right: 10px;
+  border-radius: 5px 0 0 5px;
+}
+/* --------------------------------------------------
+  Video STYLES (
+-------------------------------------------------- */
+video.thumb, video.carousel-slide {
+    width: 100%;
+    max-height: 250px; /* Ajusta según tu diseño */
+    background: #000;
+}
