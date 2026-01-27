@@ -1,83 +1,151 @@
 [
-{ 
-    "title": "My AI i google page",
-    "video":["video/AIColab/AIcolab.mp4"],
-    "description": "Este es mi propio Ai que install en la la Google colab(por eso debe ejutar por mano)",
-    "githublinkrepo":"https://github.com/Sagmanua/SagmanOllamaAI",
-    "githublinkwebsite":"https://sagmanua.github.io/SagmanOllamaAI/"
-},
-{
-    "title": "Recetas y Planificador de Comidas",
+  {
+    "title": {
+      "es": "Mi AI en Google Colab",
+      "en": "My AI in Google Colab",
+      "ua": "Мій ШІ в Google Colab"
+    },
+    "video": ["video/AIColab/AIcolab.mp4"],
+    "description": {
+      "es": "Este es mi propio AI instalado en Google Colab (por eso debe ejecutarse manualmente).",
+      "en": "This is my own AI installed on Google Colab (therefore it must be run manually).",
+      "ua": "Це мій власний ШІ, встановлений у Google Colab (тому його потрібно запускати вручну)."
+    },
+    "language": ["Python", "JavaScript"],
+    "githublinkrepo": "https://github.com/Sagmanua/SagmanOllamaAI",
+    "githublinkwebsite": "https://sagmanua.github.io/SagmanOllamaAI/"
+  },
+  {
+    "title": {
+      "es": "Recetas y Planificador de Comidas",
+      "en": "Recipes and Meal Planner",
+      "ua": "Рецепти та планувальник харчування"
+    },
     "image": [
-        "foto of projects/Recetas/CRUD.png",
-        "foto of projects/Recetas/index.png",
-        "foto of projects/Recetas/login.png",
-        "foto of projects/Recetas/planner.png",
-        "foto of projects/Recetas/profile.png",
-        "foto of projects/Recetas/recipe_details.png",
-        "foto of projects/Recetas/update.png"
+      "foto of projects/Recetas/CRUD.png",
+      "foto of projects/Recetas/index.png",
+      "foto of projects/Recetas/login.png",
+      "foto of projects/Recetas/planner.png",
+      "foto of projects/Recetas/profile.png",
+      "foto of projects/Recetas/recipe_details.png",
+      "foto of projects/Recetas/update.png"
     ],
-    "description": "Una aplicación web full-stack que permite a los usuarios gestionar recetas y organizar un calendario de comidas semanal. Incluye un sistema de autenticación, gestión de perfiles y una base de datos relacional para manejar ingredientes y menús programados mediante operaciones CRUD en un entorno PHP.",
+    "description": {
+      "es": "Una aplicación web full-stack para gestionar recetas y organizar un calendario semanal. Incluye autenticación y CRUD con PHP y MySQL.",
+      "en": "A full-stack web application to manage recipes and organize a weekly calendar. Includes authentication and CRUD using PHP and MySQL.",
+      "ua": "Повнофункціональний вебдодаток для керування рецептами та організації тижневого календаря. Включає автентифікацію та CRUD за допомогою PHP та MySQL."
+    },
     "language": ["Php", "CSS", "Mysql"],
     "githublinkrepo": "https://github.com/Sagmanua/Proyecto-Entornos-de-Desarrollo",
-    "githublinkwebsite":"https://recepe-planer.great-site.net/Proyecto-Entornos-de-Desarrollo/"
-    
-},
-
-{ 
-    "title": "Noticia",
-    "image":["foto of projects/Noticia/Noticia admin.index.png", "foto of projects/Noticia/Noticia admin.index.png"],
-    "description": "The aplication directory, therefore, holds the necessary files (which are typically PHP, HTML, and possibly CSS/JS) for running the front-end and back-end logic of a simple administrative interface designed to manage data (perform CRUD operations) within a PHP environment.",
-    "language":["Php","HTML", "CSS"],
-    "githublinkrepo":"https://github.com/Sagmanua/Programacion-de-DAM-2025-2026-/tree/main/Explication/PHP%20Ud-10%20Programaci%C3%B3n%20en%20el%20lado%20del%20servidor/009%20Instalacion%20de%20CRUD/003%20Panel%20de%20control/aplication"
-
-},
-{
-    "title": "Reloj Analógico Multi-Zona con Canvas",
+    "githublinkwebsite": "https://recepe-planer.great-site.net/Proyecto-Entornos-de-Desarrollo/"
+  },
+  {
+    "title": {
+      "es": "Panel de Administración de Noticias",
+      "en": "News Admin Panel",
+      "ua": "Панель адміністратора новин"
+    },
+    "image": ["foto of projects/Noticia/Noticia admin.index.png"],
+    "description": {
+      "es": "Interfaz administrativa simple diseñada para gestionar datos (operaciones CRUD) dentro de un entorno PHP.",
+      "en": "Simple administrative interface designed to manage data (CRUD operations) within a PHP environment.",
+      "ua": "Простий адміністративний інтерфейс для керування даними (операції CRUD) у середовищі PHP."
+    },
+    "language": ["Php", "HTML", "CSS"],
+    "githublinkrepo": "https://github.com/Sagmanua/Programacion-de-DAM-2025-2026-/tree/main/Explication/PHP%20Ud-10%20Programaci%C3%B3n%20en%20el%20lado%20del%20servidor/009%20Instalacion%20de%20CRUD/003%20Panel%20de%20control/aplication"
+  },
+  {
+    "title": {
+      "es": "Reloj Analógico Multi-Zona",
+      "en": "Multi-Zone Analog Clock",
+      "ua": "Мультизонний аналоговий годинник"
+    },
     "image": "foto of projects/AnalogClock.png",
-    "description": "Un reloj analógico interactivo desarrollado con HTML Canvas. Permite al usuario seleccionar entre la hora local, UTC y 12 zonas horarias globales principales. Utiliza la API `Intl.DateTimeFormat` de JavaScript para garantizar la precisión de la hora, incluyendo los ajustes automáticos por Horario de Verano (DST).",
+    "description": {
+      "es": "Reloj interactivo con HTML Canvas. Permite seleccionar entre hora local y 12 zonas globales con ajuste DST automático.",
+      "en": "Interactive clock built with HTML Canvas. Allows selection between local time and 12 global zones with automatic DST adjustment.",
+      "ua": "Інтерактивний годинник, створений за допомогою HTML Canvas. Дозволяє вибирати між місцевим часом та 12 глобальними зонами з автоматичним переходом на літній час."
+    },
     "language": ["HTML", "CSS", "JavaScript"],
     "githublinkrepo": "https://github.com/Sagmanua/Reloj-de-tiempo-",
-    "githublinkwebsite":"https://sagmanua.github.io/Reloj-de-tiempo-/"
-},
-
-
-{ 
-    "title": "Wot Wordle",
-    "image": "foto of projects/Wot-wordle.png", 
-    "description": "Mini-juego de adivinanza de tanques en Python: aplicación GUI creada con Tkinter que reta al usuario a adivinar un tanque elegido al azar de un archivo JSON. Proporciona retroalimentación sobre atributos como daño, velocidad, clase y nación, cuenta los intentos y cambia el fondo al ganar. Incluye un sistema de reinicio para seleccionar un nuevo tanque y probar de nuevo.",
+    "githublinkwebsite": "https://sagmanua.github.io/Reloj-de-tiempo-/"
+  },
+  {
+    "title": {
+      "es": "Wot Wordle",
+      "en": "Wot Wordle",
+      "ua": "Wot Wordle"
+    },
+    "image": "foto of projects/Wot-wordle.png",
+    "description": {
+      "es": "Mini-juego de adivinanza de tanques en Python (Tkinter). Utiliza un archivo JSON para datos de tanques y atributos.",
+      "en": "Tank guessing mini-game in Python (Tkinter). Uses a JSON file for tank data and attributes.",
+      "ua": "Міні-гра на вгадування танків на Python (Tkinter). Використовує JSON-файл для даних про танки та їхні характеристики."
+    },
     "language": "Python",
     "githublinkrepo": "https://github.com/Sagmanua/Wot-Wordle"
-},
-{ 
-    "title": "Html website Asir mini-project",
-    "image": "foto of projects/ASIR.png", 
-    "description": "Un miniproyecto de varias páginas en HTML y CSS que presenta reseñas personales y discusiones sobre videojuegos populares de PC, incluyendo una lista de los 5 mejores y secciones dedicadas a 'The Witcher 3', 'Cyberpunk 2077' y 'Borderlands 3'. El sitio es compatible con los idiomas inglés, español y ucraniano.",
+  },
+  {
+    "title": {
+      "es": "Mini-proyecto Web ASIR",
+      "en": "ASIR Web Mini-project",
+      "ua": "Вебмініпроєкт ASIR"
+    },
+    "image": "foto of projects/ASIR.png",
+    "description": {
+      "es": "Sitio web de reseñas de videojuegos en HTML/CSS. Soporta múltiples idiomas y diseño responsivo.",
+      "en": "Video game review website in HTML/CSS. Supports multiple languages and responsive design.",
+      "ua": "Сайт для оглядів відеоігор на HTML/CSS. Підтримує кілька мов та адаптивний дизайн."
+    },
     "language": ["HTML", "CSS", "JavaScript"],
     "githublinkrepo": "https://github.com/Sagmanua/Webasirwork-2023-",
     "githublinkwebsite": "https://sagmanua.github.io/Webasirwork-2023-/"
-},
-{
-    "title": "(En ruso) Generador de paletas de colores",
+  },
+  {
+    "title": {
+      "es": "Generador de Paletas de Colores",
+      "en": "Color Palette Generator",
+      "ua": "Генератор палітри кольорів"
+    },
     "image": "foto of projects/Generador_de_paletas/image.png",
-    "description": "Aplicación web interactiva para la generación y gestión de paletas cromáticas. Permite crear combinaciones de colores personalizadas basadas en estilos y estados de ánimo (como 'calm', 'vibrant' o 'minimalism'), con una interfaz dinámica que ajusta el contraste del texto automáticamente para asegurar la legibilidad. Incluye funciones para la edición manual de colores mediante un selector integrado, exportación de variables a CSS y pre-configuración para integración con una base de datos mediante una arquitectura escalable. Los datos se visualizan en un contenedor flexbox responsivo con efectos de transición y sombras suaves.",
-    "github": "https://github.com/Sagmanua/Ideas/tree/main/ideas/palitra",
+    "description": {
+      "es": "Generador interactivo de colores basado en estados de ánimo. Exporta variables a CSS y ajusta contraste automáticamente.",
+      "en": "Interactive color generator based on moods. Exports variables to CSS and adjusts contrast automatically.",
+      "ua": "Інтерактивний генератор кольорів на основі настрою. Експортує змінні в CSS та автоматично налаштовує контраст."
+    },
+    "language": ["HTML", "CSS", "JavaScript"],
+    "githublinkrepo": "https://github.com/Sagmanua/Ideas/tree/main/ideas/palitra",
     "githublinkwebsite": "https://sagmanua.github.io/Ideas/ideas/palitra/index.html"
-},
-{
-    "title": "(En ruso) Generador de plantillas de correo electrónico",
+  },
+  {
+    "title": {
+      "es": "Generador de Plantillas de Email",
+      "en": "Email Template Generator",
+      "ua": "Генератор шаблонів листів"
+    },
     "image": "foto of projects/Generador_de_plantillas/image.png",
-    "description": "Aplicación web Full Stack para la generación y gestión de plantillas de correos electrónicos. Permite la creación de borradores personalizados mediante un sistema de categorías (negocios, amigos, felicitaciones) con campos de entrada dinámicos que adaptan sus etiquetas según el contexto seleccionado. Incluye un sistema completo de autenticación de usuarios y persistencia de datos en el servidor mediante una API REST construida con Node.js y Express, utilizando un archivo JSON como base de datos. El programa permite a los usuarios registrados guardar sus borradores, visualizar un historial de correos guardados con marcas de tiempo y exportar el contenido mediante la copia al portapapeles o una función de impresión optimizada.",
-    "github": "https://github.com/Sagmanua/Ideas/tree/main/ideas/pisama",
+    "description": {
+      "es": "App Full Stack (Node.js/Express) para crear borradores de email por categorías con persistencia de datos.",
+      "en": "Full Stack App (Node.js/Express) to create email drafts by categories with data persistence.",
+      "ua": "Full Stack додаток (Node.js/Express) для створення чернеток електронних листів за категоріями зі збереженням даних."
+    },
+    "language": ["JavaScript", "HTML", "CSS"],
+    "githublinkrepo": "https://github.com/Sagmanua/Ideas/tree/main/ideas/pisama",
     "githublinkwebsite": "https://sagmanua.github.io/Ideas/ideas/pisama/index.html"
-
-},
-{
-    "title": "Agenda de Contactos in console",
+  },
+  {
+    "title": {
+      "es": "Agenda de Contactos (Consola)",
+      "en": "Contact Agenda (Console)",
+      "ua": "Книга контактів (Консоль)"
+    },
     "image": "foto of projects/MenuBetter.png",
-    "description": "Aplicación de consola en Python para gestionar contactos. Permite agregar, leer, actualizar y borrar registros, con validación de email y teléfono mediante expresiones regulares. Los datos se guardan de forma persistente en un archivo binario usando pickle, y el programa carga automáticamente los contactos existentes al iniciar. Incluye un menú interactivo y confirmación antes de eliminar registros.",
+    "description": {
+      "es": "Gestor de contactos en Python con validación de Regex y almacenamiento persistente mediante pickle.",
+      "en": "Python contact manager with Regex validation and persistent storage using pickle.",
+      "ua": "Менеджер контактів на Python з валідацією через Regex та постійним зберіганням даних за допомогою pickle."
+    },
     "language": "Python",
-    "github": "https://github.com/Sagmanua/Programacion-de-DAM-2025-2026-/tree/main/Practica/Mejorar%20menu"
-}
-
+    "githublinkrepo": "https://github.com/Sagmanua/Programacion-de-DAM-2025-2026-/tree/main/Practica/Mejorar%20menu"
+  }
 ]
