@@ -8,7 +8,7 @@ Un sitio web de portafolio **responsive** y basado en datos, diseñado para most
 El sitio cuenta con un diseño de cuadrícula dinámica, filtrado de proyectos por lenguaje de programación y un carrusel de imágenes interactivo para proyectos con múltiples capturas de pantalla.
 
 🚀 **Demo en Vivo**  
-[Ver el Portafolio de Bohdan Sydorenko](https://sagmanua.github.io/Portafolio/)
+[Ver el Portafolio de Bohdan Sydorenko](https://sagmanua.github.io/Portafolio/index.html)
 
 ---
 
