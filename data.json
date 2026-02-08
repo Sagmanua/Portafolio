@@ -1,5 +1,42 @@
 [
-  {
+{
+  "title": {
+    "es": "Bot de Telegram",
+    "en": "Telegram Bot",
+    "ua": "Telegram-бот"
+  },
+      "image": [
+      "foto of projects/Telegram-bot/Todolist1.png",
+      "foto of projects/Telegram-bot/Todolist2.png",
+      "foto of projects/Telegram-bot/Todolist3.png",
+      "foto of projects/Telegram-bot/AIbot.png"
+
+    ],
+
+  "description": {
+    "es": "Este proyecto cuenta con 3 bots de Telegram: 2 para listas de tareas (ToDo-List) que envió mensaje 1 día antes de tarea  y 1 que conecta una IA. Todos funcionan, pero están alojados en servicios gratuitos; si quieres probarlos, escríbeme para que los active (@Sagmanua).",
+    "en": "This project features 3 Telegram bots: 2 ToDo-Lists that send mesage 1 day before task  and 1 AI-integrated bot. All are functional, but since they are hosted on free services, please message me (@Sagmanua) to turn them on if you wish to test them.",
+    "ua": "Цей проєкт включає 3 Telegram-боти: 2 для списків справ (ToDo-List) який відправляее повідомленя за 1 день до термину задачі та 1 бот із інтеграцією штучного інтелекту. Усі вони працюють, але розміщені на безкоштовних хостингах. Якщо хочете протестувати їх, напишіть мені (@Sagmanua), щоб я їх увімкнув."
+  },
+  "language": ["Python","Telegram_bot"],
+  "githublinkrepo": "https://github.com/Sagmanua/Telgram-bot"
+},
+{
+  "title": {
+    "es": "Ajedrez en Pygame",
+    "en": "Chess on Pygame",
+    "ua": "Шахи на Pygame"
+  },
+  "video": ["video/Chees/chees.mp4"],
+  "description": {
+    "es": "Este es un proyecto donde creé un juego de ajedrez sencillo en Python utilizando la librería Pygame.",
+    "en": "This is a project where I created a simple chess game in Python using the Pygame library.",
+    "ua": "Це проєкт, у якому я створив прості шахи на Python з використанням бібліотеки Pygame."
+  },
+  "language": ["Python"],
+  "githublinkrepo": "https://github.com/Sagmanua/Chess-in-Py"
+},
+{
     "title": {
       "es": "Mi AI en Google Colab",
       "en": "My AI in Google Colab",
@@ -107,7 +144,7 @@
       "en": "Color Palette Generator",
       "ua": "Генератор палітри кольорів"
     },
-    "image": "foto of projects/Generador_de_paletas/image.png",
+    "video": "video/Generador_de_paletas/Generator.mp4",
     "description": {
       "es": "Generador interactivo de colores basado en estados de ánimo. Exporta variables a CSS y ajusta contraste automáticamente.",
       "en": "Interactive color generator based on moods. Exports variables to CSS and adjusts contrast automatically.",

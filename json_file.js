@@ -11,7 +11,8 @@ const languageImages = {
     CSS: "images/css.png",
     Java: "images/java.png",
     Php: "images/php.png",
-    Mysql: "images/mysql.png"
+    Mysql: "images/mysql.png",
+    Telegram_bot: "images/telegram_bot.png"
 };
 
 // Site-wide translations (UI elements)
@@ -41,7 +42,7 @@ const uiTranslations = {
     }
 };
 
-let projectData = []; // Will hold data from data.json
+let projectData = []; 
 let currentLang = localStorage.getItem('idioma') || 'es';
 let currentFilter = null;
 
