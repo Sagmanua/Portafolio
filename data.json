@@ -1,4 +1,56 @@
+
 [
+
+{
+  "title": {
+    "es": "Mini Photoshop",
+    "en": "Mini Photoshop",
+    "ua": "Міні-Фотошоп"
+  },
+  "video": "video/mini-fotoshop/How_it_work.mp4",
+  "description": {
+    "es": "En este proyecto creé un 'Mini Photoshop' basado en la web donde puedes editar imágenes aplicando filtros y ajustes, y luego guardarlas directamente en tu dispositivo.",
+    "en": "A web-based image editor that allows users to upload, manipulate, and apply various filters to images before saving the final result to their device.",
+    "ua": "У цьому проєкті я створив веб-редактор зображень, де ви можете редагувати фотографії, застосовувати фільтри та зберігати результат на свій пристрій."
+  },
+  "language": ["HTML","CSS","JavaScript"],
+  "githublinkrepo": "https://github.com/Sagmanua/List-of-usefull-fearchers/tree/main/mini-photoshop",
+  "githublinkwebsite": "https://sagmanua.github.io/List-of-usefull-fearchers/mini-photoshop/index.html"
+},
+{
+  "title": {
+    "es": "Calendario Web",
+    "en": "Web Calendar Project",
+    "ua": "Веб-календар"
+  },
+  "video": "video/Web_Calendar/How_it_work.mp4",
+  "description": {
+    "es": "Este es un calendario sencillo que muestra todos los meses del año. Permite añadir títulos, aunque el proyecto no está finalizado (decidí enfocarme en un bot de Telegram más útil con la misma idea). El principal inconveniente es que, para guardar tareas, es necesario editar manualmente el archivo JSON para que aparezcan en la web.",
+    "en": "A simple web calendar showing all months of the year. While you can add titles, the project is unfinished as I moved focus toward a more practical Telegram bot with similar features. Currently, saving tasks requires manual editing of the JSON file to display them on the site.",
+    "ua": "Це простий календар, який показує всі місяці року. У нього можна додавати заголовки, але проект не завершений (я вирішив зосередитися на більш корисному Telegram-боті з тією ж ідеєю). Головна особливість у тому, що для збереження завдань потрібно вручну редагувати JSON-файл, щоб вони відобразилися на сайті."
+  },
+  "language": ["HTML", "CSS", "JavaScript","JSON"],
+  "githublinkrepo": "https://github.com/Sagmanua/List-of-usefull-fearchers/tree/main/calendario",
+  "githublinkwebsite": "https://sagmanua.github.io/List-of-usefull-fearchers/calendario/index.html"
+},
+
+{
+  "title": {
+    "es": "Lista de Recursos Útiles",
+    "en": "List of Useful Resources",
+    "ua": "Список корисних ресурсів"
+  },
+  "image": "foto of projects/List_of_Useful_Resources/image.png",
+  "description": {
+    "es": "Este es un mazo simple donde puedes encontrar aplicaciones, repositorios, páginas y videos que ayudan a resolver diversos problemas. He incluido una calificación personal para resaltar las herramientas más útiles.",
+    "en": "This is a curated collection of apps, repositories, websites, and videos that solve various technical challenges. It includes a rating system to help you identify the most effective and useful resources.",
+    "ua": "це проста добірка додатків, репозиторіїв, сторінок та відео, які допомагають вирішувати різноманітні завдання. Я також додав систему оцінювання, щоб ви могли бачити найкорисніші ресурси."
+  },
+      "language": ["HTML", "CSS", "JavaScript","JSON"],
+
+  "githublinkrepo": "https://github.com/Sagmanua/List-of-usefull-fearchers",
+  "githublinkwebsite": "https://sagmanua.github.io/List-of-usefull-fearchers/"
+},
 {
   "title": {
     "es": "Bot de Noticias de Telegram",
@@ -206,6 +258,22 @@
     "githublinkrepo": "https://github.com/Sagmanua/Ideas/tree/main/ideas/pisama",
     "githublinkwebsite": "https://sagmanua.github.io/Ideas/ideas/pisama/index.html"
   },
+{
+"title": {
+    "es": "Juego de Supervivencia Zombie",
+    "en": "Zombie Survival Game",
+    "ua": "Гра на виживання проти зомбі"
+  },
+  "video": "video/Game_cratos/How_it_works.mp4",
+  "description": {
+    "es": "Un minijuego desarrollado con ayuda de IA en el que debes sobrevivir a oleadas constantes de zombies. El objetivo es aguantar el mayor tiempo posible mientras la dificultad aumenta con cada horda.",
+    "en": "An AI-assisted mini-game where you must survive against endless waves of zombies. Test your skills and see how long you can last as the difficulty increases with every wave.",
+    "ua": "Міні-гра, розроблена за допомогою ШІ, у якій вам потрібно виживати проти хвиль зомбі. Перевірте свої сили та спробуйте протриматися якомога довше під натиском ворогів."
+  },
+  "language": ["HTML","CSS","JavaScript"],
+  "githublinkrepo": "https://github.com/Sagmanua/List-of-usefull-fearchers/tree/main/010%20Ai",
+  "githublinkwebsite": "https://sagmanua.github.io/List-of-usefull-fearchers/010%20Ai/"
+},
   {
     "title": {
       "es": "Agenda de Contactos (Consola)",

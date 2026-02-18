@@ -12,7 +12,9 @@ const languageImages = {
     Java: "images/java.png",
     Php: "images/php.png",
     Mysql: "images/mysql.png",
-    Telegram_bot: "images/telegram_bot.png"
+    Telegram_bot: "images/telegram_bot.png",
+    JSON: "images/json.png"
+
 };
 
 // Site-wide translations (UI elements)
