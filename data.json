@@ -1,6 +1,8 @@
 
 [
 
+
+
 {
   "title": {
     "es": "Mini Photoshop",
@@ -17,6 +19,31 @@
   "githublinkrepo": "https://github.com/Sagmanua/List-of-usefull-fearchers/tree/main/mini-photoshop",
   "githublinkwebsite": "https://sagmanua.github.io/List-of-usefull-fearchers/mini-photoshop/index.html"
 },
+  {
+    "title": {
+      "es": "Recetas y Planificador de Comidas",
+      "en": "Recipes and Meal Planner",
+      "ua": "Рецепти та планувальник харчування"
+    },
+    "image": [
+      "foto of projects/Recetas/CRUD.png",
+      "foto of projects/Recetas/index.png",
+      "foto of projects/Recetas/login.png",
+      "foto of projects/Recetas/planner.png",
+      "foto of projects/Recetas/profile.png",
+      "foto of projects/Recetas/recipe_details.png",
+      "foto of projects/Recetas/update.png"
+    ],
+    "description": {
+      "es": "Una aplicación web full-stack para gestionar recetas y organizar un calendario semanal. Incluye autenticación y CRUD con PHP y MySQL.",
+      "en": "A full-stack web application to manage recipes and organize a weekly calendar. Includes authentication and CRUD using PHP and MySQL.",
+      "ua": "Повнофункціональний вебдодаток для керування рецептами та організації тижневого календаря. Включає автентифікацію та CRUD за допомогою PHP та MySQL."
+    },
+    "language": ["Php", "CSS", "Mysql"],
+    "githublinkrepo": "https://github.com/Sagmanua/Proyecto-Entornos-de-Desarrollo",
+    "githublinkwebsite": "https://recepe-planer.great-site.net/Proyecto-Entornos-de-Desarrollo/"
+  },
+  
 {
   "title": {
     "es": "Calendario Web",
@@ -32,6 +59,21 @@
   "language": ["HTML", "CSS", "JavaScript","JSON"],
   "githublinkrepo": "https://github.com/Sagmanua/List-of-usefull-fearchers/tree/main/calendario",
   "githublinkwebsite": "https://sagmanua.github.io/List-of-usefull-fearchers/calendario/index.html"
+},
+{
+  "title": {
+    "es": "Ajedrez en Pygame",
+    "en": "Chess on Pygame",
+    "ua": "Шахи на Pygame"
+  },
+  "video": ["video/Chees/chees.mp4"],
+  "description": {
+    "es": "Este es un proyecto donde creé un juego de ajedrez sencillo en Python utilizando la librería Pygame.",
+    "en": "This is a project where I created a simple chess game in Python using the Pygame library.",
+    "ua": "Це проєкт, у якому я створив прості шахи на Python з використанням бібліотеки Pygame."
+  },
+  "language": ["Python"],
+  "githublinkrepo": "https://github.com/Sagmanua/Chess-in-Py"
 },
 
 {
@@ -110,21 +152,6 @@
   "githublinkrepo": "https://github.com/Sagmanua/Telgram-bot"
 },
 {
-  "title": {
-    "es": "Ajedrez en Pygame",
-    "en": "Chess on Pygame",
-    "ua": "Шахи на Pygame"
-  },
-  "video": ["video/Chees/chees.mp4"],
-  "description": {
-    "es": "Este es un proyecto donde creé un juego de ajedrez sencillo en Python utilizando la librería Pygame.",
-    "en": "This is a project where I created a simple chess game in Python using the Pygame library.",
-    "ua": "Це проєкт, у якому я створив прості шахи на Python з використанням бібліотеки Pygame."
-  },
-  "language": ["Python"],
-  "githublinkrepo": "https://github.com/Sagmanua/Chess-in-Py"
-},
-{
     "title": {
       "es": "Mi AI en Google Colab",
       "en": "My AI in Google Colab",
@@ -140,30 +167,8 @@
     "githublinkrepo": "https://github.com/Sagmanua/SagmanOllamaAI",
     "githublinkwebsite": "https://sagmanua.github.io/SagmanOllamaAI/"
   },
-  {
-    "title": {
-      "es": "Recetas y Planificador de Comidas",
-      "en": "Recipes and Meal Planner",
-      "ua": "Рецепти та планувальник харчування"
-    },
-    "image": [
-      "foto of projects/Recetas/CRUD.png",
-      "foto of projects/Recetas/index.png",
-      "foto of projects/Recetas/login.png",
-      "foto of projects/Recetas/planner.png",
-      "foto of projects/Recetas/profile.png",
-      "foto of projects/Recetas/recipe_details.png",
-      "foto of projects/Recetas/update.png"
-    ],
-    "description": {
-      "es": "Una aplicación web full-stack para gestionar recetas y organizar un calendario semanal. Incluye autenticación y CRUD con PHP y MySQL.",
-      "en": "A full-stack web application to manage recipes and organize a weekly calendar. Includes authentication and CRUD using PHP and MySQL.",
-      "ua": "Повнофункціональний вебдодаток для керування рецептами та організації тижневого календаря. Включає автентифікацію та CRUD за допомогою PHP та MySQL."
-    },
-    "language": ["Php", "CSS", "Mysql"],
-    "githublinkrepo": "https://github.com/Sagmanua/Proyecto-Entornos-de-Desarrollo",
-    "githublinkwebsite": "https://recepe-planer.great-site.net/Proyecto-Entornos-de-Desarrollo/"
-  },
+
+
   {
     "title": {
       "es": "Panel de Administración de Noticias",
