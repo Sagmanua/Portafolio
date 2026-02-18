@@ -1,6 +1,24 @@
 [
 {
   "title": {
+    "es": "Bot de Telegram del Clima",
+    "en": "Telegram Weather Bot",
+    "ua": "Telegram-бот для погоди"
+  },
+  "video": "video/Weather_tgbot/work_of_bot.mp4",
+  "description": {
+    "es": "Este bot te permite consultar el clima actual o programar mensajes en un horario específico para saber si lloverá o cómo estará el día. También puedes consultar el pronóstico para la semana. El bot es multilingüe y soporta inglés, ucraniano, español, francés, ruso, portugués y alemán.",
+    "en": "This bot allows you to check the current weather or schedule messages at a specific time to know the daily forecast and if it will rain. You can also check the weather forecast for the entire week. The bot is multilingual, supporting EN, UA, ES, FR, RU, PT, and DE.",
+    "ua": "Цей бот дозволяє перевіряти погоду на сьогодні або налаштувати сповіщення на певний час, щоб знати, чи буде дощ. Також можна переглянути прогноз на тиждень. Бот багатомовний і підтримує англійську, українську, іспанську, французьку, російську, португальську та німецьку мови."
+  },
+  "language": [
+    "Python",
+    "Telegram_bot"
+  ],
+  "githublinkrepo": "https://github.com/Sagmanua/Telgram-bot/Weather"
+},
+{
+  "title": {
     "es": "Bot de Telegram",
     "en": "Telegram Bot",
     "ua": "Telegram-бот"
