@@ -1,6 +1,24 @@
 [
 {
   "title": {
+    "es": "Bot de Noticias de Telegram",
+    "en": "Telegram News Bot",
+    "ua": "Telegram-бот новин"
+  },
+  "video": "video/News_bot/work_of_bot.mp4",
+  "description": {
+    "es": "Con este bot puedes elegir qué noticias quieres recibir. Carga los temas más importantes según tus preferencias y permite programar un horario exacto para recibir las noticias más destacadas del mundo automáticamente.",
+    "en": "This bot allows you to customize your news feed by selecting topics that interest you most. It fetches top headlines based on your choices and features a scheduling system to send you the world's most important news at a specific time of your day.",
+    "ua": "За допомогою цього бота ви можете обирати цікаві для вас теми новин. Він завантажує найважливіші події за обраними категоріями, а також дозволяє створити розклад, щоб отримувати головні новини світу у точно визначений час."
+  },
+  "language": [
+    "Python",
+    "Telegram_bot"
+  ],
+  "githublinkrepo": "https://github.com/Sagmanua/Telgram-bot/News"
+},
+{
+  "title": {
     "es": "Bot de Telegram del Clima",
     "en": "Telegram Weather Bot",
     "ua": "Telegram-бот для погоди"
