@@ -1,6 +1,3 @@
-// =======================
-// LANGUAGE ICONS
-// =======================
 const languageImages = {
     JavaScript: "images/js.png",
     Python: "images/python.png",
@@ -16,52 +13,19 @@ let projectData = [];
 let currentLang = localStorage.getItem('idioma') || 'es';
 let currentFilter = null;
 
-
-// =======================
-// UI TEXT TRANSLATIONS
-// =======================
 const uiText = {
-    en: {
-        watchDemo: "Watch Demo",
-        viewDetails: "View Details",
-        website: "Website",
-        github: "GitHub",
-        videoLabel: "▶ Video Demo",
-        all: "All"
-    },
-    es: {
-        watchDemo: "Ver Demo",
-        viewDetails: "Ver Detalles",
-        website: "Sitio Web",
-        github: "GitHub",
-        videoLabel: "▶ Video",
-        all: "Todos"
-    },
-    ua: {
-        watchDemo: "Дивитися демо",
-        viewDetails: "Детальніше",
-        website: "Сайт",
-        github: "GitHub",
-        videoLabel: "▶ Відео",
-        all: "Всі"
-    }
+    en: { watchDemo: "Watch Demo", viewDetails: "View Details", website: "Website", github: "GitHub", videoLabel: "▶ Video Demo", all: "All" },
+    es: { watchDemo: "Ver Demo", viewDetails: "Ver Detalles", website: "Sitio Web", github: "GitHub", videoLabel: "▶ Video", all: "Todos" },
+    ua: { watchDemo: "Дивитися демо", viewDetails: "Детальніше", website: "Сайт", github: "GitHub", videoLabel: "▶ Відео", all: "Всі" }
 };
 
-
-// =======================
-// INTERSECTION OBSERVER
-// =======================
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-        if (e.isIntersecting) e.target.classList.add('reveal');
-    });
+// Intersection Observer
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('reveal'); observer.unobserve(e.target); } });
 }, { threshold: 0.1 });
 
-
-// =======================
-// GLOBAL VIDEO MODAL
-// =======================
-document.addEventListener("click", (e) => {
+// Modal
+document.addEventListener("click", e => {
     const modal = document.getElementById("videoModal");
     const video = document.getElementById("modalVideo");
     if (!modal || !video) return;
@@ -74,247 +38,114 @@ document.addEventListener("click", (e) => {
 
     if (e.target.classList.contains("close-modal") || e.target === modal) {
         modal.style.display = "none";
-        video.pause();
-        video.currentTime = 0;
-        video.src = "";
+        video.pause(); video.currentTime = 0; video.src = "";
     }
 });
 
-
-// =======================
 // INIT
-// =======================
 async function init() {
     try {
-        const response = await fetch('data.json');
-        projectData = await response.json();
-
+        const res = await fetch('data.json');
+        projectData = await res.json();
         renderFilters();
         renderProjects();
         setupLanguageSelector();
-
-    } catch (err) {
-        console.error("Data fetch error:", err);
-    }
+    } catch(err) { console.error("Data fetch error:", err); }
 }
 
-
-// =======================
 // FILTERS
-// =======================
 function renderFilters() {
-
     const container = document.getElementById('langFilter');
     if (!container) return;
-
-    container.innerHTML = '';
-
     const t = uiText[currentLang] || uiText.en;
 
-    // ===== ALL BUTTON =====
+    container.innerHTML = '';
+    const frag = document.createDocumentFragment();
+
     const allItem = document.createElement('div');
-    allItem.className = 'filter-item all-filter';
-    if (currentFilter === null) allItem.classList.add('active');
+    allItem.className = 'filter-item all-filter' + (currentFilter===null?' active':'');
+    allItem.innerHTML = `<span>${t.all}</span>`;
+    allItem.onclick = () => { currentFilter=null; renderProjects(); renderFilters(); };
+    frag.appendChild(allItem);
 
-    allItem.addEventListener('click', () => {
-        currentFilter = null;
-        renderProjects();
-        renderFilters();
-    });
-
-    const allText = document.createElement('span');
-    allText.textContent = t.all;
-    allItem.appendChild(allText);
-    container.appendChild(allItem);
-
-    // ===== LANGUAGE FILTERS =====
-    const langs = [...new Set(projectData.flatMap(p =>
-        Array.isArray(p.language) ? p.language : [p.language]
-    ))].filter(l => l && l.trim() !== "");
-
+    const langs = [...new Set(projectData.flatMap(p => Array.isArray(p.language)?p.language:[p.language]))].filter(Boolean);
     langs.forEach(lang => {
-
         const item = document.createElement('div');
-        item.className = 'filter-item';
-        if (lang === currentFilter) item.classList.add('active');
-
-        item.addEventListener('click', () => {
-            currentFilter = lang;
-            renderProjects(lang);
-            renderFilters();
-        });
-
-        const img = document.createElement('img');
-        img.src = languageImages[lang] || 'images/default.png';
-        img.className = 'filter-icon';
-        img.alt = lang;
-
-        const span = document.createElement('span');
-        span.textContent = lang;
-
-        item.appendChild(img);
-        item.appendChild(span);
-        container.appendChild(item);
+        item.className = 'filter-item' + (lang===currentFilter?' active':'');
+        item.innerHTML = `<img src="${languageImages[lang]||'images/default.png'}" class="filter-icon" alt="${lang}"><span>${lang}</span>`;
+        item.onclick = () => { currentFilter=lang; renderProjects(); renderFilters(); };
+        frag.appendChild(item);
     });
+
+    container.appendChild(frag);
 }
 
-
-// =======================
-// PROJECT RENDER
-// =======================
-function renderProjects(filter = currentFilter) {
-
+// PROJECTS
+function renderProjects(filter=currentFilter) {
     const grid = document.getElementById('portfolioGrid');
     if (!grid) return;
 
     grid.innerHTML = '';
-
-    const filtered = filter
-        ? projectData.filter(p =>
-            (Array.isArray(p.language) ? p.language : [p.language]).includes(filter)
-        )
-        : projectData;
-
+    const frag = document.createDocumentFragment();
+    const filtered = filter ? projectData.filter(p => (Array.isArray(p.language)?p.language:[p.language]).includes(filter)) : projectData;
+    const t = uiText[currentLang] || uiText.en;
 
     filtered.forEach((item, index) => {
-
         const card = document.createElement('div');
         card.className = 'card';
-
-        const t = uiText[currentLang] || uiText.en;
 
         const title = item.title?.[currentLang] || item.title?.en || "No title";
         const desc = item.description?.[currentLang] || item.description?.en || "";
 
-        // SAFE VIDEO SOURCE
-        const videoSrc = item.video
-            ? (Array.isArray(item.video) ? item.video[0] : item.video)
-            : null;
-
-        // =======================
         // MEDIA
-        // =======================
         let mediaHTML = '';
+        const videoSrc = item.video ? (Array.isArray(item.video)?item.video[0]:item.video) : null;
+        if (item.image) mediaHTML = `<img src="${Array.isArray(item.image)?item.image[0]:item.image}" class="thumb" loading="lazy" onerror="this.src='images/default.png'">`;
+        else if (videoSrc) mediaHTML = `<video class="thumb video-thumb" muted playsinline loop preload="metadata"><source src="${videoSrc}" type="video/mp4"></video>`;
+        else mediaHTML = `<img src="images/default.png" class="thumb" loading="lazy">`;
 
-        if (item.image) {
-            const imgSrc = Array.isArray(item.image) ? item.image[0] : item.image;
-            mediaHTML = `<img src="${imgSrc}" class="thumb" onerror="this.src='images/default.png'">`;
-        }
-        else if (videoSrc) {
-            mediaHTML = `
-                <video class="thumb video-thumb" muted playsinline loop preload="metadata">
-                    <source src="${videoSrc}" type="video/mp4">
-                </video>
-            `;
-        }
-        else {
-            mediaHTML = `<img src="images/default.png" class="thumb">`;
-        }
-
-        // =======================
-        // LANGUAGE BADGES
-        // =======================
+        // LANG BADGES
         let langsHTML = '';
-if (item.language && item.language.length > 0) {
-    const langs = Array.isArray(item.language) ? item.language : [item.language];
-    
-    langsHTML = langs.map(lang => {
-        // Get the icon path from your languageImages object
-        const iconPath = languageImages[lang] || 'images/default.png';
-        return `
-            <div class="lang-badge">
-                <img src="${iconPath}" alt="${lang}" class="badge-icon">
-                <span>${lang}</span>
-            </div>`;
-    }).join('');
-}
+        if(item.language) {
+            const langs = Array.isArray(item.language)?item.language:[item.language];
+            langsHTML = langs.map(lang => `<div class="lang-badge"><img src="${languageImages[lang]||'images/default.png'}" class="badge-icon" alt="${lang}"><span>${lang}</span></div>`).join('');
+        }
 
-        // =======================
         // BUTTONS
-        // =======================
-        const repoBtn = item.githublinkrepo
-            ? `<a href="${item.githublinkrepo}" target="_blank" class="card-btn repo">${t.github}</a>`
-            : "";
+        const repoBtn = item.githublinkrepo?`<a href="${item.githublinkrepo}" target="_blank" class="card-btn repo">${t.github}</a>`:'';
+        const siteBtn = item.githublinkwebsite?`<a href="${item.githublinkwebsite}" target="_blank" class="card-btn site">${t.website}</a>`:'';
+        const videoBtn = videoSrc?`<button class="card-btn demo" data-video="${videoSrc}">${t.watchDemo}</button>`:'';
 
-        const siteBtn = item.githublinkwebsite
-            ? `<a href="${item.githublinkwebsite}" target="_blank" class="card-btn site">${t.website}</a>`
-            : "";
+        card.innerHTML = `
+            <h3>${title}</h3>
+            <div class="thumb-wrapper">${mediaHTML}${videoSrc?`<div class="play-badge">${t.videoLabel}</div>`:''}</div>
+            <p style="color:var(--text-dim); margin-bottom:15px; font-size:0.9rem;">${desc}</p>
+            <div class="project-langs">${langsHTML}</div>
+            <div class="card-actions">${repoBtn}${siteBtn}${videoBtn}</div>
+            <a href="details.html?id=${index}" class="nav-btn details">${t.viewDetails}</a>
+        `;
 
-        const videoBtn = videoSrc
-            ? `<button class="card-btn demo" data-video="${videoSrc}">${t.watchDemo}</button>`
-            : "";
-
-        // =======================
-        // CARD HTML
-        // =======================
-        // =======================
-// CARD HTML (Updated Layout)
-// =======================
-card.innerHTML = `
-    <h3>${title}</h3>
-
-    <div class="thumb-wrapper">
-        ${mediaHTML}
-        ${videoSrc ? `<div class="play-badge">${t.videoLabel}</div>` : ''}
-    </div>
-
-    <p style="color:var(--text-dim); margin-bottom:15px; font-size:0.9rem;">
-        ${desc}
-    </p>
-
-    <div class="project-langs">
-        ${langsHTML}
-    </div>
-
-    <div class="card-actions">
-        ${repoBtn}
-        ${siteBtn}
-        ${videoBtn}
-    </div>
-
-    <a href="details.html?id=${index}" class="nav-btn details">
-        ${t.viewDetails}
-    </a>
-`;
-
-        grid.appendChild(card);
-
-        // =======================
-        // VIDEO HOVER
-        // =======================
-        const video = card.querySelector('video');
-        if (video) {
-            const playVideo = () => video.play().catch(()=>{});
-            const stopVideo = () => { video.pause(); video.currentTime = 0; };
-
-            card.addEventListener('mouseenter', playVideo);
-            card.addEventListener('mouseleave', stopVideo);
-            card.addEventListener('touchstart', playVideo);
-            card.addEventListener('touchend', stopVideo);
+        const videoEl = card.querySelector('video');
+        if(videoEl){
+            card.addEventListener('mouseenter', ()=>videoEl.play().catch(()=>{}));
+            card.addEventListener('mouseleave', ()=>{ videoEl.pause(); videoEl.currentTime=0; });
+            card.addEventListener('touchstart', ()=>videoEl.play().catch(()=>{}));
+            card.addEventListener('touchend', ()=>{ videoEl.pause(); videoEl.currentTime=0; });
         }
 
         observer.observe(card);
+        frag.appendChild(card);
     });
+
+    grid.appendChild(frag);
 }
 
-
-// =======================
 // LANGUAGE SELECTOR
-// =======================
-function setupLanguageSelector() {
-    const sel = document.getElementById('lang-selector');
-    if (!sel) return;
-
-    sel.value = currentLang;
-
-    sel.onchange = (e) => {
-        currentLang = e.target.value;
-        localStorage.setItem('idioma', currentLang);
-        renderProjects();
-        renderFilters();
-    };
+function setupLanguageSelector(){
+    const sel=document.getElementById('lang-selector');
+    if(!sel) return;
+    sel.value=currentLang;
+    sel.onchange = e => { currentLang=e.target.value; localStorage.setItem('idioma',currentLang); renderProjects(); renderFilters(); };
 }
 
-
-// =======================
 init();
