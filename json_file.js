@@ -13,7 +13,12 @@ const languageImages = {
     Php: "images/php.png",
     Mysql: "images/mysql.png",
     Telegram_bot: "images/telegram_bot.png",
-    JSON: "images/json.png"
+    JSON: "images/json.png",
+    SQLite: "images/SQLite.png"
+
+
+
+    
 
 };
 
@@ -142,6 +147,9 @@ function displayProjects(filterLang) {
         const card = document.createElement('div');
         card.className = 'card';
 
+        // Get the absolute index from the original projectData array
+        const absoluteIndex = projectData.indexOf(item);
+
         // Get localized text or fallback
         const titleText = (typeof item.title === 'object') ? item.title[currentLang] : item.title;
         const descText = (typeof item.description === 'object') ? item.description[currentLang] : item.description;
@@ -173,12 +181,16 @@ function displayProjects(filterLang) {
             return `<img src="${src}" title="${l}" class="lang-icon">`;
         }).join('');
 
+        // Updated card content with "More Details" button
         card.innerHTML = `
             <div class="title">${titleText}</div>
             ${mediaHTML}
             <div class="desc">${descText}</div>
             <div class="desc">${uiTranslations[currentLang].langLabel} ${iconsHTML}</div>
             <div class="desc buttons">
+                <a href="details.html?id=${absoluteIndex}" class="button-link" style="background-color: var(--accent-green); color: white;">
+                    ${currentLang === 'ua' ? 'Детальніше' : (currentLang === 'es' ? 'Más detalles' : 'More Details')}
+                </a>
                 ${item.githublinkwebsite ? `<a href="${item.githublinkwebsite}" target="_blank" class="button-link">${uiTranslations[currentLang].btnWeb}</a>` : ''}
                 ${item.githublinkrepo ? `<a href="${item.githublinkrepo}" target="_blank" class="button-link">${uiTranslations[currentLang].btnRepo}</a>` : ''}
             </div>
