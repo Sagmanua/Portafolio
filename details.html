@@ -3,43 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Details</title>
+    <title>Project Details | Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="details-page">
     <header class="topbar">
-        <div>
-            <h1 class="logo" id="det-title-header">Project Details</h1>
-            <h2 class="logo">Bohdan Sydorenko</h2>
+        <div class="nav-left">
+            <h1 class="logo" id="det-title-header">Loading...</h1>
         </div>
-        <div class="lang-selector-container">
-            <select id="lang-selector">
-                <option value="es">🇪🇸 ES</option>
-                <option value="en">🇺🇸 EN</option>
-                <option value="ua">🇺🇦 UA</option>
-            </select>
-        </div>
-        <div class="header-center">
-            <a href="index.html" class="button">← Back to Portfolio</a>
+        <div class="nav-right">
+            <div class="lang-box">
+                <select id="lang-selector">
+                    <option value="es">🇪🇸 ES</option>
+                    <option value="en">🇺🇸 EN</option>
+                    <option value="ua">🇺🇦 UA</option>
+                </select>
+            </div>
+            <a href="index.html" class="nav-btn">← Back</a>
         </div>
     </header>
 
     <main class="container">
-        <div id="details-container" class="card" style="max-width: 900px; margin: 40px auto; transform: none;">
-            <h1 id="det-title" class="title" style="font-size: 32px;"></h1>
-            <div id="det-media"></div>
-            <div id="det-languages" class="desc" style="margin-top: 20px;"></div>
-            <div id="det-long-description" class="desc" style="font-size: 1.1em; line-height: 1.6;"></div>
+        <div id="details-container" class="card" style="max-width: 900px; margin: 40px auto; transform: none; opacity: 0; transition: opacity 0.5s;">
+            <h1 id="det-title" class="title" style="font-size: 32px; margin-bottom: 20px;"></h1>
             
-            <div class="desc buttons" id="det-links">
+            <div id="det-media" class="media-container">
+                </div>
+            
+            <div id="det-languages" class="desc" style="margin-top: 25px; display: flex; align-items: center; gap: 10px;">
+                </div>
+            
+            <div id="det-long-description" class="desc" style="font-size: 1.1rem; line-height: 1.8; white-space: pre-wrap; margin-top: 20px; color: var(--text);">
+                </div>
+            
+            <div class="card-actions" id="det-links" style="margin-top: 30px; display: flex; gap: 15px;">
                 </div>
         </div>
     </main>
-
-    <footer class="footer">
-        <p class="contacto">Contact me</p>
-        <a href="https://github.com/Sagmanua"><img class="contacto_img" src="images/github.png"></a>
-    </footer>
 
     <script src="details.js"></script>
 </body>

@@ -6,116 +6,97 @@ const languageImages = {
     Php: "images/php.png",
     Mysql: "images/mysql.png",
     Telegram_bot: "images/telegram_bot.png",
-    JSON: "images/json.png"
+    JSON: "images/json.png",
+    Java: "images/java.png",
+    SQLite: "images/SQLite.png"
 };
 
-const uiTranslations = {
-    es: { langLabel: "Idiomas:", btnWeb: "Sitio Web", btnRepo: "Repositorio" },
-    en: { langLabel: "Languages:", btnWeb: "Website", btnRepo: "Repository" },
-    ua: { langLabel: "Мови:", btnWeb: "Вебсайт", btnRepo: "Репозиторій" }
+const uiText = {
+    es: { langLabel: "Tecnologías:", btnWeb: "Sitio Web", btnRepo: "Repositorio" },
+    en: { langLabel: "Technologies:", btnWeb: "Website", btnRepo: "Repository" },
+    ua: { langLabel: "Технології:", btnWeb: "Вебсайт", btnRepo: "Репозиторій" }
 };
 
 let currentLang = localStorage.getItem('idioma') || 'es';
 
-async function initDetails() {
+async function loadProjectDetails() {
     const params = new URLSearchParams(window.location.search);
-    const projectId = params.get('id');
+    const id = params.get('id');
+
+    if (id === null) {
+        console.error("No project ID found in URL");
+        return;
+    }
 
     try {
         const response = await fetch('data.json');
-        const projectData = await response.json();
-        const project = projectData[projectId];
+        const data = await response.json();
+        const project = data[id];
 
         if (!project) {
-            window.location.href = 'index.html';
+            document.getElementById('det-title-header').textContent = "Project not found";
             return;
         }
 
         renderProject(project);
-        setupLanguageSelector();
-    } catch (err) {
-        console.error("Error loading project details:", err);
+    } catch (error) {
+        console.error("Error loading JSON:", error);
     }
 }
 
-function renderFilters() {
-    const container = document.getElementById('langFilter');
-    if (!container) return;
-    container.innerHTML = '';
-
-    // Get unique languages, removing any empty strings from the data
-    const langs = [...new Set(projectData.flatMap(p => 
-        Array.isArray(p.language) ? p.language : [p.language]
-    ))].filter(l => l && l.trim() !== "");
-
-    langs.forEach(lang => {
-        const item = document.createElement('div');
-        item.className = 'filter-item';
-        item.onclick = () => renderProjects(lang);
-
-        // Language Icon
-        const img = document.createElement('img');
-        img.src = languageImages[lang] || 'images/default.png';
-        img.className = 'filter-icon';
-        
-        // Language Text Label
-        const span = document.createElement('span');
-        span.textContent = lang;
-
-        item.appendChild(img);
-        item.appendChild(span);
-        container.appendChild(item);
-    });
-}
-
-function renderProjects(filter = null) {
-    const grid = document.getElementById('portfolioGrid');
-    grid.innerHTML = '';
+function renderProject(item) {
+    const t = uiText[currentLang];
     
-    const filtered = filter 
-        ? projectData.filter(p => (Array.isArray(p.language) ? p.language : [p.language]).includes(filter))
-        : projectData;
+    // 1. Titles
+    const titleText = item.title[currentLang] || item.title['en'];
+    document.getElementById('det-title').textContent = titleText;
+    document.getElementById('det-title-header').textContent = titleText;
 
-    filtered.forEach((item) => {
-        const card = document.createElement('div');
-        card.className = 'card';
-        
-        const title = item.title[currentLang] || item.title['en'];
-        const desc = item.description[currentLang] || item.description['en'];
+    // 2. Media (Video or Image)
+    const mediaBox = document.getElementById('det-media');
+    if (item.video) {
+        mediaBox.innerHTML = `
+            <video controls autoplay muted style="width:100%; border-radius:12px; border: 1px solid var(--glass);">
+                <source src="${item.video}" type="video/mp4">
+            </video>`;
+    } else {
+        const imgSrc = Array.isArray(item.image) ? item.image[0] : item.image;
+        mediaBox.innerHTML = `<img src="${imgSrc}" style="width:100%; border-radius:12px;" onerror="this.src='images/default.png'">`;
+    }
 
-        // Logic to handle "video" tag vs "image" tag
-        let displayImage = 'images/default.png'; 
-
-        if (item.image) {
-            displayImage = Array.isArray(item.image) ? item.image[0] : item.image;
-        } else if (item.video) {
-            // Since it's a video, we show a "Video Project" placeholder
-            displayImage = 'images/video-placeholder.png'; 
+    // 3. Languages
+    const langBox = document.getElementById('det-languages');
+    const langs = Array.isArray(item.language) ? item.language : [item.language];
+    langBox.innerHTML = `<strong>${t.langLabel}</strong>`;
+    langs.forEach(l => {
+        if(languageImages[l]) {
+            langBox.innerHTML += `<img src="${languageImages[l]}" title="${l}" style="width:30px; height:30px;">`;
         }
-
-        card.innerHTML = `
-            <h3>${title}</h3>
-            <img src="${displayImage}" class="thumb" onerror="this.src='images/default.png'">
-            <p style="color:var(--text-dim); margin-bottom:15px; font-size:0.9rem;">${desc}</p>
-            <a href="details.html?id=${projectData.indexOf(item)}" class="nav-btn" style="display:inline-block">View Details</a>
-        `;
-        grid.appendChild(card);
     });
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('reveal'); });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.card').forEach(c => observer.observe(c));
+    // 4. Description
+    document.getElementById('det-long-description').textContent = item.long_description[currentLang] || item.long_description['en'];
+
+    // 5. Buttons
+    const linkBox = document.getElementById('det-links');
+    if (item.githublinkrepo) {
+        linkBox.innerHTML += `<a href="${item.githublinkrepo}" target="_blank" class="nav-btn">${t.btnRepo}</a>`;
+    }
+    if (item.githublinkwebsite) {
+        linkBox.innerHTML += `<a href="${item.githublinkwebsite}" target="_blank" class="nav-btn" style="background:var(--accent); color:black;">${t.btnWeb}</a>`;
+    }
+
+    // Show content
+    document.getElementById('details-container').style.opacity = '1';
 }
 
-function setupLanguageSelector() {
-    const selector = document.getElementById('lang-selector');
-    selector.value = currentLang;
-    selector.onchange = (e) => {
-        currentLang = e.target.value;
-        localStorage.setItem('idioma', currentLang);
-        location.reload(); // Reload to refresh the translations
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+    const sel = document.getElementById('lang-selector');
+    sel.value = currentLang;
+    sel.onchange = (e) => {
+        localStorage.setItem('idioma', e.target.value);
+        location.reload();
     };
-}
-
-initDetails();
+    loadProjectDetails();
+});

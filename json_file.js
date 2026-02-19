@@ -26,21 +26,24 @@ const uiText = {
         viewDetails: "View Details",
         website: "Website",
         github: "GitHub",
-        videoLabel: "▶ Video Demo"
+        videoLabel: "▶ Video Demo",
+        all: "All"
     },
     es: {
         watchDemo: "Ver Demo",
         viewDetails: "Ver Detalles",
         website: "Sitio Web",
         github: "GitHub",
-        videoLabel: "▶ Video"
+        videoLabel: "▶ Video",
+        all: "Todos"
     },
     ua: {
         watchDemo: "Дивитися демо",
         viewDetails: "Детальніше",
         website: "Сайт",
         github: "GitHub",
-        videoLabel: "▶ Відео"
+        videoLabel: "▶ Відео",
+        all: "Всі"
     }
 };
 
@@ -106,6 +109,25 @@ function renderFilters() {
 
     container.innerHTML = '';
 
+    const t = uiText[currentLang] || uiText.en;
+
+    // ===== ALL BUTTON =====
+    const allItem = document.createElement('div');
+    allItem.className = 'filter-item all-filter';
+    if (currentFilter === null) allItem.classList.add('active');
+
+    allItem.addEventListener('click', () => {
+        currentFilter = null;
+        renderProjects();
+        renderFilters();
+    });
+
+    const allText = document.createElement('span');
+    allText.textContent = t.all;
+    allItem.appendChild(allText);
+    container.appendChild(allItem);
+
+    // ===== LANGUAGE FILTERS =====
     const langs = [...new Set(projectData.flatMap(p =>
         Array.isArray(p.language) ? p.language : [p.language]
     ))].filter(l => l && l.trim() !== "");
@@ -189,6 +211,23 @@ function renderProjects(filter = currentFilter) {
             mediaHTML = `<img src="images/default.png" class="thumb">`;
         }
 
+        // =======================
+        // LANGUAGE BADGES
+        // =======================
+        let langsHTML = '';
+if (item.language && item.language.length > 0) {
+    const langs = Array.isArray(item.language) ? item.language : [item.language];
+    
+    langsHTML = langs.map(lang => {
+        // Get the icon path from your languageImages object
+        const iconPath = languageImages[lang] || 'images/default.png';
+        return `
+            <div class="lang-badge">
+                <img src="${iconPath}" alt="${lang}" class="badge-icon">
+                <span>${lang}</span>
+            </div>`;
+    }).join('');
+}
 
         // =======================
         // BUTTONS
@@ -205,35 +244,40 @@ function renderProjects(filter = currentFilter) {
             ? `<button class="card-btn demo" data-video="${videoSrc}">${t.watchDemo}</button>`
             : "";
 
-
         // =======================
         // CARD HTML
         // =======================
-        card.innerHTML = `
-            <h3>${title}</h3>
+        // =======================
+// CARD HTML (Updated Layout)
+// =======================
+card.innerHTML = `
+    <h3>${title}</h3>
 
-            <div class="thumb-wrapper">
-                ${mediaHTML}
-                ${videoSrc ? `<div class="play-badge">${t.videoLabel}</div>` : ''}
-            </div>
+    <div class="thumb-wrapper">
+        ${mediaHTML}
+        ${videoSrc ? `<div class="play-badge">${t.videoLabel}</div>` : ''}
+    </div>
 
-            <p style="color:var(--text-dim); margin-bottom:15px; font-size:0.9rem;">
-                ${desc}
-            </p>
+    <p style="color:var(--text-dim); margin-bottom:15px; font-size:0.9rem;">
+        ${desc}
+    </p>
 
-            <div class="card-actions">
-                ${repoBtn}
-                ${siteBtn}
-                ${videoBtn}
-            </div>
+    <div class="project-langs">
+        ${langsHTML}
+    </div>
 
-            <a href="details.html?id=${index}" class="nav-btn details">
-                ${t.viewDetails}
-            </a>
-        `;
+    <div class="card-actions">
+        ${repoBtn}
+        ${siteBtn}
+        ${videoBtn}
+    </div>
+
+    <a href="details.html?id=${index}" class="nav-btn details">
+        ${t.viewDetails}
+    </a>
+`;
 
         grid.appendChild(card);
-
 
         // =======================
         // VIDEO HOVER

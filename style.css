@@ -256,3 +256,62 @@ main { padding: 120px 5% 50px; }
     cursor: pointer;
     z-index: 10;
 }
+
+.all-filter {
+    border: 2px solid var(--accent);
+    font-weight: bold;
+}
+
+/* Container for the badges */
+.project-langs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+/* Individual Badge styling */
+.lang-badge {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1); /* Darker background for contrast */
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* The Icon inside the badge */
+.badge-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+    object-fit: contain;
+}
+
+.footer {
+    padding: 50px 0;
+    text-align: center;
+    border-top: 1px solid var(--glass);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.soc-icon {
+    width: 30px; /* Small fixed size */
+    height: 30px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    /* Since your icons are black, this makes them white for the dark theme */
+    filter: invert(1); 
+}
+
+.soc-icon:hover {
+    transform: scale(1.2);
+    filter: invert(1) drop-shadow(0 0 5px var(--accent));
+}
