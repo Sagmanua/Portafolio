@@ -38,36 +38,74 @@ async function initDetails() {
     }
 }
 
-function renderProject(item) {
-    // Title & Description
-    document.getElementById('det-title').textContent = item.title[currentLang];
-    document.getElementById('det-title-header').textContent = item.title[currentLang];
+function renderFilters() {
+    const container = document.getElementById('langFilter');
+    if (!container) return;
+    container.innerHTML = '';
+
+    // Get unique languages, removing any empty strings from the data
+    const langs = [...new Set(projectData.flatMap(p => 
+        Array.isArray(p.language) ? p.language : [p.language]
+    ))].filter(l => l && l.trim() !== "");
+
+    langs.forEach(lang => {
+        const item = document.createElement('div');
+        item.className = 'filter-item';
+        item.onclick = () => renderProjects(lang);
+
+        // Language Icon
+        const img = document.createElement('img');
+        img.src = languageImages[lang] || 'images/default.png';
+        img.className = 'filter-icon';
+        
+        // Language Text Label
+        const span = document.createElement('span');
+        span.textContent = lang;
+
+        item.appendChild(img);
+        item.appendChild(span);
+        container.appendChild(item);
+    });
+}
+
+function renderProjects(filter = null) {
+    const grid = document.getElementById('portfolioGrid');
+    grid.innerHTML = '';
     
-    // Use long_description if available, otherwise fallback to standard description
-    const longDesc = item.long_description ? item.long_description[currentLang] : item.description[currentLang];
-    document.getElementById('det-long-description').innerHTML = longDesc.replace(/\n/g, '<br>');
+    const filtered = filter 
+        ? projectData.filter(p => (Array.isArray(p.language) ? p.language : [p.language]).includes(filter))
+        : projectData;
 
-    // Media Handling
-    const mediaContainer = document.getElementById('det-media');
-    const images = Array.isArray(item.image) ? item.image : (item.image ? [item.image] : []);
-    const videos = Array.isArray(item.video) ? item.video : (item.video ? [item.video] : []);
-    
-    mediaContainer.innerHTML = [
-        ...images.map(src => `<img src="${src}" class="thumb" style="max-height: 500px; margin-bottom: 15px;">`),
-        ...videos.map(src => `<video src="${src}" class="thumb" style="max-height: 500px;" controls muted loop></video>`)
-    ].join('');
+    filtered.forEach((item) => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        
+        const title = item.title[currentLang] || item.title['en'];
+        const desc = item.description[currentLang] || item.description['en'];
 
-    // Languages
-    const itemLangs = Array.isArray(item.language) ? item.language : [item.language];
-    const iconsHTML = itemLangs.map(l => `<img src="${languageImages[l] || 'images/default.png'}" title="${l}" class="lang-icon">`).join('');
-    document.getElementById('det-languages').innerHTML = `${uiTranslations[currentLang].langLabel} ${iconsHTML}`;
+        // Logic to handle "video" tag vs "image" tag
+        let displayImage = 'images/default.png'; 
 
-    // Links
-    const linksContainer = document.getElementById('det-links');
-    linksContainer.innerHTML = `
-        ${item.githublinkwebsite ? `<a href="${item.githublinkwebsite}" target="_blank" class="button-link">${uiTranslations[currentLang].btnWeb}</a>` : ''}
-        ${item.githublinkrepo ? `<a href="${item.githublinkrepo}" target="_blank" class="button-link">${uiTranslations[currentLang].btnRepo}</a>` : ''}
-    `;
+        if (item.image) {
+            displayImage = Array.isArray(item.image) ? item.image[0] : item.image;
+        } else if (item.video) {
+            // Since it's a video, we show a "Video Project" placeholder
+            displayImage = 'images/video-placeholder.png'; 
+        }
+
+        card.innerHTML = `
+            <h3>${title}</h3>
+            <img src="${displayImage}" class="thumb" onerror="this.src='images/default.png'">
+            <p style="color:var(--text-dim); margin-bottom:15px; font-size:0.9rem;">${desc}</p>
+            <a href="details.html?id=${projectData.indexOf(item)}" class="nav-btn" style="display:inline-block">View Details</a>
+        `;
+        grid.appendChild(card);
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('reveal'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.card').forEach(c => observer.observe(c));
 }
 
 function setupLanguageSelector() {
