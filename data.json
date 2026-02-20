@@ -30,7 +30,7 @@
     "en": "Recipes and Meal Planner",
     "ua": "Рецепти та планувальник харчування"
   },
-  "video":"video/planner",
+  "video":"video/planner/planner.mp4",
   "description": {
     "es": "Una aplicación web full-stack para gestionar recetas y organizar un calendario semanal. Incluye autenticación y CRUD con PHP y MySQL.",
     "en": "A full-stack web application to manage recipes and organize a weekly calendar. Includes authentication and CRUD using PHP and MySQL.",
