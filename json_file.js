@@ -9,7 +9,11 @@ const languageImages = {
     java: "images/java.png",
     php: "images/php.png",
     mysql: "images/mysql.png",
-    sqlite: "images/sqlite.png"
+    sqlite: "images/sqlite.png",
+    telegram_bot: "images/telegram_bot.png",
+    json: "images/json.png"
+
+
 };
 
 // ============================

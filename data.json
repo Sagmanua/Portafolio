@@ -30,15 +30,7 @@
     "en": "Recipes and Meal Planner",
     "ua": "Рецепти та планувальник харчування"
   },
-  "image": [
-    "foto of projects/Recetas/CRUD.png",
-    "foto of projects/Recetas/index.png",
-    "foto of projects/Recetas/login.png",
-    "foto of projects/Recetas/planner.png",
-    "foto of projects/Recetas/profile.png",
-    "foto of projects/Recetas/recipe_details.png",
-    "foto of projects/Recetas/update.png"
-  ],
+  "video":"video/planner",
   "description": {
     "es": "Una aplicación web full-stack para gestionar recetas y organizar un calendario semanal. Incluye autenticación y CRUD con PHP y MySQL.",
     "en": "A full-stack web application to manage recipes and organize a weekly calendar. Includes authentication and CRUD using PHP and MySQL.",
@@ -194,28 +186,27 @@
 {
   "title": {
     "es": "Buscador satori",
-    "en": "",
-    "ua": ""
+    "en": "Satori search engine",
+    "ua": "Пошукова система Satori"
   },
   "video": "https://www.youtube.com/watch?v=ObzFmz-c4Cs",
   "description": {
-    "es": "",
-    "en": "This is simply search system work like chorome.",
-    "ua": ""
+    "es": "Este es un sistema de búsqueda simple que funciona de manera similar a Google.",
+    "en": "This is simply search system work like google.",
+    "ua": "Це проста пошукова система, яка працює подібно до Google."
   },
     "long_description": {
-    "es": "",
-    "en": "",
-    "ua": ""
+    "es": "Cómo funciona: realizo un rastreo (parsing) que carga en SQLite el título y la URL. Cuando los usuarios escriben un texto en la búsqueda, selecciona los títulos que contienen esa palabra introducida y muestra la URL y el título correspondientes.",
+    "en": "How it work i do parse that load to by sqllite title and url when users write some text in search it select title that contain this world that user introduce adn give url and title",
+    "ua": "Як це працює: я роблю парсинг, який завантажує в SQLite заголовок та URL. Коли користувачі вводять текст у пошуку, система вибирає заголовки, що містять це слово, і видає відповідні URL та заголовок."
   },
   "language": [
-    "",
-    ""
+    "Python",
+    "PHP",
+    "SQLite"
   ],
-  "githublinkrepo": "",
-  "githublinkwebsite": ""
-}
-,
+  "githublinkrepo": "https://github.com/Sagmanua"
+},
 
 {
   "title": {
