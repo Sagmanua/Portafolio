@@ -103,7 +103,7 @@
     "en": "List of Useful Resources",
     "ua": "Список корисних ресурсів"
   },
-  "image": "foto of projects/List_of_Useful_Resources/image.png",
+  "video":"video/list/list_of_feachers.mp4",
   "description": {
     "es": "Este es un mazo simple donde puedes encontrar aplicaciones, repositorios, páginas y videos que ayudan a resolver diversos problemas. He incluido una calificación personal para resaltar las herramientas más útiles.",
     "en": "This is a curated collection of apps, repositories, websites, and videos that solve various technical challenges. It includes a rating system to help you identify the most effective and useful resources.",
@@ -266,7 +266,7 @@
     "en": "Multi-Zone Analog Clock",
     "ua": "Мультизонний аналоговий годинник"
   },
-  "image": "foto of projects/AnalogClock.png",
+  "video":"https://www.youtube.com/watch?v=Caw3GpzWtlI",
   "description": {
     "es": "Reloj interactivo con HTML Canvas. Permite seleccionar entre hora local y 12 zonas globales con ajuste DST automático.",
     "en": "Interactive clock built with HTML Canvas. Allows selection between local time and 12 global zones with automatic DST adjustment.",
@@ -287,7 +287,7 @@
     "en": "Wot Wordle",
     "ua": "Wot Wordle"
   },
-  "image": "foto of projects/Wot-wordle.png",
+  "video":"video/wot-wordle/wot_wordle.mp4",
   "description": {
     "es": "Mini-juego de adivinanza de tanques en Python (Tkinter). Utiliza un archivo JSON para datos de tanques y atributos.",
     "en": "Tank guessing mini-game in Python (Tkinter). Uses a JSON file for tank data and attributes.",
@@ -310,16 +310,16 @@
   },
   "image": "foto of projects/Generador_de_plantillas/image.png",
   "description": {
-    "es": "App Full Stack (Node.js/Express) para crear borradores de email por categorías con persistencia de datos.",
-    "en": "Full Stack App (Node.js/Express) to create email drafts by categories with data persistence.",
-    "ua": "Full Stack додаток (Node.js/Express) для створення чернеток електронних листів за категоріями зі збереженням даних."
+    "es": "App Full Stack  para crear borradores de email por categorías con persistencia de datos.",
+    "en": "Full Stack App  to create email drafts by categories with data persistence.",
+    "ua": "Full Stack додаток  для створення чернеток електронних листів за категоріями зі збереженням даних."
   },
   "long_description": {
-    "es": "Esta aplicación Full Stack fue diseñada para optimizar la comunicación profesional mediante la creación de borradores de correo electrónico predefinidos. Es una herramienta ideal para gestionar respuestas frecuentes de forma rápida y organizada.\n\nCapacidades técnicas:\n- Arquitectura Robusta: Implementé un servidor con Node.js y Express para gestionar la lógica de negocio y la API de plantillas.\n- Categorización Dinámica: El sistema permite filtrar plantillas por categorías (trabajo, personal, soporte), facilitando la búsqueda del mensaje adecuado.\n- Persistencia de Datos: Utiliza una base de datos para almacenar y recuperar los borradores, asegurando que la información no se pierda entre sesiones.\n- Interfaz Intuitiva: Diseñé un frontend limpio donde el usuario puede previsualizar el contenido del email y copiarlo al portapapeles con un solo clic, listo para ser enviado.",
-    "en": "This Full Stack application was designed to optimize professional communication by creating predefined email drafts. It is an ideal tool for managing frequent responses quickly and in an organized manner.\n\nTechnical capabilities:\n- Robust Architecture: I implemented a server using Node.js and Express to manage business logic and the template API.\n- Dynamic Categorization: The system allows filtering templates by categories (work, personal, support), making it easy to find the right message.\n- Data Persistence: Uses a database to store and retrieve drafts, ensuring that information is not lost between sessions.\n- Intuitive Interface: I designed a clean frontend where users can preview email content and copy it to the clipboard with a single click, ready to be sent.",
-    "ua": "Цей Full Stack додаток був розроблений для оптимізації професійної комунікації за допомогою створення зумовлених чернеток електронних листів. Це ідеальний інструмент для швидкого та організованого керування частими відповідями.\n\nТехнічні можливості:\n- Надійна архітектура: Я реалізував сервер на Node.js та Express для керування бізнес-логікою та API шаблонів.\n- Динамічна категоризація: Система дозволяє фільтрувати шаблони за категоріями (робота, особисті, підтримка), що полегшує пошук потрібного повідомлення.\n- Збереження даних: Використовується база даних для зберігання та отримання чернеток, що гарантує збереження інформації між сесіями.\n- Інтуїтивно зрозумілий інтерфейс: Я розробив чистий frontend, де користувач може попередньо переглянути вміст листа та скопіювати його в буфер обміну одним кліком, готовим до відправки."
+    "es": "Esta aplicación Full Stack fue diseñada para optimizar la comunicación profesional mediante la creación de borradores de correo electrónico predefinidos. Es una herramienta ideal para gestionar respuestas frecuentes de forma rápida y organizada.\n\nCapacidades técnicas:\n- Arquitectura Robusta: Implementé un servidor con  y Express para gestionar la lógica de negocio y la API de plantillas.\n- Categorización Dinámica: El sistema permite filtrar plantillas por categorías (trabajo, personal, soporte), facilitando la búsqueda del mensaje adecuado.\n- Persistencia de Datos: Utiliza una base de datos para almacenar y recuperar los borradores, asegurando que la información no se pierda entre sesiones.\n- Interfaz Intuitiva: Diseñé un frontend limpio donde el usuario puede previsualizar el contenido del email y copiarlo al portapapeles con un solo clic, listo para ser enviado.",
+    "en": "This Full Stack application was designed to optimize professional communication by creating predefined email drafts. It is an ideal tool for managing frequent responses quickly and in an organized manner.\n\nTechnical capabilities:\n- Robust Architecture: I implemented a server using  and Express to manage business logic and the template API.\n- Dynamic Categorization: The system allows filtering templates by categories (work, personal, support), making it easy to find the right message.\n- Data Persistence: Uses a database to store and retrieve drafts, ensuring that information is not lost between sessions.\n- Intuitive Interface: I designed a clean frontend where users can preview email content and copy it to the clipboard with a single click, ready to be sent.",
+    "ua": "Цей Full Stack додаток був розроблений для оптимізації професійної комунікації за допомогою створення зумовлених чернеток електронних листів. Це ідеальний інструмент для швидкого та організованого керування частими відповідями.\n\nТехнічні можливості:\n- Надійна архітектура: Я реалізував сервер на  та Express для керування бізнес-логікою та API шаблонів.\n- Динамічна категоризація: Система дозволяє фільтрувати шаблони за категоріями (робота, особисті, підтримка), що полегшує пошук потрібного повідомлення.\n- Збереження даних: Використовується база даних для зберігання та отримання чернеток, що гарантує збереження інформації між сесіями.\n- Інтуїтивно зрозумілий інтерфейс: Я розробив чистий frontend, де користувач може попередньо переглянути вміст листа та скопіювати його в буфер обміну одним кліком, готовим до відправки."
   },
-  "language": ["JavaScript", "HTML", "CSS", "Node.js"],
+  "language": ["JavaScript", "HTML", "CSS"],
   "githublinkrepo": "https://github.com/Sagmanua/Ideas/tree/main/ideas/pisama",
   "githublinkwebsite": "https://sagmanua.github.io/Ideas/ideas/pisama/index.html"
 },
@@ -345,7 +345,7 @@
     "en": "Contact Agenda (Console)",
     "ua": "Книга контактів (Консоль)"
   },
-  "image": "foto of projects/MenuBetter.png",
+  "video":"video/menu/menu.mp4",
   "description": {
     "es": "Gestor de contactos en Python con validación de Regex y almacenamiento persistente mediante pickle.",
     "en": "Python contact manager with Regex validation and persistent storage using pickle.",
@@ -362,7 +362,7 @@
     "en": "ASIR Web Mini-project",
     "ua": "Вебмініпроєкт ASIR"
   },
-  "image": "foto of projects/ASIR.png",
+  "video":"video/ASIR/Asir.mp4",
   "description": {
     "es": "Sitio web de reseñas de videojuegos en HTML/CSS. Soporta múltiples idiomas y diseño responsivo.",
     "en": "Video game review website in HTML/CSS. Supports multiple languages and responsive design.",
