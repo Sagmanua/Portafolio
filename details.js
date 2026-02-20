@@ -19,6 +19,13 @@ const uiText = {
 
 let currentLang = localStorage.getItem('idioma') || 'es';
 
+// Helper function to extract YouTube embed URL
+function getYouTubeEmbed(url) {
+    if (!url) return null;
+    const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|v\/))([^?&]+)/);
+    return match ? `https://www.youtube.com/embed/${match[1]}` : null;
+}
+
 async function loadProjectDetails() {
     const params = new URLSearchParams(window.location.search);
     const id = params.get('id');
@@ -52,14 +59,38 @@ function renderProject(item) {
     document.getElementById('det-title').textContent = titleText;
     document.getElementById('det-title-header').textContent = titleText;
 
-    // 2. Media (Video or Image)
+    // 2. Media (YouTube Video, Local Video, or Image)
     const mediaBox = document.getElementById('det-media');
-    if (item.video) {
-        mediaBox.innerHTML = `
-            <video controls autoplay muted style="width:100%; border-radius:12px; border: 1px solid var(--glass);">
-                <source src="${item.video}" type="video/mp4">
-            </video>`;
-    } else {
+    
+    // Normalize video source (handle arrays just in case)
+    const videoSrc = item.video 
+        ? (Array.isArray(item.video) ? item.video[0] : item.video) 
+        : null;
+
+    if (videoSrc) {
+        const ytEmbedUrl = getYouTubeEmbed(videoSrc);
+        
+        if (ytEmbedUrl) {
+            // Render YouTube iframe
+            mediaBox.innerHTML = `
+                <div style="aspect-ratio: 16/9; width: 100%; border-radius: 12px; overflow: hidden; border: 1px solid var(--glass);">
+                    <iframe 
+                        src="${ytEmbedUrl}?autoplay=1" 
+                        frameborder="0" 
+                        allow="autoplay; encrypted-media; fullscreen" 
+                        allowfullscreen
+                        style="width: 100%; height: 100%;">
+                    </iframe>
+                </div>`;
+        } else {
+            // Render Local Video
+            mediaBox.innerHTML = `
+                <video controls autoplay muted style="width:100%; border-radius:12px; border: 1px solid var(--glass);">
+                    <source src="${videoSrc}" type="video/mp4">
+                </video>`;
+        }
+    } else if (item.image) {
+        // Render Image
         const imgSrc = Array.isArray(item.image) ? item.image[0] : item.image;
         mediaBox.innerHTML = `<img src="${imgSrc}" style="width:100%; border-radius:12px;" onerror="this.src='images/default.png'">`;
     }
@@ -75,10 +106,13 @@ function renderProject(item) {
     });
 
     // 4. Description
+    // Using innerHTML instead of textContent here if you want to support basic HTML like <br> tags in your long_description
     document.getElementById('det-long-description').textContent = item.long_description[currentLang] || item.long_description['en'];
 
     // 5. Buttons
     const linkBox = document.getElementById('det-links');
+    linkBox.innerHTML = ''; // Clear just in case
+    
     if (item.githublinkrepo) {
         linkBox.innerHTML += `<a href="${item.githublinkrepo}" target="_blank" class="nav-btn">${t.btnRepo}</a>`;
     }

@@ -9,7 +9,7 @@
     "en": "Mini Photoshop",
     "ua": "Міні-Фотошоп"
   },
-  "video": "video/mini-fotoshop/How_it_work.mp4",
+  "video": "https://www.youtube.com/watch?v=5SMhWIpAcXg",
   "description": {
     "es": "En este proyecto creé un 'Mini Photoshop' basado en la web donde puedes editar imágenes aplicando filtros y ajustes, y luego guardarlas directamente en tu dispositivo.",
     "en": "A web-based image editor that allows users to upload, manipulate, and apply various filters to images before saving the final result to their device.",
@@ -61,7 +61,7 @@
     "en": "Web Calendar Project",
     "ua": "Веб-календар"
   },
-  "video": "video/Web_Calendar/How_it_work.mp4",
+  "video": "https://www.youtube.com/watch?v=43-xwKp9JVw",
   "description": {
     "es": "Este es un calendario sencillo que muestra todos los meses del año. Permite añadir títulos, aunque el proyecto no está finalizado (decidí enfocarme en un bot de Telegram más útil con la misma idea). El principal inconveniente es que, para guardar tareas, es necesario editar manualmente el archivo JSON para que aparezcan en la web.",
     "en": "A simple web calendar showing all months of the year. While you can add titles, the project is unfinished as I moved focus toward a more practical Telegram bot with similar features. Currently, saving tasks requires manual editing of the JSON file to display them on the site.",
@@ -124,7 +124,7 @@
     "en": "Telegram News Bot",
     "ua": "Telegram-бот новин"
   },
-  "video": "video/News_bot/work_of_bot.mp4",
+  "video": "https://www.youtube.com/watch?v=QhAUWw5_UJY",
   "description": {
     "es": "Con este bot puedes elegir qué noticias quieres recibir. Carga los temas más importantes según tus preferencias y permite programar un horario exacto para recibir las noticias más destacadas del mundo automáticamente.",
     "en": "This bot allows you to customize your news feed by selecting topics that interest you most. It fetches top headlines based on your choices and features a scheduling system to send you the world's most important news at a specific time of your day.",
@@ -147,7 +147,7 @@
     "en": "Telegram Weather Bot",
     "ua": "Telegram-бот для погоди"
   },
-  "video": "video/Weather_tgbot/work_of_bot.mp4",
+  "video": "https://www.youtube.com/watch?v=xL5q0bNO1fw",
   "description": {
     "es": "Este bot te permite consultar el clima actual o programar mensajes en un horario específico para saber si lloverá o cómo estará el día. También puedes consultar el pronóstico para la semana. El bot es multilingüe y soporta inglés, ucraniano, español, francés, ruso, portugués y alemán.",
     "en": "This bot allows you to check the current weather or schedule messages at a specific time to know the daily forecast and if it will rain. You can also check the weather forecast for the entire week. The bot is multilingual, supporting EN, UA, ES, FR, RU, PT, and DE.",
@@ -197,7 +197,7 @@
     "en": "",
     "ua": ""
   },
-  "video": "",
+  "video": "https://www.youtube.com/watch?v=ObzFmz-c4Cs",
   "description": {
     "es": "",
     "en": "This is simply search system work like chorome.",
@@ -223,7 +223,7 @@
     "en": "Color Palette Generator",
     "ua": "Генератор палітри кольорів"
   },
-  "video": "video/Generador_de_paletas/Generator.mp4",
+  "video": "vhttps://www.youtube.com/watch?v=8upxj84JILY",
   "description": {
     "es": "Generador interactivo de colores basado en estados de ánimo. Exporta variables a CSS y ajusta contraste automáticamente.",
     "en": "Interactive color generator based on moods. Exports variables to CSS and adjusts contrast automatically.",
@@ -244,7 +244,7 @@
     "en": "My AI on Google Colab (Ollama)",
     "ua": "Мій ШІ в Google Colab (Ollama)"
   },
-  "video": ["video/AIColab/AIcolab.mp4"],
+  "video": ["https://www.youtube.com/watch?v=WtOXou2E41g"],
   "description": {
     "es": "Este es mi propio AI instalado en Google Colab (por eso debe ejecutarse manualmente).",
     "en": "This is my own AI installed on Google Colab (therefore it must be run manually).",
@@ -329,7 +329,7 @@
     "en": "Zombie Survival Game",
     "ua": "Гра на виживання проти зомбі"
   },
-  "video": "video/Game_cratos/How_it_works.mp4",
+  "video": "https://www.youtube.com/watch?v=38mIdOBJX8A",
   "description": {
     "es": "Un minijuego desarrollado con ayuda de IA en el que debes sobrevivir a oleadas constantes de zombies. El objetivo es aguantar el mayor tiempo posible mientras la dificultad aumenta con cada horda.",
     "en": "An AI-assisted mini-game where you must survive against endless waves of zombies. Test your skills and see how long you can last as the difficulty increases with every wave.",
