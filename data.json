@@ -30,7 +30,7 @@
     "en": "Recipes and Meal Planner",
     "ua": "Рецепти та планувальник харчування"
   },
-  "video":"video/planner/planner.mp4",
+  "video":"https://www.youtube.com/watch?v=8dQ_J3_8znY",
   "description": {
     "es": "Una aplicación web full-stack para gestionar recetas y organizar un calendario semanal. Incluye autenticación y CRUD con PHP y MySQL.",
     "en": "A full-stack web application to manage recipes and organize a weekly calendar. Includes authentication and CRUD using PHP and MySQL.",
@@ -95,7 +95,7 @@
     "en": "List of Useful Resources",
     "ua": "Список корисних ресурсів"
   },
-  "video":"video/list/list_of_feachers.mp4",
+  "video":"https://www.youtube.com/watch?v=QwLSf-Funt0",
   "description": {
     "es": "Este es un mazo simple donde puedes encontrar aplicaciones, repositorios, páginas y videos que ayudan a resolver diversos problemas. He incluido una calificación personal para resaltar las herramientas más útiles.",
     "en": "This is a curated collection of apps, repositories, websites, and videos that solve various technical challenges. It includes a rating system to help you identify the most effective and useful resources.",
@@ -336,7 +336,7 @@
     "en": "Contact Agenda (Console)",
     "ua": "Книга контактів (Консоль)"
   },
-  "video":"video/menu/menu.mp4",
+  "video":"https://www.youtube.com/watch?v=knvxPCYFp84",
   "description": {
     "es": "Gestor de contactos en Python con validación de Regex y almacenamiento persistente mediante pickle.",
     "en": "Python contact manager with Regex validation and persistent storage using pickle.",
@@ -353,7 +353,7 @@
     "en": "ASIR Web Mini-project",
     "ua": "Вебмініпроєкт ASIR"
   },
-  "video":"video/ASIR/Asir.mp4",
+  "video":"https://www.youtube.com/watch?v=c9z57UByvA0",
   "description": {
     "es": "Sitio web de reseñas de videojuegos en HTML/CSS. Soporta múltiples idiomas y diseño responsivo.",
     "en": "Video game review website in HTML/CSS. Supports multiple languages and responsive design.",
