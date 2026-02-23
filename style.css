@@ -18,6 +18,7 @@ body {
     font-family: 'Space Grotesk', sans-serif; 
     overflow-x: hidden;
     scrollbar-width: none; 
+    cursor: none;
 }
 body::-webkit-scrollbar { display: none; }
 
@@ -46,7 +47,7 @@ body::-webkit-scrollbar { display: none; }
 
 .lang-box select {
     background: #111827; color: #fff; border: 2px solid var(--accent);
-    padding: 8px 12px; border-radius: 8px; cursor: pointer;
+    padding: 8px 12px; border-radius: 8px; 
     font-weight: 600; font-family: 'Space Grotesk', sans-serif; outline: none;
 }
 
@@ -73,14 +74,14 @@ main { padding: 120px 5% 50px; }
 .thumb { width: 100%; height: 200px; border-radius: 12px; object-fit: cover; margin-bottom: 20px; }
 
 .filter-wrapper, .lang-filter { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; padding: 20px 0; }
-.filter-item { display: flex; align-items: center; gap: 8px; background: var(--card-bg); border: 1px solid var(--glass); padding: 8px 16px; border-radius: 12px; cursor: pointer; transition: all 0.3s ease; }
+.filter-item { display: flex; align-items: center; gap: 8px; background: var(--card-bg); border: 1px solid var(--glass); padding: 8px 16px; border-radius: 12px;  transition: all 0.3s ease; }
 .filter-item:hover { background: var(--accent); color: var(--bg); transform: translateY(-3px); }
 .filter-item img { width: 20px; height: 20px; object-fit: contain; }
 .filter-item span { font-size: 0.9rem; font-weight: 500; }
 .all-filter { border: 2px solid var(--accent); font-weight: bold; }
 
 .card-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 12px; }
-.card-btn { border: 1px solid var(--glass); background: transparent; color: var(--text); padding: 8px 14px; border-radius: 10px; cursor: pointer; font-size: 0.8rem; transition: all 0.25s; text-decoration: none; }
+.card-btn { border: 1px solid var(--glass); background: transparent; color: var(--text); padding: 8px 14px; border-radius: 10px;  font-size: 0.8rem; transition: all 0.25s; text-decoration: none; }
 .card-btn:hover { transform: translateY(-2px); }
 .card-btn.repo:hover { background: #24292e; border-color: #24292e; }
 .card-btn.site:hover { background: var(--accent); color: black; border-color: var(--accent); }
@@ -89,7 +90,7 @@ main { padding: 120px 5% 50px; }
 .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 2000; justify-content: center; align-items: center; }
 .modal-content { position: relative; width: 80%; max-width: 900px; background: #000; border-radius: 15px; overflow: hidden; border: 1px solid var(--accent); }
 .modal-content video { width: 100%; display: block; }
-.close-modal { position: absolute; top: 15px; right: 20px; color: white; font-size: 30px; cursor: pointer; z-index: 10; }
+.close-modal { position: absolute; top: 15px; right: 20px; color: white; font-size: 30px;  z-index: 10; }
 
 .project-langs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px; }
 .lang-badge { display: flex; align-items: center; background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 6px; font-size: 0.8rem; color: #fff; border: 1px solid rgba(255,255,255,0.1); }
@@ -101,7 +102,7 @@ main { padding: 120px 5% 50px; }
 .soc-icon:hover { transform: scale(1.2); filter: invert(1) drop-shadow(0 0 5px var(--accent)); }
 .thumb-wrapper {
     position: relative;
-    cursor: pointer;
+
 }
 
 .preview-video {
@@ -121,4 +122,28 @@ main { padding: 120px 5% 50px; }
     font-size: 0.8rem;
     color: white;
     pointer-events: none;
+}
+
+#cursor-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Crucial: allows you to click buttons "through" the animation */
+    z-index: 9999;       /* Keeps it on top of all other sections */
+}
+
+.segment {
+    position: fixed;     /* Changed from absolute to fixed */
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(45deg, #00ffcc, #0077ff);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+    /* Remove the transition if the movement feels "laggy" */
 }
