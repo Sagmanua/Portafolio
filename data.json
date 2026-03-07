@@ -1,6 +1,28 @@
 
 [
 
+{
+  "title": {
+    "es": "Cuadro de torneo",
+    "en": "Tournament grid",
+    "ua": "Турнірна сітка"
+  },
+  "video": "https://www.youtube.com/watch?v=kgPMNa3lEPg",
+  "description": {
+    "es": "Si alguna vez has pensado en crear un torneo personalizado donde puedas elegir cuántas personas añadir y hacerlo de forma aleatoria, puedes probar este sitio web.",
+    "en": "If you want to create a custom tournament where you can choose the number of participants and assign them randomly, you can test this website.",
+    "ua": "Якщо ви хочете створити власний турнір, де можна обрати кількість учасників та розподілити їх випадковим чином, ви можете протестувати цей веб-сайт."
+  },
+  "long_description": {
+    "es": "Esta herramienta web te permite generar cuadros de torneos de forma sencilla. Es ideal para organizar competiciones rápidas, permitiendo gestionar los emparejamientos de manera aleatoria según la cantidad de participantes que decidas incluir.",
+    "en": "This web tool allows you to generate tournament brackets easily. It is ideal for organizing quick competitions, allowing you to manage pairings randomly based on the number of participants you decide to include.",
+    "ua": "Цей веб-інструмент дозволяє легко створювати турнірні сітки. Він ідеально підходить для організації швидких змагань, дозволяючи випадковим чином керувати парами залежно від кількості учасників, яких ви вирішите додати."
+  },
+  "language": ["HTML", "CSS", "JavaScript"],
+  "githublinkrepo": "https://github.com/Sagmanua/Tournament_grid",
+  "githublinkwebsite": "https://sagmanua.github.io/Tournament_grid/"
+},
+
 
 
 {
