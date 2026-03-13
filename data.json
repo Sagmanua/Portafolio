@@ -1,6 +1,31 @@
 
 [
-
+{
+  "title": {
+    "es": "Asistente de Telegram para World of Tanks",
+    "en": "WOT Tactical Telegram Assistant",
+    "ua": "Telegram-бот для World of Tanks"
+  },
+  "video": "https://www.youtube.com/watch?v=gdqZNXCJCOw",
+  "description": {
+    "es": "Un bot avanzado de Telegram que proporciona estadísticas en tiempo real, comparaciones de tanques y gestión de clanes para jugadores de World of Tanks.",
+    "en": "A sophisticated Telegram bot designed for World of Tanks enthusiasts, offering real-time player telemetry, visual equipment guides, and automated clan activity monitoring.",
+    "ua": "Просунутий Telegram-бот для гравців World of Tanks, що надає статистику в реальному часі, порівняння танків та інструменти для управління кланом."
+  },
+  "long_description": {
+    "en": "This project is a high-performance Telegram bot built with Python and the Telebot library, integrating deeply with the Wargaming.net Open API to provide real-time game telemetry. It utilizes an SQLite3 backend to facilitate historical data tracking, allowing users to monitor performance 'snapshots' over specific time intervals via the /progress command. Key technical features include: Dynamic Image Composition using the Pillow (PIL) library to stitch multiple equipment and crew skill icons into a single, high-resolution grid; a Statistical Comparison Engine that compares two vehicles across 18 different metrics—such as DPM, Alpha, and Dispersion—highlighting superior stats using Markdown; Clan Synchronization tools for broadcasting messages to registered members; Real-time Activity Tracking to identify active clan members within the last 120 minutes; and a mathematical XP calculator based on logarithmic crew skill progression.",
+    "es": "Este proyecto es un bot de Telegram de alto rendimiento desarrollado con Python y la librería Telebot, con una integración profunda en la API abierta de Wargaming.net para proporcionar telemetría del juego en tiempo real. Utiliza un backend de SQLite3 para facilitar el seguimiento de datos históricos, lo que permite a los usuarios monitorear 'instantáneas' de rendimiento durante intervalos de tiempo específicos mediante el comando /progress. Las características técnicas clave incluyen: Composición Dinámica de Imágenes utilizando Pillow (PIL) para combinar iconos de equipamiento y habilidades en una sola cuadrícula de alta resolución; un Motor de Comparación Estadística que evalúa dos vehículos en 18 métricas diferentes—como DPM, Daño Alfa y Dispersión—resaltando dinámicamente las estadísticas superiores; Sincronización de Clanes para difundir mensajes a miembros registrados; Seguimiento de Actividad en Tiempo Real para identificar miembros activos en los últimos 120 minutos; y una calculadora de XP personalizada basada en la progresión logarítmica de habilidades.",
+    "ua": "Цей проект — це високопродуктивний Telegram-бот, створений за допомогою Python та бібліотеки Telebot, який глибоко інтегрується з Wargaming.net Open API для надання ігрової телеметрії в режимі реального часу. Він використовує базу даних SQLite3 для відстеження історичних даних, що дозволяє користувачам переглядати 'знімки' продуктивності за певні проміжки часу за допомогою команди /progress. Основні технічні характеристики включають: Динамічна композиція зображень за допомогою бібліотеки Pillow (PIL) для об'єднання іконок обладнання та навичок екіпажу в єдину сітку; Механізм статистичного порівняння, який порівнює два транспортні засоби за 18 різними метриками (такими як DPM, Альфа-урон та Розкид), динамічно виділяючи кращі показники; Синхронізація клану для розсилки повідомлень зареєстрованим членам; Відстеження активності в реальному часі для визначення членів клану, активних протягом останніх 120 хвилин; та математична утиліта для розрахунку досвіду (XP) на основі логарифмічної формули прогресії навичок."
+  },
+  "language": [
+    "Python",
+    "SQLite",
+    "JSON",
+    "Wargaming API",
+    "Pillow (PIL)"
+  ],
+  "githublinkrepo": "https://github.com/Sagmanua/Project-Telegram_bot-web-page/tree/All_in_one"
+},
 {
   "title": {
     "es": "Mini Minecraft",
