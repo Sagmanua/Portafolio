@@ -22,6 +22,28 @@
   "githublinkrepo": "https://github.com/Sagmanua/Tournament_grid",
   "githublinkwebsite": "https://sagmanua.github.io/Tournament_grid/"
 },
+{
+  "title": {
+    "es": "Mi IA en Google Colab (Ollama)",
+    "en": "My AI on Google Colab (Ollama)",
+    "ua": "Мій ШІ в Google Colab (Ollama)"
+  },
+  "video": ["https://www.youtube.com/watch?v=WtOXou2E41g"],
+  "description": {
+    "es": "Este es mi propio AI instalado en Google Colab (por eso debe ejecutarse manualmente).",
+    "en": "This is my own AI installed on Google Colab (therefore it must be run manually).",
+    "ua": "Це мій власний ШІ, встановлений у Google Colab (тому його потрібно запускати вручну)."
+  },
+  "long_description": {
+    "es": "Este proyecto representa una solución creativa para ejecutar Modelos de Lenguaje Grandes (LLM) de forma gratuita utilizando la potencia de Google Colab. Configuré un entorno que permite ejecutar Ollama en la nube y acceder a él desde cualquier lugar a través de una interfaz web personalizada.\n\nLogros técnicos:\n- Infraestructura en la Nube: Utilicé Google Colab para aprovechar sus recursos de GPU, permitiendo que la IA responda con rapidez.\n- Túneles de Conexión: Implementé métodos de acceso seguro (Ngrok y Cloudflared) para conectar el servidor de Ollama con la web.\n- Frontend con Streaming: Desarrollé una interfaz en JavaScript que permite ver la respuesta de la IA en tiempo real, palabra por palabra.\n\n¡Pruébalo tú mismo! He diseñado el repositorio para que sea extremadamente práctico; solo tienes que abrir mi repo y seguir las instrucciones de configuración. Es un proceso sencillo y rápido que te permitirá tener tu propia IA funcionando en minutos.",
+    "en": "This project is a creative solution for running Large Language Models (LLMs) for free by leveraging Google Colab. I configured an environment that runs Ollama in the cloud, accessible through a custom-built web interface.\n\nTechnical Highlights:\n- Cloud Infrastructure: Utilized Google Colab to harness GPU acceleration for fast response times.\n- Secure Tunneling: Implemented Ngrok and Cloudflared to bridge the Ollama server to the public web.\n- Streaming Frontend: Developed a JavaScript interface that supports real-time streaming responses, showing text generation word-by-word.\n\nTry it yourself! I have designed this project to be highly practical. If you want to test it, simply open my repository and follow the setup instructions. The process is easy and straightforward, allowing you to get your own AI up and running in no time.",
+    "ua": "Цей проєкт — це креативне рішення для запуску великих мовних моделей (LLM) безкоштовно, використовуючи потужності Google Colab. Я налаштував середовище, яке дозволяє запускати Ollama в хмарі та підключатися до неї через власний веб-інтерфейс.\n\nТехнічні особливості:\n- Хмарна інфраструктура: Використання Google Colab для доступу до GPU, що забезпечує швидку генерацію відповідей.\n- Тунелювання: Реалізація безпечного доступу через Ngrok та Cloudflared для зв'язку сервера з фронтендом.\n- Стрімінговий інтерфейс: Розробка JS-інтерфейсу для відображення генерації тексту в реальному часі.\n\nСпробуйте самі! Я розробив цей проєкт так, щоб він був максимально практичним. Якщо ви хочете протестувати його, просто відкрийте мій репозиторій і дотримуйтесь інструкцій. Налаштування дуже просте і швидке, що дозволить вам запустити власний ШІ за лічені хвилини."
+  },
+  "language": ["Python", "JavaScript", "HTML", "CSS"],
+  "githublinkrepo": "https://github.com/Sagmanua/SagmanOllamaAI",
+  "githublinkwebsite": "https://sagmanua.github.io/SagmanOllamaAI/"
+},
+
 
 
 
@@ -250,27 +272,6 @@
   "language": ["HTML", "CSS", "JavaScript"],
   "githublinkrepo": "https://github.com/Sagmanua/Ideas/tree/main/ideas/palitra",
   "githublinkwebsite": "https://sagmanua.github.io/Ideas/ideas/palitra/index.html"
-},
-{
-  "title": {
-    "es": "Mi IA en Google Colab (Ollama)",
-    "en": "My AI on Google Colab (Ollama)",
-    "ua": "Мій ШІ в Google Colab (Ollama)"
-  },
-  "video": ["https://www.youtube.com/watch?v=WtOXou2E41g"],
-  "description": {
-    "es": "Este es mi propio AI instalado en Google Colab (por eso debe ejecutarse manualmente).",
-    "en": "This is my own AI installed on Google Colab (therefore it must be run manually).",
-    "ua": "Це мій власний ШІ, встановлений у Google Colab (тому його потрібно запускати вручну)."
-  },
-  "long_description": {
-    "es": "Este proyecto representa una solución creativa para ejecutar Modelos de Lenguaje Grandes (LLM) de forma gratuita utilizando la potencia de Google Colab. Configuré un entorno que permite ejecutar Ollama en la nube y acceder a él desde cualquier lugar a través de una interfaz web personalizada.\n\nLogros técnicos:\n- Infraestructura en la Nube: Utilicé Google Colab para aprovechar sus recursos de GPU, permitiendo que la IA responda con rapidez.\n- Túneles de Conexión: Implementé métodos de acceso seguro (Ngrok y Cloudflared) para conectar el servidor de Ollama con la web.\n- Frontend con Streaming: Desarrollé una interfaz en JavaScript que permite ver la respuesta de la IA en tiempo real, palabra por palabra.\n\n¡Pruébalo tú mismo! He diseñado el repositorio para que sea extremadamente práctico; solo tienes que abrir mi repo y seguir las instrucciones de configuración. Es un proceso sencillo y rápido que te permitirá tener tu propia IA funcionando en minutos.",
-    "en": "This project is a creative solution for running Large Language Models (LLMs) for free by leveraging Google Colab. I configured an environment that runs Ollama in the cloud, accessible through a custom-built web interface.\n\nTechnical Highlights:\n- Cloud Infrastructure: Utilized Google Colab to harness GPU acceleration for fast response times.\n- Secure Tunneling: Implemented Ngrok and Cloudflared to bridge the Ollama server to the public web.\n- Streaming Frontend: Developed a JavaScript interface that supports real-time streaming responses, showing text generation word-by-word.\n\nTry it yourself! I have designed this project to be highly practical. If you want to test it, simply open my repository and follow the setup instructions. The process is easy and straightforward, allowing you to get your own AI up and running in no time.",
-    "ua": "Цей проєкт — це креативне рішення для запуску великих мовних моделей (LLM) безкоштовно, використовуючи потужності Google Colab. Я налаштував середовище, яке дозволяє запускати Ollama в хмарі та підключатися до неї через власний веб-інтерфейс.\n\nТехнічні особливості:\n- Хмарна інфраструктура: Використання Google Colab для доступу до GPU, що забезпечує швидку генерацію відповідей.\n- Тунелювання: Реалізація безпечного доступу через Ngrok та Cloudflared для зв'язку сервера з фронтендом.\n- Стрімінговий інтерфейс: Розробка JS-інтерфейсу для відображення генерації тексту в реальному часі.\n\nСпробуйте самі! Я розробив цей проєкт так, щоб він був максимально практичним. Якщо ви хочете протестувати його, просто відкрийте мій репозиторій і дотримуйтесь інструкцій. Налаштування дуже просте і швидке, що дозволить вам запустити власний ШІ за лічені хвилини."
-  },
-  "language": ["Python", "JavaScript", "HTML", "CSS"],
-  "githublinkrepo": "https://github.com/Sagmanua/SagmanOllamaAI",
-  "githublinkwebsite": "https://sagmanua.github.io/SagmanOllamaAI/"
 },
 
 {
