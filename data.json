@@ -3,6 +3,29 @@
 
 {
   "title": {
+    "es": "Mini Minecraft",
+    "en": "Mini Minecraft",
+    "ua": "Міні Майнкрафт"
+  },
+  "video": "https://www.youtube.com/watch?v=ZRk0KKG1Jrk",
+  "description": {
+    "es": "Este es un mini proyecto que creé donde el jugador puede moverse, colocar y eliminar bloques.",
+    "en": "This is a mini project that I created where the player can move, place, and delete blocks.",
+    "ua": "Це міні-проект, який я створив, де гравець може рухатися, ставити та видаляти блоки."
+  },
+  "long_description": {
+    "es": "Este proyecto es una recreación simplificada de Minecraft utilizando el motor de juego Ursina en Python. El juego comienza con una cuadrícula de 20x20 de bloques de hierba [00:00:00]. El jugador utiliza un controlador de primera persona para navegar por el entorno [00:00:25]. Las mecánicas principales incluyen la colocación de bloques haciendo clic izquierdo, lo que genera un nuevo bloque en la cara del bloque apuntado [00:00:04], y la eliminación de bloques haciendo clic derecho [00:00:10]. El código utiliza el sistema de entrada de Ursina para manejar estas interacciones y la clase Button para representar los bloques individuales, permitiendo la detección de colisiones y eventos de ratón de manera sencilla [00:01:17].",
+    "en": "This project is a simplified recreation of Minecraft built using the Ursina game engine in Python. The game starts with a 20x20 grid of grass blocks [00:00:00]. The player uses a first-person controller to navigate the environment [00:00:25]. Core mechanics include placing blocks by left-clicking, which spawns a new block on the face of the targeted block [00:00:04], and deleting blocks by right-clicking [00:00:10]. The code leverages Ursina's input system to handle these interactions and the Button class to represent individual blocks, allowing for easy collision detection and mouse events [00:01:17].",
+    "ua": "Цей проект — це спрощена рекреація Minecraft, створена за допомогою ігрового движка Ursina на Python. Гра починається з сітки трав'яних блоків 20x20 [00:00:00]. Гравець використовує контролер від першої особи для навігації в середовищі [00:00:25]. Основні механіки включають розміщення блоків лівим кліком миші, що створює новий блок на грані цільового блоку [00:00:04], та видалення блоків правим кліком миші [00:00:10]. Код використовує систему введення Ursina для обробки цих взаємодій та клас Button для представлення окремих блоків, що дозволяє легко виявляти зіткнення та події миші [00:01:17]."
+  },
+  "language": [
+    "Python"
+  ],
+  "githublinkrepo": "https://github.com/Sagmanua/minecraft_in_py"
+},
+
+{
+  "title": {
     "es": "Cuadro de torneo",
     "en": "Tournament grid",
     "ua": "Турнірна сітка"
