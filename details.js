@@ -1,16 +1,14 @@
 const languageImages = {
-    javascript: "images/js.png",
-    python: "images/python.png",
-    html: "images/html.png",
-    css: "images/css.png",
-    java: "images/java.png",
-    php: "images/php.png",
-    mysql: "images/mysql.png",
-    sqlite: "images/SQLite.png",
-    telegram_bot: "images/telegram_bot.png",
-    json: "images/json.png",
-    vue: "images/Vue.png",     
-    scss: "images/SCSS.png"    
+    JavaScript: "images/js.png",
+    Python: "images/python.png",
+    HTML: "images/html.png",
+    CSS: "images/css.png",
+    Php: "images/php.png",
+    Mysql: "images/mysql.png",
+    Telegram_bot: "images/telegram_bot.png",
+    JSON: "images/json.png",
+    Java: "images/java.png",
+    SQLite: "images/SQLite.png"
 };
 
 const uiText = {
@@ -108,11 +106,12 @@ function renderProject(item) {
     });
 
     // 4. Description
+    // Using innerHTML instead of textContent here if you want to support basic HTML like <br> tags in your long_description
     document.getElementById('det-long-description').textContent = item.long_description[currentLang] || item.long_description['en'];
 
     // 5. Buttons
     const linkBox = document.getElementById('det-links');
-    linkBox.innerHTML = ''; 
+    linkBox.innerHTML = ''; // Clear just in case
     
     if (item.githublinkrepo) {
         linkBox.innerHTML += `<a href="${item.githublinkrepo}" target="_blank" class="nav-btn">${t.btnRepo}</a>`;
@@ -129,21 +128,9 @@ function renderProject(item) {
 document.addEventListener('DOMContentLoaded', () => {
     const sel = document.getElementById('lang-selector');
     sel.value = currentLang;
-    
     sel.onchange = (e) => {
         localStorage.setItem('idioma', e.target.value);
-        
-        // Smooth fade-out before reloading
-        const container = document.getElementById('details-container');
-        if (container) {
-            container.style.opacity = '0';
-        }
-        
-        // Wait 500ms for the fade out to happen, then reload
-        setTimeout(() => {
-            location.reload();
-        }, 500); 
+        location.reload();
     };
-    
     loadProjectDetails();
 });

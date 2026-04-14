@@ -147,37 +147,3 @@ main { padding: 120px 5% 50px; }
     box-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
     /* Remove the transition if the movement feels "laggy" */
 }
-.lang-success {
-    border-color: #4CAF50 !important; /* Green */
-    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
-    transition: all 0.3s ease;
-}
-/* Styling to make sure the selector can actually glow */
-#lang-selector {
-    border: 1px solid var(--glass);
-    outline: none;
-    border-radius: 6px;
-}
-
-/* The Glow Animation Class */
-.glow-effect {
-    animation: bluePulse 1.2s ease-out;
-}
-
-@keyframes bluePulse {
-    0% {
-        box-shadow: 0 0 0 0 var(--accent);
-        border-color: var(--accent);
-        color: var(--accent);
-    }
-    50% {
-        box-shadow: 0 0 20px 4px var(--accent);
-        border-color: var(--accent);
-        color: var(--accent);
-    }
-    100% {
-        box-shadow: 0 0 0 0 transparent;
-        border-color: var(--glass);
-        color: var(--text);
-    }
-}
