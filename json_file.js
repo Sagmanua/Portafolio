@@ -11,8 +11,12 @@ const languageImages = {
     mysql: "images/mysql.png",
     sqlite: "images/SQLite.png",
     telegram_bot: "images/telegram_bot.png",
-    json: "images/json.png"
-
+    json: "images/json.png",
+    vue: "images/Vue.png",     
+    scss: "images/SCSS.png",
+    vite: "images/Vite.png",
+    pillow: "images/Pillow.png",
+    wargaming_api: "images/Wargaming.png"
 
 
 };

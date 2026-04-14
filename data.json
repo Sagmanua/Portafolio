@@ -1,5 +1,25 @@
 
 [
+  {
+  "title": {
+    "es": "Marcador Interactivo Vue",
+    "en": "Vue Interactive Scoreboard",
+    "ua": "Інтерактивне табло на Vue"
+  },
+  "video": "https://www.youtube.com/watch?v=mzhfKOsgYY0",
+  "description": {
+    "es": "Una aplicación ligera para seguir puntuaciones en juegos multijugador.",
+    "en": "A lightweight application to track scores for multiplayer games.",
+    "ua": "Легкий додаток для відстеження рахунку в багатокористувацьких іграх."
+  },
+  "long_description": {
+    "es": "Este proyecto es un marcador dinámico construido con Vue 3 y Vite. Permite a los usuarios configurar un número personalizado de jugadores, asignar nombres y establecer un límite de puntuación para ganar. Cuenta con un diseño responsivo utilizando SCSS y una lógica de componentes modular para una experiencia de usuario fluida.",
+    "en": "This project is a dynamic scoreboard built with Vue 3 and Vite. It allows users to configure a custom number of players, assign names, and set a winning score limit. Featuring a responsive design using SCSS and modular component logic, it ensures a smooth user experience from setup to the final win alert.",
+    "ua": "Цей проєкт — це динамічне табло, створене за допомогою Vue 3 та Vite. Він дозволяє користувачам налаштовувати кількість гравців, присвоювати імена та встановлювати ліміт очок для перемоги. Завдяки адаптивному дизайну на SCSS та модульній логіці компонентів, додаток забезпечує зручну роботу від налаштування до оголошення переможця."
+  },
+  "language": ["Vue","Vite", "SCSS"],
+  "githublinkrepo": "https://github.com/Sagmanua/Scoreeboard/tree/main/src"
+},
 {
   "title": {
     "es": "Asistente de Telegram para World of Tanks",
@@ -21,8 +41,8 @@
     "Python",
     "SQLite",
     "JSON",
-    "Wargaming API",
-    "Pillow (PIL)"
+    "Wargaming_api",
+    "Pillow"
   ],
   "githublinkrepo": "https://github.com/Sagmanua/Project-Telegram_bot-web-page/tree/All_in_one"
 },
@@ -134,7 +154,7 @@
     "ua": "Цей проєкт — це повноцінна Full-Stack система, розроблена для вирішення щоденних завдань з організації харчування. Це не просто список рецептів, а комплексний інструмент управління, де безпека та структура даних є пріоритетами.\n\nТехнічні особливості:\n- Архітектура сервера: Я розробив надійний бекенд на PHP, який керує сесіями користувачів, забезпечуючи приватне та безпечне середовище для зберігання персональних даних.\n- Безпека даних: Система використовує підготовлені запити (Prepared Statements) для захисту від SQL-ін'єкцій та сучасні алгоритми хешування (password_verify/hash) для захисту паролів.\n- Бізнес-логіка (CRUD): Створено адміністративну панель для повного керування базою рецептів, включаючи завантаження зображень, редагування інгредієнтів та організацію категорій у MySQL.\n- Динамічне планування: Я спроектував реляційну базу даних, яка пов’язує рецепти з конкретними днями тижня, створюючи інтерактивний календар для планування раціону.\n- Користувацький досвід: Завдяки кастомному CSS я створив чистий та зрозумілий інтерфейс, що забезпечує плавний перехід від авторизації до створення власного плану харчування."
   },
 
-  "language": ["Php", "CSS", "Mysql"],
+  "language": ["PHP", "CSS", "Mysql"],
   "githublinkrepo": "https://github.com/Sagmanua/Proyecto-Entornos-de-Desarrollo",
   "githublinkwebsite": "https://recepe-planer.great-site.net/Proyecto-Entornos-de-Desarrollo/"
 },
