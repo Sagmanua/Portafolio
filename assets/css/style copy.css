@@ -1,0 +1,13 @@
+#depth-viewer {
+    width: 400px; /* Adjust this to the size you want */
+    height: 300px; /* Adjust this to the size you want */
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* This forces the internal engine to shrink to your div size */
+  #depth-viewer canvas {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain;
+  }

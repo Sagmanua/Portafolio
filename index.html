@@ -43,6 +43,12 @@
         </div>
     </section>
 
+
+<section class="my-foto">
+    <div id="depth-viewer"></div>
+</section>
+
+
     <main id="main-content">
         <div class="filter-wrapper">
             <div id="langFilter" class="lang-filter"></div>
@@ -83,6 +89,17 @@
     <script src="animation_cursor.js"></script>
 
     <script src="json_file.js"></script>
-    
+
+<script src="assets/js/pixi.4.8.9.js"></script>
+<script src="assets/js/DepthyViewer.js"></script>
+
+<script>
+    let viewerContainer = document.getElementById("depth-viewer");
+
+    let viewer = new DepthyViewer(viewerContainer, {});
+
+    viewer.setImage('assets/imgs/img.png');
+    viewer.setDepthmap('assets/imgs/img-depth.png');
+</script>
 </body>
 </html>

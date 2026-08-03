@@ -147,3 +147,24 @@ main { padding: 120px 5% 50px; }
     box-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
     /* Remove the transition if the movement feels "laggy" */
 }
+
+
+.my-foto {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 600px;
+}
+
+#depth-viewer {
+    width: 1200px;
+    height: 1021px;
+    position: relative;
+}
+
+#depth-viewer canvas {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+}
