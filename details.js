@@ -4,25 +4,36 @@ const languageImages = {
     HTML: "images/html.png",
     CSS: "images/css.png",
     Php: "images/php.png",
+    PHP: "images/php.png",
     Mysql: "images/mysql.png",
     Telegram_bot: "images/telegram_bot.png",
     JSON: "images/json.png",
     Java: "images/java.png",
-    SQLite: "images/SQLite.png"
+    SQLite: "images/SQLite.png",
+    Vue: "images/Vue.png",
+    Vite: "images/Vite.png",
+    SCSS: "images/SCSS.png",
+    Pillow: "images/Pillow.png",
+    Wargaming_api: "images/Wargaming.png"
 };
 
 const uiText = {
-    es: { langLabel: "Tecnologías:", btnWeb: "Sitio Web", btnRepo: "Repositorio" },
-    en: { langLabel: "Technologies:", btnWeb: "Website", btnRepo: "Repository" },
-    ua: { langLabel: "Технології:", btnWeb: "Вебсайт", btnRepo: "Репозиторій" }
+    es: { langLabel: "Tecnologías", btnWeb: "Sitio web", btnRepo: "Repositorio", back: "← Volver", missing: "Este proyecto aún no tiene una descripción detallada." },
+    en: { langLabel: "Technologies", btnWeb: "Live site", btnRepo: "Repository", back: "← Back", missing: "This project does not have a longer write-up yet." },
+    ua: { langLabel: "Технології", btnWeb: "Вебсайт", btnRepo: "Репозиторій", back: "← Назад", missing: "Для цього проєкту ще немає детального опису." }
+};
+
+const languageLabels = {
+    Telegram_bot: "Telegram",
+    Wargaming_api: "Wargaming API",
+    Mysql: "MySQL"
 };
 
 let currentLang = localStorage.getItem('idioma') || 'es';
 
-// Helper function to extract YouTube embed URL
 function getYouTubeEmbed(url) {
     if (!url) return null;
-    const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|v\/))([^?&]+)/);
+    const match = String(url).match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|v\/))([^?&]+)/);
     return match ? `https://www.youtube.com/embed/${match[1]}` : null;
 }
 
@@ -31,7 +42,7 @@ async function loadProjectDetails() {
     const id = params.get('id');
 
     if (id === null) {
-        console.error("No project ID found in URL");
+        document.getElementById('det-title').textContent = "Project not found";
         return;
     }
 
@@ -41,7 +52,7 @@ async function loadProjectDetails() {
         const project = data[id];
 
         if (!project) {
-            document.getElementById('det-title-header').textContent = "Project not found";
+            document.getElementById('det-title').textContent = "Project not found";
             return;
         }
 
@@ -53,78 +64,63 @@ async function loadProjectDetails() {
 
 function renderProject(item) {
     const t = uiText[currentLang];
-    
-    // 1. Titles
-    const titleText = item.title[currentLang] || item.title['en'];
-    document.getElementById('det-title').textContent = titleText;
-    document.getElementById('det-title-header').textContent = titleText;
+    document.documentElement.lang = currentLang === 'ua' ? 'uk' : currentLang;
 
-    // 2. Media (YouTube Video, Local Video, or Image)
+    const titleText = item.title[currentLang] || item.title.en;
+    document.getElementById('det-title').textContent = titleText;
+    document.title = `${titleText} | Bohdan Sydorenko`;
+
+    const backBtn = document.querySelector('.nav-btn');
+    if (backBtn) backBtn.textContent = t.back;
+
     const mediaBox = document.getElementById('det-media');
-    
-    // Normalize video source (handle arrays just in case)
-    const videoSrc = item.video 
-        ? (Array.isArray(item.video) ? item.video[0] : item.video) 
+    const videoSrc = item.video
+        ? (Array.isArray(item.video) ? item.video[0] : item.video)
         : null;
 
     if (videoSrc) {
         const ytEmbedUrl = getYouTubeEmbed(videoSrc);
-        
         if (ytEmbedUrl) {
-            // Render YouTube iframe
             mediaBox.innerHTML = `
-                <div style="aspect-ratio: 16/9; width: 100%; border-radius: 12px; overflow: hidden; border: 1px solid var(--glass);">
-                    <iframe 
-                        src="${ytEmbedUrl}?autoplay=1" 
-                        frameborder="0" 
-                        allow="autoplay; encrypted-media; fullscreen" 
-                        allowfullscreen
-                        style="width: 100%; height: 100%;">
-                    </iframe>
+                <div style="aspect-ratio: 16/9; width: 100%; border-radius: 12px; overflow: hidden;">
+                    <iframe src="${ytEmbedUrl}" allow="encrypted-media; fullscreen" allowfullscreen title="${titleText}"></iframe>
                 </div>`;
         } else {
-            // Render Local Video
             mediaBox.innerHTML = `
-                <video controls autoplay muted style="width:100%; border-radius:12px; border: 1px solid var(--glass);">
+                <video controls>
                     <source src="${videoSrc}" type="video/mp4">
                 </video>`;
         }
     } else if (item.image) {
-        // Render Image
         const imgSrc = Array.isArray(item.image) ? item.image[0] : item.image;
-        mediaBox.innerHTML = `<img src="${imgSrc}" style="width:100%; border-radius:12px;" onerror="this.src='images/default.png'">`;
+        mediaBox.innerHTML = `<img src="${imgSrc}" alt="${titleText}" onerror="this.src='images/default.png'">`;
     }
 
-    // 3. Languages
     const langBox = document.getElementById('det-languages');
     const langs = Array.isArray(item.language) ? item.language : [item.language];
-    langBox.innerHTML = `<strong>${t.langLabel}</strong>`;
+    langBox.innerHTML = `<strong style="margin-right:8px;color:var(--text);">${t.langLabel}</strong>`;
     langs.forEach(l => {
-        if(languageImages[l]) {
-            langBox.innerHTML += `<img src="${languageImages[l]}" title="${l}" style="width:30px; height:30px;">`;
-        }
+        const icon = languageImages[l];
+        langBox.innerHTML += icon
+            ? `<span class="lang-badge"><img src="${icon}" title="${l}" class="badge-icon" alt=""><span>${languageLabels[l] || l}</span></span>`
+            : `<span class="lang-badge"><span>${languageLabels[l] || l}</span></span>`;
     });
 
-    // 4. Description
-    // Using innerHTML instead of textContent here if you want to support basic HTML like <br> tags in your long_description
-    document.getElementById('det-long-description').textContent = item.long_description[currentLang] || item.long_description['en'];
+    const longDesc = item.long_description
+        ? (item.long_description[currentLang] || item.long_description.en || t.missing)
+        : t.missing;
+    document.getElementById('det-long-description').textContent = longDesc;
 
-    // 5. Buttons
     const linkBox = document.getElementById('det-links');
-    linkBox.innerHTML = ''; // Clear just in case
-    
+    linkBox.innerHTML = '';
     if (item.githublinkrepo) {
-        linkBox.innerHTML += `<a href="${item.githublinkrepo}" target="_blank" class="nav-btn">${t.btnRepo}</a>`;
+        linkBox.innerHTML += `<a href="${item.githublinkrepo}" target="_blank" rel="noopener noreferrer" class="card-btn repo">${t.btnRepo}</a>`;
     }
     if (item.githublinkwebsite) {
-        linkBox.innerHTML += `<a href="${item.githublinkwebsite}" target="_blank" class="nav-btn" style="background:var(--accent); color:black;">${t.btnWeb}</a>`;
+        linkBox.innerHTML += `<a href="${item.githublinkwebsite}" target="_blank" rel="noopener noreferrer" class="btn-primary">${t.btnWeb}</a>`;
     }
-
-    // Show content
-    document.getElementById('details-container').style.opacity = '1';
 }
 
-// Initialize
 document.addEventListener('DOMContentLoaded', () => {
     const sel = document.getElementById('lang-selector');
     sel.value = currentLang;

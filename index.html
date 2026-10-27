@@ -1,105 +1,140 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bohdan Sydorenko | Portfolio</title>
+    <meta name="description" content="Portfolio of Bohdan Sydorenko — full-stack developer working with Python, JavaScript, PHP, and interactive web applications.">
+    <title>Bohdan Sydorenko — Full-Stack Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="cursor-container"></div>
-
-    <div class="bg-grid"></div>
+    <a class="skip-link" href="#main-content">Skip to projects</a>
+    <div class="bg-grid" aria-hidden="true"></div>
 
     <header class="topbar">
-        <div class="nav-left">
-            <h1 class="logo">Bohdan Sydorenko</h1>
-        </div>
-        <div class="nav-right">
+        <a href="#top" class="logo">Bohdan Sydorenko</a>
+        <nav class="nav-right" aria-label="Primary">
             <div class="nav-links">
-                <a href="https://sagmanua.github.io/List-of-usefull-fearchers/" target="_blank" class="nav-btn">Tools</a>
-                <a href="https://sagmanua.github.io/Curriculum/" target="_blank" class="nav-btn">Curriculum</a>
-
+                <a href="#about" class="nav-link" data-i18n="navAbout">About</a>
+                <a href="#main-content" class="nav-link" data-i18n="navWork">Work</a>
+                <a href="#contact" class="nav-link" data-i18n="navContact">Contact</a>
+                <a href="https://sagmanua.github.io/List-of-usefull-fearchers/" target="_blank" rel="noopener noreferrer" class="nav-link" data-i18n="tools">Tools</a>
+                <a href="https://sagmanua.github.io/Curriculum/" target="_blank" rel="noopener noreferrer" class="nav-btn" data-i18n="cv">Resume</a>
             </div>
-            <div class="lang-box">
-                <select id="lang-selector">
-                    <option value="es">🇪🇸 ES</option>
-                    <option value="en">🇺🇸 EN</option>
-                    <option value="ua">🇺🇦 UA</option>
+            <label class="lang-box">
+                <span class="sr-only">Language</span>
+                <select id="lang-selector" aria-label="Language">
+                    <option value="es">ES</option>
+                    <option value="en">EN</option>
+                    <option value="ua">UA</option>
                 </select>
-            </div>
-        </div>
+            </label>
+        </nav>
     </header>
 
-    <section class="hero">
+    <section class="hero" id="top">
         <div class="hero-content">
-            <div class="badge">Full-Stack Developer</div>
-            <h1 class="typing-text">Building the digital future...</h1>
-            <p class="hero-sub">Specializing in Python, JavaScript, and Interactive Web Design.</p>
-            <a href="#main-content" class="scroll-indicator">
-                <span>Explore Projects</span>
-                <div class="mouse"><div class="wheel"></div></div>
-            </a>
+            <p class="badge" data-i18n="role">Full-Stack Developer</p>
+            <h1 data-i18n="heroTitle">Software that is clear, useful, and well built.</h1>
+            <p class="hero-sub" data-i18n="heroSub">I design and develop web apps, bots, and tools — mainly with Python, JavaScript, and PHP.</p>
+            <div class="hero-actions">
+                <a href="#main-content" class="btn-primary" data-i18n="explore">View projects</a>
+                <a href="#contact" class="btn-ghost" data-i18n="navContact">Contact</a>
+            </div>
+        </div>
+        <div class="hero-portrait">
+            <div class="portrait-frame">
+                <div id="depth-viewer" aria-hidden="true"></div>
+            </div>
+            <p class="portrait-caption" data-i18n="portraitCaption">Move the pointer to tilt the portrait</p>
         </div>
     </section>
 
-
-<section class="my-foto">
-    <div id="depth-viewer"></div>
-</section>
-
+    <section class="about" id="about">
+        <div class="section-inner">
+            <p class="section-kicker" data-i18n="navAbout">About</p>
+            <div class="about-grid">
+                <h2 data-i18n="aboutTitle">A practical engineer who ships working products.</h2>
+                <div>
+                    <p class="about-body" data-i18n="aboutBody">I build full-stack applications, Telegram bots, and browser tools. My work ranges from PHP and MySQL systems with authentication to Vue interfaces, Python services, and canvas-based experiments. I care about readable code, clear UX, and finishing features people can actually use.</p>
+                    <ul class="skill-list" aria-label="Skills">
+                        <li>Python</li>
+                        <li>JavaScript</li>
+                        <li>Vue</li>
+                        <li>PHP</li>
+                        <li>SQL</li>
+                        <li>HTML / CSS</li>
+                        <li>APIs</li>
+                        <li>Telegram</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <main id="main-content">
-        <div class="filter-wrapper">
-            <div id="langFilter" class="lang-filter"></div>
+        <div class="section-inner">
+            <p class="section-kicker" data-i18n="navWork">Work</p>
+            <div class="section-heading">
+                <h2 data-i18n="projectsTitle">Selected work</h2>
+                <p class="section-sub" data-i18n="projectsSub">Filter by technology</p>
+            </div>
+            <div class="filter-wrapper">
+                <div id="langFilter" class="lang-filter"></div>
+            </div>
+            <div id="portfolioGrid" class="grid"></div>
         </div>
-        <div id="portfolioGrid" class="grid"></div>
     </main>
 
-    <div id="videoModal" class="modal">
+    <section class="contact" id="contact">
+        <div class="section-inner contact-inner">
+            <p class="section-kicker" data-i18n="navContact">Contact</p>
+            <h2 data-i18n="contactTitle">Let’s work together</h2>
+            <p class="contact-copy" data-i18n="contactBody">Open to internships, junior roles, and freelance projects. The fastest way to reach me is Telegram or GitHub.</p>
+            <div class="contact-actions">
+                <a href="https://github.com/Sagmanua" target="_blank" rel="noopener noreferrer" class="btn-primary">GitHub</a>
+                <a href="https://t.me/Sagmanua" target="_blank" rel="noopener noreferrer" class="btn-ghost">Telegram</a>
+                <a href="https://sagmanua.github.io/Curriculum/" target="_blank" rel="noopener noreferrer" class="btn-ghost" data-i18n="cv">Resume</a>
+            </div>
+        </div>
+    </section>
+
+    <div id="videoModal" class="modal" role="dialog" aria-modal="true" aria-label="Project video">
         <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <video id="modalVideo" controls style="display: none; width: 100%;">
+            <button type="button" class="close-modal" aria-label="Close">&times;</button>
+            <video id="modalVideo" controls>
                 <source src="" type="video/mp4">
             </video>
-            <div id="ytPlayerContainer" style="display: none; width: 100%; aspect-ratio: 16/9;">
-                <iframe id="modalYoutube" width="100%" height="100%" frameborder="0" 
-                        allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div id="ytPlayerContainer">
+                <iframe id="modalYoutube" title="YouTube video" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
         </div>
     </div>
 
     <footer class="footer">
+        <p class="footer-copy" data-i18n="footer">© 2026 Bohdan Sydorenko</p>
         <div class="social-links">
-            <a href="https://github.com/Sagmanua" class="soc-link">
+            <a href="https://github.com/Sagmanua" class="soc-link" target="_blank" rel="noopener noreferrer">
                 <img src="images/github.png" class="soc-icon" alt="GitHub">
             </a>
-            <a href="https://t.me/Sagmanua" class="soc-link">
+            <a href="https://t.me/Sagmanua" class="soc-link" target="_blank" rel="noopener noreferrer">
                 <img src="images/telegram.png" class="soc-icon" alt="Telegram">
             </a>
         </div>
     </footer>
-    <div class="container">
-    <svg id="main-svg">
-        <g id="screen"></g>
-    </svg>
-    </div>
-    
-   
-    <script src="animation_cursor.js"></script>
 
     <script src="json_file.js"></script>
-
-<script src="assets/js/pixi.4.8.9.js"></script>
-<script src="assets/js/DepthyViewer.js"></script>
-
-<script>
-    let viewerContainer = document.getElementById("depth-viewer");
-
-    let viewer = new DepthyViewer(viewerContainer, {});
-
-    viewer.setImage('assets/imgs/img.png');
-    viewer.setDepthmap('assets/imgs/img-depth.png');
-</script>
+    <script src="assets/js/pixi.4.8.9.js"></script>
+    <script src="assets/js/DepthyViewer.js"></script>
+    <script>
+        const viewerContainer = document.getElementById("depth-viewer");
+        if (viewerContainer && window.DepthyViewer) {
+            const viewer = new DepthyViewer(viewerContainer, {});
+            viewer.setImage("assets/imgs/img.png");
+            viewer.setDepthmap("assets/imgs/img-depth.png");
+        }
+    </script>
 </body>
 </html>
