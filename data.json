@@ -279,7 +279,7 @@
     "Python",
     "Telegram_bot"
   ],
-  "githublinkrepo": "https://github.com/Sagmanua/Telgram-bot/News"
+  "githublinkrepo": "https://github.com/Sagmanua/Telgram-bot/tree/main"
 },
 {
   "title": {
@@ -303,7 +303,8 @@
     "Telegram_bot",
     "SQLite"
   ],
-  "githublinkrepo": "https://github.com/Sagmanua/Telgram-bot/Weather"
+  "githublinkrepo": "https://github.com/Sagmanua/Telgram-bot/tree/main/Weather",
+  "githublinkwebsite": "https://web.telegram.org/k/#@weather_sagman_bot"
 },
 {
   "title": {
