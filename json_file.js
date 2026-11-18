@@ -279,8 +279,6 @@ function renderProjects(filter = currentFilter) {
     if (!grid) return;
 
     grid.innerHTML = '';
-    const copy = t();
-
     const filtered = filter
         ? projectData.filter(p => {
             const langs = Array.isArray(p.language) ? p.language : [p.language];
@@ -296,7 +294,6 @@ function renderProjects(filter = currentFilter) {
         card.className = 'card';
 
         const title = item.title?.[currentLang] || item.title?.en || "Untitled";
-        const desc = item.description?.[currentLang] || item.description?.en || "";
         const videoSrc = item.video
             ? (Array.isArray(item.video) ? item.video[0] : item.video)
             : null;
@@ -334,26 +331,13 @@ function renderProjects(filter = currentFilter) {
             `).join('');
         }
 
-        const repoBtn = item.githublinkrepo
-            ? `<a href="${item.githublinkrepo}" target="_blank" rel="noopener noreferrer" class="card-btn repo">${copy.github}</a>`
-            : '';
-        const siteBtn = item.githublinkwebsite
-            ? `<a href="${item.githublinkwebsite}" target="_blank" rel="noopener noreferrer" class="card-btn site">${copy.website}</a>`
-            : '';
-
         card.innerHTML = `
             <div class="thumb-wrapper">
                 ${mediaHTML}
                 ${videoSrc ? `<div class="play-badge">Play</div>` : ''}
             </div>
-            <h3>${title}</h3>
-            <p class="desc">${desc}</p>
+            <h3><a href="details.html?id=${originalIndex}">${title}</a></h3>
             <div class="project-langs">${langsHTML}</div>
-            <div class="card-actions">
-                ${repoBtn}
-                ${siteBtn}
-            </div>
-            <a href="details.html?id=${originalIndex}" class="card-more">${copy.viewDetails} →</a>
         `;
 
         const videoEl = card.querySelector('video.preview-video');
@@ -384,3 +368,32 @@ function setupLanguageSelector() {
 }
 
 init();
+
+const projectGallery = document.getElementById('portfolioGrid');
+const projectSection = document.getElementById('main-content');
+if (projectGallery && projectSection) {
+    const sectionInner = projectSection.querySelector('.section-inner');
+    let travel = 0;
+    let stickyTop = 0;
+
+    function updateGalleryPosition() {
+        if (!travel) return;
+        const progress = Math.max(0, Math.min(travel, stickyTop - projectSection.getBoundingClientRect().top));
+        projectGallery.scrollLeft = progress;
+    }
+
+    function measureGallery() {
+        projectSection.classList.add('gallery-scroll');
+        travel = Math.max(0, projectGallery.scrollWidth - projectGallery.clientWidth);
+        stickyTop = Math.min(0, window.innerHeight - sectionInner.offsetHeight);
+        projectSection.style.setProperty('--gallery-sticky-top', `${stickyTop}px`);
+        projectSection.style.height = `${sectionInner.offsetHeight + travel}px`;
+        updateGalleryPosition();
+    }
+
+    window.addEventListener('scroll', updateGalleryPosition, { passive: true });
+    window.addEventListener('resize', measureGallery);
+    new ResizeObserver(measureGallery).observe(sectionInner);
+    new MutationObserver(measureGallery).observe(projectGallery, { childList: true });
+    measureGallery();
+}
